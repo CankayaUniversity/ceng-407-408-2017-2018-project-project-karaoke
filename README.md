@@ -10,7 +10,7 @@
 
 
 <p align="center">
-<b align="center">Mehmet Ali Bekereci      Ege Naz ALARSLAN      Tolga KARAMAN</b><br>
+<b align="center">Mehmet Ali BEKERECI     Ege Naz ALARSLAN      Tolga KARAMAN</b><br>
 
 <p align="center">
 <b align="center">{c1311009, c1311002, c1111029}@student.cankaya.edu.tr</b><br>
@@ -19,7 +19,7 @@
 <br/>
 <b align="center">This page includes</b>
 
- <ol  align="center">
+ <ul style="list-style-type:none"  align="center">
   <li>Literature</li>
 <li> Software Requirements Specification (SRS)</li>
 <li> <a href="http://developmentkaraoke.unaux.com/MainPage.html">This is our website!</a> </li>
