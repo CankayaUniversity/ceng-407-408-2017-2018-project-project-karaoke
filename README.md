@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://i.hizliresim.com/9mvZn5.png">
+<img src="https://i.hizliresim.com/p6r94N.png">
 </p>
  <h1 align="center">ÇANKAYA UNIVERSITY FACULTY OF ENGINEERING COMPUTER ENGINEERING DEPARTMENT</h1>
 <h2 align="center">Development of a Karaoke Application for Language Learning</h2>
