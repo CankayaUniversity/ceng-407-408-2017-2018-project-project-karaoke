@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteUserFamily">
+   <children>
+      <Button layoutX="253.0" layoutY="95.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="33.0" layoutY="332.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="48.0" layoutY="35.0" text="Name :" />
+      <Label layoutX="48.0" layoutY="78.0" text="Surname : " />
+   </children>
+</AnchorPane>
