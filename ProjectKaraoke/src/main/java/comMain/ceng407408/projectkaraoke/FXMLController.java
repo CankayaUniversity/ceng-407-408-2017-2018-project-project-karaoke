@@ -1,5 +1,7 @@
 package comMain.ceng407408.projectkaraoke;
 
+import RecognizeSpeech.Transcriber; 
+
 import javafx.animation.Animation;
 import javafx.animation.Transition;
 import javafx.event.EventHandler;
@@ -23,27 +25,21 @@ import org.fredy.jsrt.api.SRTTimeFormat;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import org.fredy.jsrt.api.SRT;
 import org.fredy.jsrt.api.SRTInfo;
 import org.fredy.jsrt.api.SRTReader;
 import org.fredy.jsrt.api.SRTTimeFormat;
 
 public class FXMLController implements Initializable {
-
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-    }
-    
+  
     
     @FXML
     public ImageView imageAnimation;
-
     @FXML
     public VBox closedCaption;
     @FXML
@@ -52,11 +48,20 @@ public class FXMLController implements Initializable {
     public MediaView mediaT;
     MediaPlayer player;
     Media pick;
+    
+    
+    @FXML
+    public void RecognizeSpeech() throws IOException, UnsupportedAudioFileException, InterruptedException{
+        Transcriber speechRecognition =  new Transcriber();
+        //There should be original lyric entered somehow
+        //double dobScore = speechRecognition.funcRecognize(strOriginal);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         pick = new Media(Paths.get("zxczxc.mp3").toUri().toString());
         File file = new File("tenor.gif");
         Image image = new Image(file.toURI().toString());
+        //Srt file is not needed!
         SRTInfo info = SRTReader.read(new File("test.srt"));
         print(info);
 

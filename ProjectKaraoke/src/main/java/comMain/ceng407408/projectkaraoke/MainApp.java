@@ -1,5 +1,6 @@
 package comMain.ceng407408.projectkaraoke;
 
+import RecognizeSpeech.Transcriber;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -25,10 +26,12 @@ import org.fredy.jsrt.api.SRTReader;
 import org.fredy.jsrt.api.SRTTimeFormat;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javafx.scene.control.PasswordField;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import sun.applet.Main;
 
 
@@ -56,7 +59,7 @@ public class MainApp extends Application {
         stage.setResizable(false);
         stage.show();
     }
-@FXML
+    @FXML
     public void loginPress() {
 
 
@@ -74,10 +77,9 @@ public class MainApp extends Application {
                 e.printStackTrace();
             }
         }
-
-
-
     }
+    
+    
     private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page = (Parent) FXMLLoader.load(Main.class.getResource(fxml), null, new JavaFXBuilderFactory());
 
@@ -103,5 +105,4 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }

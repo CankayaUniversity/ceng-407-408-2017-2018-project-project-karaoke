@@ -18,7 +18,7 @@ import java.text.DecimalFormat;
 public class Transcriber {
 
 
-    public double funcRecognize(String[] args) throws IOException, UnsupportedAudioFileException, InterruptedException {
+    public double funcRecognize(String strOriginalLyric) throws IOException, UnsupportedAudioFileException, InterruptedException {
         URL audioURL;
         double dobScore = 0;
         JavaSoundRecorder soundRecord = new JavaSoundRecorder();
@@ -28,10 +28,8 @@ public class Transcriber {
         soundRecord.startCapture();
         Thread.sleep(RecordTime + 10);
         
-        if (args.length > 0) 
-            audioURL = new File(args[0]).toURI().toURL();
-         else 
-            audioURL = Transcriber.class.getResource("RecordAudio.wav");
+        //Way of getting resource may change
+        audioURL = Transcriber.class.getResource("RecordAudio.wav");
         
 
         URL configURL = Transcriber.class.getResource("config.xml");
@@ -52,7 +50,7 @@ public class Transcriber {
                 String resultText = result.getBestResultNoFiller();
                 System.out.println(resultText);
                 DecimalFormat scoreFormat = new DecimalFormat("#00.00");
-                dobScore = evaluationResult.funcResult(resultText, "one zero zero zero one one oh two one oh zero one three zero three");
+                dobScore = evaluationResult.funcResult(resultText, strOriginalLyric);
                 //one zero zero zero one one oh two one oh zero one three zero three
                 if(dobScore == -1)
                     System.out.print("Speech text/word overrated!\n");
