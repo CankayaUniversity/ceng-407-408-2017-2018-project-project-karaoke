@@ -54,8 +54,13 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         //scene.getStylesheets().add("/styles/Styles.css");
         
+        //Setting title of the login page 
         stage.setTitle("Karaoke Login");
+        
+        //Setting the scene
         stage.setScene(scene);
+        
+        //In order to block resizing the page(scene) 
         stage.setResizable(false);
         stage.show();
     }

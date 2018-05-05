@@ -5,6 +5,7 @@
  */
 package EvaluationScore;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,10 +14,10 @@ import java.util.Map;
 
 public class TestEvaluation {
 
-    public double funcResult(String strSpeechToText, String strOriginal) {
+    public ScoreAbst funcResult(String strSpeechToText, String strOriginal) {
         return funcEvaluate(strSpeechToText, strOriginal);
     }
-    private static double funcEvaluate(String strSpeechToText, String strOriginal){
+    private static ScoreAbst funcEvaluate(String strSpeechToText, String strOriginal){
         double dobScore = 0;
         int numFrequency = 0;
         strSpeechToText = strSpeechToText.replace('\n', '-');
@@ -36,7 +37,7 @@ public class TestEvaluation {
         
         dobScore = listSpeech.size();
         if(listSpeech.size() > listOriginal.size())
-            return -1;
+            return new ScoreAbst(0,0,-1);
         if(listSpeech.size() < listOriginal.size()){
             for(String strWord : listOriginal){
                 numFrequency = (Collections.frequency(listSpeech, strWord));
@@ -54,13 +55,13 @@ public class TestEvaluation {
                         dobScore = dobScore - (numOrgFreq - numFrequency);
                 }
             }
-            //return -2;
-             return ((dobScore * 100) / listOriginal.size());
+            return new ScoreAbst((int)dobScore, (dobScore * 100) / listOriginal.size(), -2);
+             
         }
         
         for(int i = 0 ; i < listSpeech.size() ; i++)
             if(listSpeech.get(i).compareTo(listOriginal.get(i)) != 0)
                 dobScore--;
-        return ((dobScore * 100) / listOriginal.size());
+        return new ScoreAbst((int)dobScore, (dobScore * 100) / listOriginal.size(), 0);
     }    
 }

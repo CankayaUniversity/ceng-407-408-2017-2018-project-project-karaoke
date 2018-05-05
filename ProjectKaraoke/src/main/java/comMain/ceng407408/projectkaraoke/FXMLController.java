@@ -1,5 +1,6 @@
 package comMain.ceng407408.projectkaraoke;
 
+import EvaluationScore.ScoreAbst;
 import RecognizeSpeech.Transcriber; 
 
 import javafx.animation.Animation;
@@ -54,7 +55,11 @@ public class FXMLController implements Initializable {
     public void RecognizeSpeech() throws IOException, UnsupportedAudioFileException, InterruptedException{
         Transcriber speechRecognition =  new Transcriber();
         //There should be original lyric entered somehow
-        //double dobScore = speechRecognition.funcRecognize(strOriginal);
+        //Original lyrics should get from the database as an string
+            //Ex. String StrOriginalLyrics
+        String strOriginalLyrics="";    
+        ScoreAbst scoreFinal = speechRecognition.funcRecognize(strOriginalLyrics);
+        //scoreFinal should send the score to database or display the score
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
