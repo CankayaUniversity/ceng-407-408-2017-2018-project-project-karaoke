@@ -24,7 +24,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,22 +35,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.sound.sampled.AudioFormat;
-import javax.speech.AudioException;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.recognition.RecognizerEvent;
-import javax.speech.recognition.ResultEvent;
-import javax.speech.recognition.ResultListener;
-import javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
 
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestEvent;
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
-import org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
-import org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
-import org.jvoicexml.jsapi2.jse.recognition.BaseResult;
-import org.jvoicexml.jsapi2.jse.recognition.GrammarDefinition;
-import org.jvoicexml.jsapi2.jse.recognition.JseBaseRecognizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestEvent;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.BaseResult;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.GrammarDefinition;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.JseBaseRecognizer;
 
 import edu.cmu.sphinx.decoder.search.Token;
 import edu.cmu.sphinx.frontend.DataProcessor;
@@ -58,10 +58,13 @@ import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.linguist.language.grammar.Grammar;
 import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.recognizer.Recognizer.State;
+import static edu.cmu.sphinx.recognizer.Recognizer.State.ALLOCATED;
 import edu.cmu.sphinx.recognizer.StateListener;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
 import edu.cmu.sphinx.util.props.PropertyException;
 import edu.cmu.sphinx.util.props.PropertySheet;
+import static jsapi2.javax.speech.src.javax.speech.recognition.Recognizer.LISTENING;
+import static jsapi2.javax.speech.src.javax.speech.recognition.Recognizer.PROCESSING;
 
 /**
  * JSAPI wrapper for sphinx4.

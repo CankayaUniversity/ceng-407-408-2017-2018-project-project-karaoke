@@ -9,7 +9,7 @@
  * Copyright (C) 2007-2009 JVoiceXML group - http://jvoicexml.sourceforge.net
  *
  */
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -25,11 +25,11 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.speech.AudioException;
-import javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
 
-import org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
-import org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
 
 /**
  * Supports the JSAPI 2.0 <code>AudioManager</code> interface. Actual JSAPI

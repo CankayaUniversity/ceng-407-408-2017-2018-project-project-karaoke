@@ -1,4 +1,4 @@
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 
 import java.io.IOException;
@@ -8,15 +8,15 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleAlternatives;
-import javax.speech.recognition.RuleComponent;
-import javax.speech.recognition.RuleCount;
-import javax.speech.recognition.RuleReference;
-import javax.speech.recognition.RuleSequence;
-import javax.speech.recognition.RuleSpecial;
-import javax.speech.recognition.RuleTag;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleAlternatives;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleCount;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleReference;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSequence;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSpecial;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleTag;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;

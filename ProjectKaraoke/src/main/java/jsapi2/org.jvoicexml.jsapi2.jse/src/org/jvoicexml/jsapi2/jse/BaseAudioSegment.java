@@ -10,13 +10,13 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
 
 /**
  * Basic implementation of an {@link AudioSegment}.

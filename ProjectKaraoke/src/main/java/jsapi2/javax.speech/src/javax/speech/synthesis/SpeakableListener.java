@@ -24,11 +24,11 @@
  *
  */
 
-package javax.speech.synthesis;
+package jsapi2.javax.speech.src.javax.speech.synthesis;
 
 //Comp 2.0.6
 
-import javax.speech.SpeechEventListener;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventListener;
 
 public interface SpeakableListener extends SpeechEventListener {
     void speakableUpdate(SpeakableEvent e);

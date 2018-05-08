@@ -10,12 +10,12 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis;
 
-import javax.speech.synthesis.Speakable;
-import javax.speech.synthesis.SpeakableListener;
-import javax.speech.AudioSegment;
-import javax.speech.synthesis.PhoneInfo;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableListener;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.synthesis.PhoneInfo;
 
 /**
  * An item of the {@link QueueManager}.

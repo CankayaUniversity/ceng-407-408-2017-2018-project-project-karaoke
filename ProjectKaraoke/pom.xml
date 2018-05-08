@@ -105,4 +105,14 @@
         </plugins>
     </build>
     <description>Developing Karaoke Application for Language Learning</description>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <type>jar</type>
+        </dependency>
+
+        
+    </dependencies>
 </project>

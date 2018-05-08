@@ -14,7 +14,7 @@
  *
  * @version 1.9 09/09/99 14:24:41
  */
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import java.io.Serializable;
 import java.util.Enumeration;
@@ -23,29 +23,29 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.speech.AudioSegment;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.recognition.FinalResult;
-import javax.speech.recognition.FinalRuleResult;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.RecognizerProperties;
-import javax.speech.recognition.Result;
-import javax.speech.recognition.ResultEvent;
-import javax.speech.recognition.ResultListener;
-import javax.speech.recognition.ResultStateException;
-import javax.speech.recognition.ResultToken;
-import javax.speech.recognition.RuleAlternatives;
-import javax.speech.recognition.RuleComponent;
-import javax.speech.recognition.RuleCount;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.RuleParse;
-import javax.speech.recognition.RuleReference;
-import javax.speech.recognition.RuleSequence;
-import javax.speech.recognition.RuleTag;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.recognition.FinalResult;
+import jsapi2.javax.speech.src.javax.speech.recognition.FinalRuleResult;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerProperties;
+import jsapi2.javax.speech.src.javax.speech.recognition.Result;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultStateException;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultToken;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleAlternatives;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleCount;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleParse;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleReference;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSequence;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleTag;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 
-import org.jvoicexml.jsapi2.recognition.BaseResultToken;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition.BaseResultToken;
 
 public class BaseResult implements Result, FinalResult, FinalRuleResult, Serializable, Cloneable {
     /** Logger for this class. */

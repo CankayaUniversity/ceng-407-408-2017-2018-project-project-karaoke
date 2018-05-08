@@ -1,4 +1,4 @@
-package javax.speech.synthesis;
+package jsapi2.javax.speech.src.javax.speech.synthesis;
 
 //Comp 2.0.6
 

@@ -1,10 +1,10 @@
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 /**
  * Represents a graph, or a sub-graph.
  * It only contains a start node and an end node.
  *
- * @author David José Rodrigues
+ * @author David Josï¿½ Rodrigues
  */
 
 public class GrammarGraph {

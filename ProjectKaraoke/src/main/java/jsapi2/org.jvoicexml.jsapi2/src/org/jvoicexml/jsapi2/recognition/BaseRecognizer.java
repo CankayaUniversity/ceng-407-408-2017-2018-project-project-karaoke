@@ -43,36 +43,36 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.AudioException;
-import javax.speech.AudioManager;
-import javax.speech.EngineEvent;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.VocabularyManager;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.RecognizerEvent;
-import javax.speech.recognition.RecognizerListener;
-import javax.speech.recognition.RecognizerMode;
-import javax.speech.recognition.RecognizerProperties;
-import javax.speech.recognition.Result;
-import javax.speech.recognition.ResultEvent;
-import javax.speech.recognition.ResultListener;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.SpeakerManager;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.EngineEvent;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.VocabularyManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerMode;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerProperties;
+import jsapi2.javax.speech.src.javax.speech.recognition.Result;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.SpeakerManager;
 
-import org.jvoicexml.jsapi2.BaseAudioManager;
-import org.jvoicexml.jsapi2.BaseEngine;
-import org.jvoicexml.jsapi2.BaseEngineProperties;
-import org.jvoicexml.jsapi2.BaseVocabularyManager;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngine;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngineProperties;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseVocabularyManager;
 
 
 /**

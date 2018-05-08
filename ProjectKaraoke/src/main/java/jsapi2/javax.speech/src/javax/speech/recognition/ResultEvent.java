@@ -24,11 +24,11 @@
  *
  */
 
-package javax.speech.recognition;
+package jsapi2.javax.speech.src.javax.speech.recognition;
 
 import java.util.Vector;
 
-import javax.speech.SpeechEvent;
+import jsapi2.javax.speech.src.javax.speech.SpeechEvent;
 
 // Comp 2.0.6
 

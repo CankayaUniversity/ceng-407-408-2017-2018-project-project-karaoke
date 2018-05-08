@@ -24,9 +24,9 @@
  *
  */
 
-package javax.speech.synthesis;
+package jsapi2.javax.speech.src.javax.speech.synthesis;
 
-import javax.speech.EngineProperties;
+import jsapi2.javax.speech.src.javax.speech.EngineProperties;
 
 //Comp 2.0.6
 

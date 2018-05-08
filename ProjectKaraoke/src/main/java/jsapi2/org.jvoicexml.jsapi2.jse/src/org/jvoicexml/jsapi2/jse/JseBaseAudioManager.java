@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -20,11 +20,11 @@ import java.net.URLConnection;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
-import javax.speech.AudioException;
-import javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
 
-import org.jvoicexml.jsapi2.BaseAudioManager;
-import org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
+import jsapi.com.sun.speech.engine.BaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
 
 /**
  * Supports the JSAPI 2.0 <code>AudioManager</code>
@@ -112,7 +112,7 @@ public abstract class JseBaseAudioManager extends BaseAudioManager implements Au
     /**
      * {@inheritDoc}
      */
-    public org.jvoicexml.jsapi2.AudioFormat getAudioFormat()
+    public jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.AudioFormat getAudioFormat()
         throws AudioException {
         final String locator = getMediaLocator();
         if (locator != null) {
@@ -122,7 +122,7 @@ public abstract class JseBaseAudioManager extends BaseAudioManager implements Au
                 url = new URL(locator);
                 AudioFormat format =
                     JavaSoundParser.parse(url);
-                return new org.jvoicexml.jsapi2.AudioFormat(
+                return new jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.AudioFormat(
                         format.getEncoding().toString(),
                         format.getSampleRate(), format.getSampleSizeInBits(),
                         format.getChannels(), format.getFrameSize(),
@@ -133,7 +133,7 @@ public abstract class JseBaseAudioManager extends BaseAudioManager implements Au
                 throw new AudioException(ex.getMessage());
             }
         }
-        return new org.jvoicexml.jsapi2.AudioFormat(
+        return new jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.AudioFormat(
                 engineAudioFormat.getEncoding().toString(),
                 engineAudioFormat.getSampleRate(), engineAudioFormat.getSampleSizeInBits(),
                 engineAudioFormat.getChannels(), engineAudioFormat.getFrameSize(),
@@ -169,7 +169,6 @@ public abstract class JseBaseAudioManager extends BaseAudioManager implements Au
      *
      * Closes the format converter. May be overridden to handle further cleanup.
      */
-    @Override
     protected void handleAudioStop() throws AudioException {
         if (formatConverter != null) {
             formatConverter = null;

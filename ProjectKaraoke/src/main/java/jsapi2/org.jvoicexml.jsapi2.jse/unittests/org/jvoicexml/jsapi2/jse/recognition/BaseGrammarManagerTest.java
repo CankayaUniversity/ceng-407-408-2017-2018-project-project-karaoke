@@ -1,18 +1,18 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.recognition;
 
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 
 import junit.framework.TestCase;
 
-import org.jvoicexml.jsapi2.jse.test.recognition.DummyRecognizer;
+import jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.test.recognition.DummyRecognizer;
 
 /**
  * Test cases for the {@link GrammarManager}.

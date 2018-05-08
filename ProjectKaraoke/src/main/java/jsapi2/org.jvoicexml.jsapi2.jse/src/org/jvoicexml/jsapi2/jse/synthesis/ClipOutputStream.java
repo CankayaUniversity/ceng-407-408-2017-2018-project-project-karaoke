@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.synthesis;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 
-import org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
 
 /**
  * A simple {@link OutputStream} that writes the data to the local speaker.

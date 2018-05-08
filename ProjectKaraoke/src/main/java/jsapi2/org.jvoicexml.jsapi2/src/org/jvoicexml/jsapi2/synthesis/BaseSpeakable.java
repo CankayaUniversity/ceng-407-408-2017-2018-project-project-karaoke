@@ -10,9 +10,9 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis;
 
-import javax.speech.synthesis.Speakable;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
 
 /**
  * A basic implementation of a {@link Speakable}.

@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.protocols.capture;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.capture;
 
 import java.io.IOException;
 import java.net.InetAddress;

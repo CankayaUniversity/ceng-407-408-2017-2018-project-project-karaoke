@@ -1,9 +1,11 @@
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.AudioFormat;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseAudioManager;
 
 public class DummyAudioManager extends BaseAudioManager {
 

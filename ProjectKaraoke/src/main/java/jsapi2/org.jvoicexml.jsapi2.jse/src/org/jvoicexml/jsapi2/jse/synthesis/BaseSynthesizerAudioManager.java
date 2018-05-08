@@ -9,7 +9,7 @@
  * Copyright (C) 2007 JVoiceXML group - http://jvoicexml.sourceforge.net
  *
  */
-package org.jvoicexml.jsapi2.jse.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.synthesis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,11 +20,11 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import javax.sound.sampled.AudioFormat;
-import javax.speech.AudioException;
-import javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
 
-import org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
-import org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.JseBaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
 
 /**
  * Supports the JSAPI 2.0 <code>AudioManager</code> interface. Actual JSAPI
@@ -128,7 +128,6 @@ public class BaseSynthesizerAudioManager extends JseBaseAudioManager {
     /**
      * {@inheritDoc}
      */
-    @Override
     public InputStream getInputStream() {
         throw new IllegalArgumentException("input streams are not supported");
     }

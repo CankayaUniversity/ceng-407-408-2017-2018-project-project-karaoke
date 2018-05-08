@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -25,23 +25,23 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.speech.EngineStateException;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.GrammarExceptionDetail;
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleAlternatives;
-import javax.speech.recognition.RuleComponent;
-import javax.speech.recognition.RuleCount;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.RuleParse;
-import javax.speech.recognition.RuleReference;
-import javax.speech.recognition.RuleSequence;
-import javax.speech.recognition.RuleSpecial;
-import javax.speech.recognition.RuleTag;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarExceptionDetail;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleAlternatives;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleCount;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleParse;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleReference;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSequence;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSpecial;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleTag;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 
-import org.jvoicexml.jsapi2.jse.recognition.BaseRuleGrammar;
-import org.jvoicexml.jsapi2.jse.recognition.SrgsRuleGrammarParser;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.BaseRuleGrammar;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.SrgsRuleGrammarParser;
 
 import edu.cmu.sphinx.linguist.dictionary.Dictionary;
 import edu.cmu.sphinx.linguist.language.grammar.Grammar;
@@ -170,7 +170,7 @@ public class SRGSGrammar extends Grammar {
      * @return the RuleGrammar
      */
     public RuleGrammar getRuleGrammar() {
-        return ruleGrammar;
+        return (RuleGrammar) ruleGrammar;
     }
 
     /**

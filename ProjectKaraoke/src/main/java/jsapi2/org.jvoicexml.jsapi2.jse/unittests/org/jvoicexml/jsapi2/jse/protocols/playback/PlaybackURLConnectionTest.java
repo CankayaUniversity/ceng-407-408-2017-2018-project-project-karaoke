@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.protocols.playback;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.protocols.playback;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.UnknownServiceException;
 
 import javax.sound.sampled.AudioSystem;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.playback.PlaybackURLConnection;
 
 import org.junit.Before;
 import org.junit.Test;

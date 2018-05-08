@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -23,7 +23,7 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 
-import org.jvoicexml.jsapi2.BaseAudioManager;
+import jsapi.com.sun.speech.engine.BaseAudioManager;
 
 /**
  * Utility to convert audio from a source format to another format.

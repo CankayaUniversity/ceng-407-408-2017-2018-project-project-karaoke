@@ -1,12 +1,12 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
-import javax.speech.EngineStateException;
-import javax.speech.SpeechLocale;
-import javax.speech.VocabularyManager;
-import javax.speech.Word;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.VocabularyManager;
+import jsapi2.javax.speech.src.javax.speech.Word;
 
 /**
  * Base implementation of a {@link VocabularyManager}.

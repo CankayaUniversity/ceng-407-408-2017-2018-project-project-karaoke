@@ -24,7 +24,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

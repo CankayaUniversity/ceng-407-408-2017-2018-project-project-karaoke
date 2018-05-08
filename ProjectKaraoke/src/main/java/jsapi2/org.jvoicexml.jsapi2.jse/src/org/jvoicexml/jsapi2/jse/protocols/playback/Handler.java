@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.protocols.playback;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.playback;
 
 import java.io.IOException;
 import java.net.InetAddress;

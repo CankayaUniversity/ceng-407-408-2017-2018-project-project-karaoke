@@ -10,31 +10,31 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.AudioException;
-import javax.speech.AudioManager;
-import javax.speech.AudioSegment;
-import javax.speech.EngineEvent;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.synthesis.PhoneInfo;
-import javax.speech.synthesis.Speakable;
-import javax.speech.synthesis.SpeakableEvent;
-import javax.speech.synthesis.SpeakableException;
-import javax.speech.synthesis.SpeakableListener;
-import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerEvent;
-import javax.speech.synthesis.SynthesizerListener;
-import javax.speech.synthesis.SynthesizerMode;
-import javax.speech.synthesis.SynthesizerProperties;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.EngineEvent;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.synthesis.PhoneInfo;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableEvent;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableException;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableListener;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerEvent;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerListener;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerMode;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerProperties;
 
-import org.jvoicexml.jsapi2.BaseEngine;
-import org.jvoicexml.jsapi2.BaseEngineProperties;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngine;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngineProperties;
 
 
 /**

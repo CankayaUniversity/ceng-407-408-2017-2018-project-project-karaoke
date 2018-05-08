@@ -1,16 +1,19 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.synthesis;
 
-import javax.speech.AudioSegment;
-import javax.speech.synthesis.SpeakableListener;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableListener;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.QueueItem;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.QueueManager;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.jvoicexml.jsapi2.test.synthesis.DummySpeakableListener;
-import org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.test.synthesis.DummySpeakableListener;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
 
 /**
  * Test cases for {@link QueueManager}.

@@ -1,9 +1,9 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2;
 
-import javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
 
 /**
  * Dummy implementation of a speech event executor that executes synchronously.

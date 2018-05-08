@@ -43,20 +43,20 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
 import java.util.Vector;
 
-import javax.speech.AudioException;
-import javax.speech.AudioManager;
-import javax.speech.Engine;
-import javax.speech.EngineEvent;
-import javax.speech.EngineException;
-import javax.speech.EngineListener;
-import javax.speech.EngineMode;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.VocabularyManager;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineEvent;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineListener;
+import jsapi2.javax.speech.src.javax.speech.EngineMode;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.VocabularyManager;
 
 /**
  * Supports the JSAPI 2.0 {@link Engine} interface.

@@ -24,9 +24,9 @@
  *
  */
 
-package javax.speech.recognition;
+package jsapi2.javax.speech.src.javax.speech.recognition;
 
-import javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
 
 //Comp 2.0.6
 

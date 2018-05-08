@@ -1,14 +1,14 @@
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
 
 /**
  * Represents a node of a graph.
  *
- * @author David José Rodrigues
+ * @author David Josï¿½ Rodrigues
  */
 
 public class GrammarNode {

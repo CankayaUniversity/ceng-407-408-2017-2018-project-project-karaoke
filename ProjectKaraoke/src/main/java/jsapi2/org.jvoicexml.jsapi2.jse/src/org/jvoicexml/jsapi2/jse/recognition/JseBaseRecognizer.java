@@ -43,20 +43,20 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import javax.sound.sampled.AudioFormat;
-import javax.speech.AudioManager;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.RecognizerMode;
-import javax.speech.recognition.Result;
-import javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerMode;
+import jsapi2.javax.speech.src.javax.speech.recognition.Result;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
 
-import org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
-import org.jvoicexml.jsapi2.recognition.BaseRecognizer;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition.BaseRecognizer;
 
 
 /**

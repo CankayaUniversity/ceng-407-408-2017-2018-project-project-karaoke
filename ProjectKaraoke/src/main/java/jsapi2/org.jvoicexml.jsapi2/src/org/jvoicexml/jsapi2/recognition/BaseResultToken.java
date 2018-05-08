@@ -1,8 +1,8 @@
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
-import javax.speech.recognition.Result;
-import javax.speech.recognition.ResultToken;
-import javax.speech.recognition.RecognizerProperties;
+import jsapi2.javax.speech.src.javax.speech.recognition.Result;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultToken;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerProperties;
 
 /**
  * Basic implementation of a {@link ResultToken}.

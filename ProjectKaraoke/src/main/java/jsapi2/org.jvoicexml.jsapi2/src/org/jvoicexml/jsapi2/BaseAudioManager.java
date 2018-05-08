@@ -10,20 +10,20 @@
  *
  */
 
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.AudioEvent;
-import javax.speech.AudioException;
-import javax.speech.AudioListener;
-import javax.speech.AudioManager;
-import javax.speech.Engine;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.AudioEvent;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioListener;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
 
 /**
  * Supports the JSAPI 2.0 <code>AudioManager</code>

@@ -24,7 +24,7 @@
  *
  */
 
-package javax.speech;
+package jsapi2.javax.speech.src.javax.speech;
 
 interface Comparator {
     int compare(Object object1, Object object2);

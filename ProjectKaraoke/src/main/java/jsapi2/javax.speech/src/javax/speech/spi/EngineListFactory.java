@@ -24,10 +24,10 @@
  *
  */
 
-package javax.speech.spi;
+package jsapi2.javax.speech.src.javax.speech.spi;
 
-import javax.speech.EngineList;
-import javax.speech.EngineMode;
+import jsapi2.javax.speech.src.javax.speech.EngineList;
+import jsapi2.javax.speech.src.javax.speech.EngineMode;
 
 //Comp. 2.0.6
 

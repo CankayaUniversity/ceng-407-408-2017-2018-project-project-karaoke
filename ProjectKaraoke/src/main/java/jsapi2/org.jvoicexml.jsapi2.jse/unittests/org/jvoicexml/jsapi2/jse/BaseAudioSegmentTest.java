@@ -1,13 +1,14 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
 
-import javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.BaseAudioSegment;
 
 import junit.framework.Assert;
 

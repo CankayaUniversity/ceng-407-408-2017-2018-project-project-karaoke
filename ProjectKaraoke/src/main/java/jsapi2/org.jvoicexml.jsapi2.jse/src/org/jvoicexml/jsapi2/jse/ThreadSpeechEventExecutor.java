@@ -9,11 +9,11 @@
  * Copyright (C) 2007 JVoiceXML group - http://jvoicexml.sourceforge.net
  *
  */
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse;
 
 import java.util.Vector;
 
-import org.jvoicexml.jsapi2.TerminatableSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.TerminatableSpeechEventExecutor;
 
 /**
  * A speech event executor that is based on a thread.

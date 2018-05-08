@@ -24,7 +24,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,19 +32,19 @@ import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.AudioException;
-import javax.speech.AudioSegment;
-import javax.speech.Engine;
-import javax.speech.EngineStateException;
-import javax.speech.synthesis.PhoneInfo;
-import javax.speech.synthesis.Speakable;
-import javax.speech.synthesis.SpeakableEvent;
-import javax.speech.synthesis.SpeakableListener;
-import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerEvent;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioSegment;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.synthesis.PhoneInfo;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableEvent;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SpeakableListener;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerEvent;
 
-import org.jvoicexml.jsapi2.AudioFormat;
-import org.jvoicexml.jsapi2.BaseAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.AudioFormat;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseAudioManager;
 
 /**
  * The {@link QueueManager} basically accepts the speech segments to

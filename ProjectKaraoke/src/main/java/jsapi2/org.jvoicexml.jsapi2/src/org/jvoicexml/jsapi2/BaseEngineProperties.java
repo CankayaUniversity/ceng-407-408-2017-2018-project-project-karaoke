@@ -9,16 +9,16 @@
  * Copyright (C) 2007-2009 JVoiceXML group - http://jvoicexml.sourceforge.net
  */
 
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.Engine;
-import javax.speech.EngineProperties;
-import javax.speech.EnginePropertyEvent;
-import javax.speech.EnginePropertyListener;
-import javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineProperties;
+import jsapi2.javax.speech.src.javax.speech.EnginePropertyEvent;
+import jsapi2.javax.speech.src.javax.speech.EnginePropertyListener;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
 
 /**
  * Supports the JSAPI 2.0 <code>EngineProperties</code> interface.

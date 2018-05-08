@@ -10,12 +10,12 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
-import org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

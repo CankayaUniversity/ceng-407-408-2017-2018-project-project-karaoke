@@ -24,18 +24,18 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.ResultEvent;
-import javax.speech.recognition.ResultToken;
-import javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultToken;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
 
-import org.jvoicexml.jsapi2.jse.recognition.BaseResult;
-import org.jvoicexml.jsapi2.recognition.BaseResultToken;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.BaseResult;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition.BaseResultToken;
 
 import edu.cmu.sphinx.decoder.ResultListener;
 import edu.cmu.sphinx.result.Result;

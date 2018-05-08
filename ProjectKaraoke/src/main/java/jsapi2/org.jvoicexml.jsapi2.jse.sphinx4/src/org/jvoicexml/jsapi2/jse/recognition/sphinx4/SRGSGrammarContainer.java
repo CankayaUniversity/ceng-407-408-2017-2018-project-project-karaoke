@@ -1,4 +1,4 @@
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -12,13 +12,13 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.speech.recognition.GrammarEvent;
-import javax.speech.recognition.GrammarListener;
-import javax.speech.recognition.ResultListener;
-import javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
 
-import org.jvoicexml.jsapi2.jse.recognition.BaseRuleGrammar;
-import org.jvoicexml.jsapi2.recognition.GrammarDefinition;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.BaseRuleGrammar;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition.GrammarDefinition;
 
 import edu.cmu.sphinx.decoder.search.Token;
 import edu.cmu.sphinx.linguist.flat.GrammarState;

@@ -10,7 +10,7 @@
  *
  */
 
-package org.jvoicexml.jsapi2.jse.protocols.capture;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.capture;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +34,7 @@ import javax.sound.sampled.Mixer;
 import javax.sound.sampled.TargetDataLine;
 import javax.sound.sampled.Mixer.Info;
 
-import org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
 
 /**
  * A {@link URLConnection} for the capture protool.

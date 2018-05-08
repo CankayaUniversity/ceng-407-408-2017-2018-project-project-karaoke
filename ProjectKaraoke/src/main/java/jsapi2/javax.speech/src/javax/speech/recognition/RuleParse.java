@@ -24,7 +24,7 @@
  *
  */
 
-package javax.speech.recognition;
+package jsapi2.javax.speech.src.javax.speech.recognition;
 
 import java.util.Vector;
 

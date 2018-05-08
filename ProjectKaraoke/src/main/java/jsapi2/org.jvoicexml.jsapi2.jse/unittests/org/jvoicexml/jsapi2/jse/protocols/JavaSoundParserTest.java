@@ -1,11 +1,12 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.protocols;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.protocols;
 
 import java.net.URL;
 
 import javax.sound.sampled.AudioFormat;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.JavaSoundParser;
 
 import junit.framework.Assert;
 

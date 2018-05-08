@@ -1,18 +1,18 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.synthesis;
 
-import javax.speech.AudioException;
-import javax.speech.Engine;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.synthesis.Synthesizer;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.jvoicexml.jsapi2.jse.test.synthesis.DummySynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.test.synthesis.DummySynthesizer;
 
 /**
  * Test cases for {@link JseBaseSynthesizer}.

@@ -1,10 +1,10 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse;
 
 import javax.sound.sampled.AudioFormat;
-import javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.Engine;
 
 import junit.framework.Assert;
 

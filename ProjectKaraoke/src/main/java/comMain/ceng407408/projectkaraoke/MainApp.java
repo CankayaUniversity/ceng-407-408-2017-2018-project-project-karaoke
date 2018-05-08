@@ -20,10 +20,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.fredy.jsrt.api.SRT;
+/*import org.fredy.jsrt.api.SRT;
 import org.fredy.jsrt.api.SRTInfo;
 import org.fredy.jsrt.api.SRTReader;
-import org.fredy.jsrt.api.SRTTimeFormat;
+import org.fredy.jsrt.api.SRTTimeFormat;*/
 
 import java.io.File;
 import java.io.IOException;

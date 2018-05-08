@@ -10,18 +10,19 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.synthesis;
 
-import javax.speech.EnginePropertyEvent;
-import javax.speech.EnginePropertyListener;
-import javax.speech.synthesis.Synthesizer;
+import jsapi.com.sun.speech.engine.synthesis.BaseSynthesizerProperties;
+import jsapi2.javax.speech.src.javax.speech.EnginePropertyEvent;
+import jsapi2.javax.speech.src.javax.speech.EnginePropertyListener;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestEvent;
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
-import org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestEvent;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
 
 /**
  * Test cases for {@link BaseSynthesizerProperties}.
@@ -44,7 +45,7 @@ public final class BaseSynthesizerPropertiesTest extends TestCase
      *         setup failed
      */
     public void setUp() throws Exception {
-        final Synthesizer synthesizer = new DummySynthesizer();
+        final Synthesizer synthesizer = (Synthesizer) new DummySynthesizer();
         props = new BaseSynthesizerProperties(synthesizer);
         props.addEnginePropertyChangeRequestListener(this);
         props.addEnginePropertyListener(this);
@@ -56,7 +57,7 @@ public final class BaseSynthesizerPropertiesTest extends TestCase
      *            test failed
      */
     public void testSetPitch() throws Exception {
-        final int pitch = props.getPitch();
+        final int pitch = (int) props.getPitch();
         final int val1 = 240;
         props.setPitch(val1);
         Assert.assertEquals(pitch, props.getPitch());

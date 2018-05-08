@@ -1,13 +1,13 @@
-package javax.speech.recognition;
+package jsapi2.javax.speech.src.javax.speech.recognition;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.util.Vector;
 
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
 
 //Comp. 2.0.6
 

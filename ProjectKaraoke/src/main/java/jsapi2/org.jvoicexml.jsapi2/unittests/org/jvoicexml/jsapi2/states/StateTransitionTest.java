@@ -1,9 +1,9 @@
-package org.jvoicexml.jsapi2.states;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.states;
 
-import javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.Engine;
 
-import org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
-import org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.test.synthesis.DummySynthesizer;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

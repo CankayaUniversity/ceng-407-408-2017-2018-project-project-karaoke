@@ -24,7 +24,7 @@
  *
  */
 
-package javax.speech;
+package jsapi2.javax.speech.src.javax.speech;
 
 import java.util.Vector;
 

@@ -1,10 +1,10 @@
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
 import java.util.Vector;
-import javax.speech.recognition.SpeakerManager;
-import javax.speech.recognition.SpeakerProfile;
-import javax.speech.recognition.SpeakerManagerUI;
-import javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.recognition.SpeakerManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.SpeakerProfile;
+import jsapi2.javax.speech.src.javax.speech.recognition.SpeakerManagerUI;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
 
 /**
  * Basic implementation of a speaker manager.

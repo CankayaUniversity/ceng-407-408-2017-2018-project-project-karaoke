@@ -1,6 +1,6 @@
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
-import javax.speech.EngineProperties;
+import jsapi2.javax.speech.src.javax.speech.EngineProperties;
 
 /**
  * Notification that a property in the {@link EngineProperties} should be

@@ -10,15 +10,15 @@
  *
  */
 
-package org.jvoicexml.jsapi2.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis;
 
-import javax.speech.Engine;
-import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerMode;
-import javax.speech.synthesis.SynthesizerProperties;
-import javax.speech.synthesis.Voice;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerMode;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerProperties;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Voice;
 
-import org.jvoicexml.jsapi2.BaseEngineProperties;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngineProperties;
 
 /**
  * Base implementation of {@link SynthesizerProperties}.

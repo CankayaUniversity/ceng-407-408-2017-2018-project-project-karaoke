@@ -1,4 +1,4 @@
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
 /**
  * <p>Title: </p>

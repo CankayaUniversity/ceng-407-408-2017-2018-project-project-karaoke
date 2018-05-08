@@ -1,12 +1,13 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.protocols.capture;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.protocols.capture;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.UnknownServiceException;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.protocols.capture.CaptureURLConnection;
 
 import org.junit.Before;
 import org.junit.Test;

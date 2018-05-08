@@ -24,9 +24,9 @@
  *
  */
 
-package javax.speech.synthesis;
+package jsapi2.javax.speech.src.javax.speech.synthesis;
 
-import javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
 
 //Comp 2.0.6
 

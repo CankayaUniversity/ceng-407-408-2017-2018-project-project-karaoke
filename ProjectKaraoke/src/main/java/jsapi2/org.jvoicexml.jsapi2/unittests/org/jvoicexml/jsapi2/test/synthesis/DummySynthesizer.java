@@ -1,16 +1,16 @@
-package org.jvoicexml.jsapi2.test.synthesis;
-import javax.speech.AudioException;
-import javax.speech.AudioManager;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.VocabularyManager;
-import javax.speech.synthesis.Speakable;
+package jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.test.synthesis;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.VocabularyManager;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
 
-import org.jvoicexml.jsapi2.DummyAudioManager;
-import org.jvoicexml.jsapi2.DummySpeechEventExecutor;
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
-import org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.DummyAudioManager;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.DummySpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
 
 /**
  * 

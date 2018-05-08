@@ -5,7 +5,7 @@
  * redistribution of this file, and for a DISCLAIMER OF ALL
  * WARRANTIES.
  */
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import java.io.StringReader;
 import java.util.Collections;
@@ -16,22 +16,22 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.speech.SpeechLocale;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleAlternatives;
-import javax.speech.recognition.RuleComponent;
-import javax.speech.recognition.RuleCount;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.RuleParse;
-import javax.speech.recognition.RuleReference;
-import javax.speech.recognition.RuleSequence;
-import javax.speech.recognition.RuleTag;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleAlternatives;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleCount;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleParse;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleReference;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSequence;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleTag;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 
-import org.jvoicexml.jsapi2.recognition.BaseGrammar;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition.BaseGrammar;
 
 /**
  * Implementation of javax.speech.recognition.RuleGrammar.

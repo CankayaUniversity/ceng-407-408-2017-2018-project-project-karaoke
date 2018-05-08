@@ -24,15 +24,15 @@
  *
  */
 
-package javax.speech;
+package jsapi2.javax.speech.src.javax.speech;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.spi.EngineFactory;
-import javax.speech.spi.EngineListFactory;
+import jsapi2.javax.speech.src.javax.speech.spi.EngineFactory;
+import jsapi2.javax.speech.src.javax.speech.spi.EngineListFactory;
 
 //Comp. 2.0.6
 

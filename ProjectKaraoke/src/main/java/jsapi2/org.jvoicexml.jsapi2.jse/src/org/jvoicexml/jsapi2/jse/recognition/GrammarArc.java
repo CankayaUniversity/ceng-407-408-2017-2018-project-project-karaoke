@@ -1,9 +1,9 @@
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 /**
  * Represents an arc of a graph.
  *
- * @author David José Rodrigues
+ * @author David Josï¿½ Rodrigues
  */
 public class GrammarArc {
     /** the destination node. */

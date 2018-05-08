@@ -10,21 +10,21 @@
  *
  */
 
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.speech.SpeechEventExecutor;
-import javax.speech.SpeechLocale;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarEvent;
-import javax.speech.recognition.GrammarListener;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.RecognizerMode;
-import javax.speech.recognition.ResultEvent;
-import javax.speech.recognition.ResultListener;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerMode;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.ResultListener;
 
 
 /**

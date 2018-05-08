@@ -10,12 +10,12 @@
  *
  */
 
-package org.jvoicexml.jsapi2.recognition;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.recognition;
 
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.RecognizerProperties;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerProperties;
 
-import org.jvoicexml.jsapi2.BaseEngineProperties;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseEngineProperties;
 
 /**
  * Base implementation of {@link RecognizerProperties}.

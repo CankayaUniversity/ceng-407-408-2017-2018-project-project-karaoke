@@ -1,4 +1,4 @@
-package org.jvoicexml.jsapi2;
+package jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2;
 
 /**
  * Simple container for an audio format.

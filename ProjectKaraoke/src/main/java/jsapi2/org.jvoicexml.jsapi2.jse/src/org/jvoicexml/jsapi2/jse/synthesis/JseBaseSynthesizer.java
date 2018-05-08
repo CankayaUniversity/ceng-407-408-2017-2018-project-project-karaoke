@@ -1,17 +1,17 @@
-package org.jvoicexml.jsapi2.jse.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.synthesis;
 
 import java.util.logging.Logger;
 
 import javax.sound.sampled.AudioFormat;
-import javax.speech.AudioManager;
-import javax.speech.SpeechEventExecutor;
-import javax.speech.VocabularyManager;
-import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerMode;
+import jsapi2.javax.speech.src.javax.speech.AudioManager;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.VocabularyManager;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Synthesizer;
+import jsapi2.javax.speech.src.javax.speech.synthesis.SynthesizerMode;
 
-import org.jvoicexml.jsapi2.BaseVocabularyManager;
-import org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
-import org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.BaseVocabularyManager;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.synthesis.BaseSynthesizer;
 
 
 /**

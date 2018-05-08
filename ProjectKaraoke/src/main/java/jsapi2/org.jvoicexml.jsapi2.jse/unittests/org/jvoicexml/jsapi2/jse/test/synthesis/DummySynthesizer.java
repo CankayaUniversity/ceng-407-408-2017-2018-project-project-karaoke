@@ -1,12 +1,12 @@
-package org.jvoicexml.jsapi2.jse.test.synthesis;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.test.synthesis;
 import javax.sound.sampled.AudioFormat;
-import javax.speech.AudioException;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.synthesis.Speakable;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.synthesis.Speakable;
 
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
-import org.jvoicexml.jsapi2.jse.synthesis.JseBaseSynthesizer;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.synthesis.JseBaseSynthesizer;
 
 /**
  * 

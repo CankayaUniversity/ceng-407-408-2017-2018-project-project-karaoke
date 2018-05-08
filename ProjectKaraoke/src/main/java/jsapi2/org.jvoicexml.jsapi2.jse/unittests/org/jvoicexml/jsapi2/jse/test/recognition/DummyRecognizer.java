@@ -1,19 +1,19 @@
 /**
  * 
  */
-package org.jvoicexml.jsapi2.jse.test.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.unittests.org.jvoicexml.jsapi2.jse.test.recognition;
 
 import java.util.Vector;
 
-import javax.speech.AudioException;
-import javax.speech.EngineException;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechEventExecutor;
+import jsapi2.javax.speech.src.javax.speech.AudioException;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechEventExecutor;
 
-import org.jvoicexml.jsapi2.DummySpeechEventExecutor;
-import org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
-import org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
-import org.jvoicexml.jsapi2.jse.recognition.JseBaseRecognizer;
+import jsapi2.org.jvoicexml.jsapi2.unittests.org.jvoicexml.jsapi2.DummySpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.src.org.jvoicexml.jsapi2.EnginePropertyChangeRequestListener;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.ThreadSpeechEventExecutor;
+import jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition.JseBaseRecognizer;
 
 /**
  * Dummy implementation of a recognizer for test purposes.

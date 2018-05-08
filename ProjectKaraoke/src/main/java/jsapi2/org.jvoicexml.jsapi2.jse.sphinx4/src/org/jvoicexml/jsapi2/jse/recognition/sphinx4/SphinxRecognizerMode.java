@@ -1,10 +1,10 @@
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
-import javax.speech.Engine;
-import javax.speech.EngineException;
-import javax.speech.SpeechLocale;
-import javax.speech.recognition.RecognizerMode;
-import javax.speech.spi.EngineFactory;
+import jsapi2.javax.speech.src.javax.speech.Engine;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerMode;
+import jsapi2.javax.speech.src.javax.speech.spi.EngineFactory;
 
 /**
  * <p>Title: JSAPI 2.0</p>

@@ -6,7 +6,7 @@
  * WARRANTIES.
  */
 
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -14,20 +14,20 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 import java.util.logging.Logger;
 
-import javax.speech.EngineStateException;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleAlternatives;
-import javax.speech.recognition.RuleComponent;
-import javax.speech.recognition.RuleCount;
-import javax.speech.recognition.RuleGrammar;
-import javax.speech.recognition.RuleParse;
-import javax.speech.recognition.RuleReference;
-import javax.speech.recognition.RuleSequence;
-import javax.speech.recognition.RuleSpecial;
-import javax.speech.recognition.RuleTag;
-import javax.speech.recognition.RuleToken;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleAlternatives;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleComponent;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleCount;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleParse;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleReference;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSequence;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleSpecial;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleTag;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleToken;
 
 
 /**

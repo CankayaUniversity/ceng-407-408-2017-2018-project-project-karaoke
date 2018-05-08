@@ -1,4 +1,4 @@
-package org.jvoicexml.jsapi2.jse.recognition;
+package jsapi2.org.jvoicexml.jsapi2.jse.src.org.jvoicexml.jsapi2.jse.recognition;
 
 
 import java.io.IOException;
@@ -15,18 +15,18 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.speech.EngineException;
-import javax.speech.EngineMode;
-import javax.speech.EngineStateException;
-import javax.speech.SpeechLocale;
-import javax.speech.recognition.Grammar;
-import javax.speech.recognition.GrammarEvent;
-import javax.speech.recognition.GrammarException;
-import javax.speech.recognition.GrammarListener;
-import javax.speech.recognition.GrammarManager;
-import javax.speech.recognition.Recognizer;
-import javax.speech.recognition.Rule;
-import javax.speech.recognition.RuleGrammar;
+import jsapi2.javax.speech.src.javax.speech.EngineException;
+import jsapi2.javax.speech.src.javax.speech.EngineMode;
+import jsapi2.javax.speech.src.javax.speech.EngineStateException;
+import jsapi2.javax.speech.src.javax.speech.SpeechLocale;
+import jsapi2.javax.speech.src.javax.speech.recognition.Grammar;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarEvent;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarException;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarListener;
+import jsapi2.javax.speech.src.javax.speech.recognition.GrammarManager;
+import jsapi2.javax.speech.src.javax.speech.recognition.Recognizer;
+import jsapi2.javax.speech.src.javax.speech.recognition.Rule;
+import jsapi2.javax.speech.src.javax.speech.recognition.RuleGrammar;
 
 /**
  * A base implementation of a {@link GrammarManager}.

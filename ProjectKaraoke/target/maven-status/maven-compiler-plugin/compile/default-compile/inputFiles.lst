@@ -1,2 +1,7 @@
-/home/mehmetali/NetBeansProjects/ProjectKaraoke/src/main/java/com/ceng407408/projectkaraoke/FXMLController.java
-/home/mehmetali/NetBeansProjects/ProjectKaraoke/src/main/java/com/ceng407408/projectkaraoke/MainApp.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/LoginTemp.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/RecognizeSpeech/Transcriber.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/RecordSound/JavaSoundRecorder.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/FXMLController.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/EvaluationScore/ScoreAbst.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/EvaluationScore/TestEvaluation.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/MainApp.java

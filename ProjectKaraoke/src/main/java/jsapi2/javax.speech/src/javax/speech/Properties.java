@@ -1,4 +1,4 @@
-package javax.speech;
+package jsapi2.javax.speech.src.javax.speech;
 
 import java.io.IOException;
 import java.io.InputStream;

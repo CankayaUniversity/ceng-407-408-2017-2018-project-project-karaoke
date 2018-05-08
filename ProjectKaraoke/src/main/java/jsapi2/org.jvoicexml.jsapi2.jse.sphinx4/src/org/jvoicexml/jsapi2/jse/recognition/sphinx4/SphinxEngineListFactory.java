@@ -1,9 +1,9 @@
-package org.jvoicexml.jsapi2.jse.recognition.sphinx4;
+package jsapi2.org.jvoicexml.jsapi2.jse.sphinx4.src.org.jvoicexml.jsapi2.jse.recognition.sphinx4;
 
-import javax.speech.EngineList;
-import javax.speech.EngineMode;
-import javax.speech.recognition.RecognizerMode;
-import javax.speech.spi.EngineListFactory;
+import jsapi2.javax.speech.src.javax.speech.EngineList;
+import jsapi2.javax.speech.src.javax.speech.EngineMode;
+import jsapi2.javax.speech.src.javax.speech.recognition.RecognizerMode;
+import jsapi2.javax.speech.src.javax.speech.spi.EngineListFactory;
 
 
 /**
