@@ -111,8 +111,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <type>jar</type>
-        </dependency>
-
-        
+        </dependency>        
     </dependencies>
 </project>
