@@ -16,6 +16,7 @@ import java.lang.String;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.security.util.PropertyExpander;
+import java.util.ArrayList;
 import javafx.scene.Scene;
 
 public class Karaoke {
@@ -33,7 +34,7 @@ public class Karaoke {
     static final String DB_URL = "jdbc:mysql://" + DOMAIN_NAME + "/" + DB_NAME;
 
     static final String USER = "root";
-    static final String PASS = "12345";
+    static final String PASS = "";
 
     public Karaoke() {
 
@@ -47,7 +48,7 @@ public class Karaoke {
 
     }
 
-    private void CreateUser() {
+    public void CreateUser() {
 
         PreparedStatement psmt = null;
 
@@ -112,7 +113,7 @@ public class Karaoke {
 
     }
 
-    private void DeleteUser() {
+    public void DeleteUser() {
 
         int flag = 1;
         PreparedStatement psmt = null;
@@ -152,7 +153,7 @@ public class Karaoke {
         }
     }
 
-    private void AddSong() {
+    public void AddSong() {
 
         PreparedStatement psmt = null;
 
@@ -224,14 +225,9 @@ public class Karaoke {
 
     }
 
-    private void Login() {
+    public int Login(String mail, int password) {
 
         PreparedStatement psmt = null;
-
-        System.out.println("E-Mail:");
-        String mail = sc.next();
-        System.out.println("Password:");
-        int password = sc.nextInt();
 
         try {
             psmt = con.prepareStatement("SELECT * FROM user_types WHERE ((Mail = ? && Password = ?) && IsActive = ?)");
@@ -242,6 +238,7 @@ public class Karaoke {
             if (resultset.next()) {
 
                 System.out.println(resultset.getString("Name"));
+                return 1;
 
             } else {
                 psmt = con.prepareStatement("SELECT IsActive FROM user_types WHERE Mail = ? && Password = ?");
@@ -267,6 +264,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
+        return 0;
     }
 
     private void ViewSongList() {
@@ -475,7 +473,7 @@ public class Karaoke {
         }
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         // TODO code application logic here
 
         int op;
@@ -512,7 +510,7 @@ public class Karaoke {
             }
         }
      
-    }
+    }*/
 
 }
 

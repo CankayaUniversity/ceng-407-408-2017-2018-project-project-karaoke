@@ -4,11 +4,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="" cache="true" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="472.0" rotate="0.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Main">
+<Pane id="" cache="true" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="472.0" rotate="0.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.MainApp">
   <children>
-    <TextField fx:id="userNameInput" layoutX="149.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="USERNAME" />
-    <Button fx:id="loginButton" layoutX="149.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginPress" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
+    <TextField id="mailTxt" fx:id="mailGUI" layoutX="149.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="MAIL" />
+    <Button fx:id="loginButton" layoutX="149.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
     <Label layoutX="43.0" layoutY="37.0" prefHeight="17.0" prefWidth="106.0" text="KARAOKE V 1.0" />
-    <TextField fx:id="passwordInput" layoutX="149.0" layoutY="137.0" prefHeight="28.1328125" prefWidth="166.99977792969003" promptText="PASSWORD" />
+    <TextField id="passwordTxt" fx:id="passwordGUI" layoutX="149.0" layoutY="137.0" prefHeight="28.1328125" prefWidth="166.99977792969003" promptText="PASSWORD" />
   </children>
 </Pane>

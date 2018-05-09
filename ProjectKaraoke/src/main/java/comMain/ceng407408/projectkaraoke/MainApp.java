@@ -1,6 +1,5 @@
 package comMain.ceng407408.projectkaraoke;
 
-import RecognizeSpeech.Transcriber;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,6 +19,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import java.io.*;
+import comMain.ceng407408.projectkaraoke.*;
+
 /*import org.fredy.jsrt.api.SRT;
 import org.fredy.jsrt.api.SRTInfo;
 import org.fredy.jsrt.api.SRTReader;
@@ -30,26 +32,28 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import static javafx.application.Application.launch;
 import javafx.scene.control.PasswordField;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import sun.applet.Main;
 
 
 public class MainApp extends Application {
-    public static Stage stage;
+    
+    public static Stage stage = new Stage();
     private static Main instance;
     @FXML
-    public TextField userNameInput;
+    public TextField mailGUI =  new TextField();
 
     @FXML
-    public TextField passwordInput;
+    public TextField passwordGUI= new TextField();
 
     @FXML
-    public MediaView mediaT;
+    public MediaView mediaT = new MediaView();
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         
         Scene scene = new Scene(root);
         //scene.getStylesheets().add("/styles/Styles.css");
@@ -65,28 +69,48 @@ public class MainApp extends Application {
         stage.show();
     }
     @FXML
-    public void loginPress() {
+    public void loginBtn() {
 
+        Karaoke db = new Karaoke();
+        
+        String checkMail = "";
+        String checkPassword = "";
+        int passwordnumeric;
 
-        String check1 = "";
-        String check2 = "";
+        checkMail = mailGUI.getText();
+        if(checkMail==null)
+        {
+            System.out.println("mali");
+            return;
+        }
+            
+        checkPassword = passwordGUI.getText().trim();
+        passwordnumeric = Integer.parseInt(checkPassword);
+        
+        int result = db.Login(checkMail,passwordnumeric);
 
-        check1 = userNameInput.getText();
-        check2 = passwordInput.getText();
-
-
-        if(check1.equals("Tolga") && check2.equals("1")) {
+        if(result==1)
+        {
+            
             try {
                 replaceSceneContent("teacher.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
         }
+        else
+        {
+            System.out.println("sample.MainApp.loginBtn()");
+        }
+        
+
     }
     
     
     private Parent replaceSceneContent(String fxml) throws Exception {
-        Parent page = (Parent) FXMLLoader.load(Main.class.getResource(fxml), null, new JavaFXBuilderFactory());
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
@@ -97,7 +121,10 @@ public class MainApp extends Application {
             stage.getScene().setRoot(page);
         }
         stage.sizeToScene();
+        stage.show();
         return page;
+ 
+                
     }
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
