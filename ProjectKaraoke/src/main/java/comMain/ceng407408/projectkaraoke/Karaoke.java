@@ -9,7 +9,7 @@ package comMain.ceng407408.projectkaraoke;
  *
  * @author sevtap
  */
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.sql.*;
 import java.util.Scanner;
 import java.lang.String;
@@ -303,9 +303,7 @@ public class Karaoke {
 
         System.out.println("Enter Name Of Song That You Want To Delete:");
         String buffer = sc.nextLine();
-
         String songname = sc.nextLine();
-
         try {
             psmt = con.prepareStatement("SELECT IsActive FROM song_main WHERE SongName = ?");
             psmt.setString(1, songname);

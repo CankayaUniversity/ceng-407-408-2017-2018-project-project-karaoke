@@ -11,12 +11,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>com.ceng407408.projectkaraoke.MainApp</mainClass>
+        <mainClass>comMain.ceng407408.projectkaraoke.MainApp</mainClass>
     </properties>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>Your Organisation</name>
+        <name>Cankaya University</name>
     </organization>
 
     <build>

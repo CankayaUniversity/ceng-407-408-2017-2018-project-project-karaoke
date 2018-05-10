@@ -7,19 +7,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<Pane disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.AccountsPage">
   <children>
-    <ListView layoutX="14.0" layoutY="48.0" prefHeight="253.0" prefWidth="200.0" />
-    <ListView layoutX="386.0" layoutY="48.0" prefHeight="253.0" prefWidth="200.0" />
-    <TextField layoutX="218.0" layoutY="280.0" promptText="Name" />
-    <TextField layoutX="217.0" layoutY="314.0" promptText="Surname" />
-    <TextField layoutX="217.0" layoutY="357.0" promptText="Username" />
-    <TextField layoutX="217.0" layoutY="396.0" promptText="Password" />
-    <Button layoutX="147.0" layoutY="451.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" text="ADD TEACHER" />
-    <Button layoutX="319.0" layoutY="451.0" mnemonicParsing="false" text="ADD FAMILY USER" />
-    <Label layoutX="85.0" layoutY="23.0" text="Teachers" />
-    <Label layoutX="447.0" layoutY="23.0" text="Family Users" />
-    <Button layoutX="26.0" layoutY="533.0" mnemonicParsing="false" text="Previous Page" />
-    <Button layoutX="27.0" layoutY="498.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="105.0" text="LOGOUT" />
+    <TextField fx:id="nameGUI" layoutX="217.0" layoutY="153.0" promptText="Name" />
+    <TextField fx:id="surnameGUI" layoutX="217.0" layoutY="184.0" promptText="Surname" />
+    <TextField fx:id="mailGUI" layoutX="217.0" layoutY="217.0" promptText="E-Mail" />
+    <Button fx:id="addGUI" layoutX="217.0" layoutY="365.0" mnemonicParsing="false" onAction="#AddUser" prefHeight="21.310646874997474" prefWidth="143.453125" text="ADD USER" />
+    <Button fx:id="ppageGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppageBtn" text="Previous Page" />
+    <Button id="logout" fx:id="logoutGUI" layoutX="477.0" layoutY="14.0" minHeight="10.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="20.310546875" prefWidth="109.0" text="LOGOUT" />
+    <PasswordField fx:id="passwordGUI" layoutX="217.0" layoutY="248.0" prefHeight="21.310546875" prefWidth="143.453125" promptText="Password" />
+    <CheckBox fx:id="familyuserGUI" layoutX="217.0" layoutY="309.0" mnemonicParsing="false" selected="true" text="Family User" />
+    <CheckBox fx:id="teacherGUI" layoutX="217.0" layoutY="334.0" mnemonicParsing="false" text="Teacher" />
+    <Label layoutX="217.0" layoutY="279.0" text="Select User Type:" underline="true" />
+    <Label fx:id="messageGUI" disable="true" layoutX="216.0" layoutY="405.0" text="User Inserted Successfully!" textFill="RED" />
   </children>
 </Pane>

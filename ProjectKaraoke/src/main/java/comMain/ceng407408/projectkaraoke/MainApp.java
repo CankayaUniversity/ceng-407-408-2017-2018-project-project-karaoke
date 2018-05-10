@@ -39,7 +39,9 @@ import sun.applet.Main;
 
 
 public class MainApp extends Application {
-    
+    public static void main(String[] args) {
+        launch(args);
+    }
     public static Stage stage = new Stage();
     private static Main instance;
     @FXML
@@ -53,13 +55,13 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getClass().getResource("/fxml/Login.fxml"));
         
         Scene scene = new Scene(root);
         //scene.getStylesheets().add("/styles/Styles.css");
         
         //Setting title of the login page 
-        stage.setTitle("Karaoke Login");
+        stage.setTitle("Login");
         
         //Setting the scene
         stage.setScene(scene);
@@ -90,18 +92,16 @@ public class MainApp extends Application {
         int result = db.Login(checkMail,passwordnumeric);
 
         if(result==1)
-        {
-            
+        {            
             try {
-                replaceSceneContent("teacher.fxml");
+                replaceSceneContent("/fxml/teacher.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
         else
         {
-            System.out.println("sample.MainApp.loginBtn()");
+            System.out.println("comMain.MainApp.loginBtn()");
         }
         
 
@@ -125,16 +125,5 @@ public class MainApp extends Application {
         return page;
  
                 
-    }
-    /**
-     * The main() method is ignored in correctly deployed JavaFX application.
-     * main() serves only as fallback in case the application can not be
-     * launched through deployment artifacts, e.g., in IDEs with limited FX
-     * support. NetBeans ignores main().
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
+    }    
 }
