@@ -50,27 +50,10 @@ public class Karaoke {
 
     }
 
-    public void CreateUser() {
+    public int CreateUser(String name, String surname, String mail, int password) {
 
         PreparedStatement psmt = null;
-
-        System.out.println("Enter Name:");
-        String name = sc.next();
-        System.out.println("Enter Surname:");
-        String surname = sc.next();
-        System.out.println("Enter Mail:");
-        String mail = sc.next();
-        System.out.println("Enter Password:");
-        int password = sc.nextInt();
-        System.out.println("1.Teacher \n2.Family User \nEnter User Type");
-        int type = sc.nextInt();
-        if (type != 1 || type != 2) {
-            while (type != 1 && type != 2) {
-                System.out.println("WRONG TYPE!");
-                System.out.println("1.Teacher \n2.Family User \nEnter User Type");
-                type = sc.nextInt();
-            }
-        }
+        int result;
 
         try {
 
@@ -86,23 +69,12 @@ public class Karaoke {
                 psmt.setString(3, mail);
                 psmt.setInt(4, password);
                 psmt.setInt(5, 1);
-                if (type == 1) {
-                    psmt.setInt(6, 0);
-                    psmt.setInt(7, 1);
-                    psmt.setInt(8, 0);
-                } else {
-                    psmt.setInt(6, 0);
-                    psmt.setInt(7, 0);
-                    psmt.setInt(8, 1);
-                }
                 psmt.executeUpdate();
-                System.out.println("Inserted Successfully! ");
+                result=1;
+             
             } else {
-                System.out.println("There Is User In Database With " + mail + " Mail Address!");
-                while (resultset.next()) {
-
-                    System.out.println(resultset.getString("Name"));
-                }
+                result=2;
+             
             }
             psmt.close();
             resultset.close();
@@ -110,9 +82,10 @@ public class Karaoke {
         } catch (Exception ex) {
 
             ex.printStackTrace();
+            result=0;
 
         }
-
+        return result;
     }
 
     public void DeleteUser() {

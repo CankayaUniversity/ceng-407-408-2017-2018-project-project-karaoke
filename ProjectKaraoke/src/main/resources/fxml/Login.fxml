@@ -2,12 +2,18 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane id="" cache="true" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="472.0" rotate="0.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.MainApp">
+<Pane id="" cache="true" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" rotate="0.0" snapToPixel="true" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.MainApp">
   <children>
-    <TextField id="mailTxt" fx:id="mailGUI" layoutX="149.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="MAIL" />
-    <Button fx:id="loginButton" layoutX="149.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
-    <TextField id="passwordTxt" fx:id="passwordGUI" layoutX="149.0" layoutY="137.0" prefHeight="28.1328125" prefWidth="166.99977792969003" promptText="PASSWORD" />
+    <ImageView fitHeight="349.9999694824219" fitWidth="511.79820633205753" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../../../../../Desktop/karaoke.jpg" />
+      </image>
+    </ImageView>
+    <TextField id="mailTxt" fx:id="mailGUI" layoutX="167.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="MAIL" />
+    <Button fx:id="loginButton" layoutX="167.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
+    <TextField id="passwordTxt" fx:id="passwordGUI" layoutX="167.0" layoutY="137.0" prefHeight="28.1328125" prefWidth="166.99977792969003" promptText="PASSWORD" />
   </children>
 </Pane>

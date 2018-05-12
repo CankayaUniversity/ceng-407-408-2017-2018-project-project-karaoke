@@ -41,19 +41,18 @@ import sun.applet.Main;
 
 
 public class MainApp extends Application {
+    
     public static void main(String[] args) {
         launch(args);
     }
+    
     public static Stage stage = new Stage();
-    private static Main instance;
-    @FXML
-    public TextField mailGUI =  new TextField();
+    @FXML public TextField mailGUI =  new TextField();
+    @FXML public TextField passwordGUI= new TextField();
+    @FXML public Button loginButton = new Button();
 
-    @FXML
-    public TextField passwordGUI= new TextField();
-
-    @FXML
-    public MediaView mediaT = new MediaView();
+    /*@FXML
+    public MediaView mediaT = new MediaView();*/
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -63,7 +62,8 @@ public class MainApp extends Application {
         //scene.getStylesheets().add("/styles/Styles.css");
         
         //Setting title of the login page 
-        stage.setTitle("Login");
+        stage.setTitle("Login Page");
+        loginButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
         
         //Setting the scene
         stage.setScene(scene);
@@ -82,17 +82,12 @@ public class MainApp extends Application {
         int passwordnumeric;
 
         checkMail = mailGUI.getText();
-        if(checkMail==null)
-        {
-            System.out.println("mali");
-            return;
-        }
-            
         checkPassword = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(checkPassword);
-        
         int result = db.Login(checkMail,passwordnumeric);
 
+        System.out.println(passwordnumeric);
+        System.out.println(checkMail);
         if(result==1)
         {            
             try {
