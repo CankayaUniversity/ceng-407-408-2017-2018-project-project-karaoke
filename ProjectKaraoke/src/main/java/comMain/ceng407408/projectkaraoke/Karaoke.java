@@ -18,6 +18,8 @@ import java.util.logging.Logger;
 import sun.security.util.PropertyExpander;
 import java.util.ArrayList;
 import javafx.scene.Scene;
+import comMain.ceng407408.projectkaraoke.UserInfo;
+import java.util.List;
 
 public class Karaoke {
 
@@ -288,7 +290,7 @@ public class Karaoke {
             }
 
             psmt.close();
-            resultset.close();;
+            resultset.close();
         } catch (Exception ex) {
 
             ex.printStackTrace();
@@ -336,28 +338,20 @@ public class Karaoke {
         }
     }
 
-    private void ViewSinger() {
+    public ArrayList<UserInfo> ViewSinger(int user) {
 
         PreparedStatement psmt = null;
-
-        System.out.println("UserID:");
-        int user = sc.nextInt();
-
+        ArrayList<UserInfo> listSinger = new ArrayList<UserInfo>();
         try {
             psmt = con.prepareStatement("SELECT * FROM singer WHERE UserID = ? && IsActive = ?");
             psmt.setInt(1, user);
             psmt.setInt(2, 1);
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
-                System.out.println(resultset.getString("SingerName"));
-                System.out.println(resultset.getString("SingerSurname"));
-                System.out.println(resultset.getFloat("AverageScore"));
-                while (resultset.next()) {
-                    System.out.println(resultset.getString("SingerName"));
-                    System.out.println(resultset.getString("SingerSurname"));
-                    System.out.println(resultset.getFloat("AverageScore"));
-                }
-            } else {
+                listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
+                while (resultset.next())
+                    listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
+            } /*else {
                 psmt = con.prepareStatement("SELECT IsActive FROM singer WHERE UserID = ?");
                 psmt.setInt(1, user);
                 resultset = psmt.executeQuery();
@@ -371,7 +365,7 @@ public class Karaoke {
 
                 }
 
-            }
+            }*/
             psmt.close();
             resultset.close();
 
@@ -380,6 +374,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
+        return listSinger;
     }
 
     private void DeleteSinger() {
