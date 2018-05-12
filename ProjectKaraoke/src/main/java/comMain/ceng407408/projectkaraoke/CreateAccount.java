@@ -38,8 +38,12 @@ import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
@@ -53,16 +57,16 @@ public class CreateAccount implements Initializable{
        
 }
   
-     public static Stage stage = new Stage();
-     @FXML public TextField nameGUI =  new TextField();
-     @FXML public TextField surnameGUI= new TextField();
+    public static Stage stage = new Stage();
+    @FXML public TextField nameGUI =  new TextField();
+    @FXML public TextField surnameGUI= new TextField();
     @FXML public TextField mailGUI = new TextField();
     @FXML public  PasswordField passwordGUI = new PasswordField();
     @FXML public  Button addGUI = new Button();
     @FXML public  Button ppageGUI = new Button();
     @FXML public  Button logout = new Button();
     @FXML public  Label messageGUI = new Label();
-
+    
     @FXML
     public void AddUser()
     {
@@ -79,6 +83,24 @@ public class CreateAccount implements Initializable{
         Mail = mailGUI.getText();
         Password = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(Password);
+        
+        Window owner = addGUI.getScene().getWindow();
+        if(nameGUI.getText().isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
+                    "Please Enter Name!");
+            return;
+        }
+        if(mailGUI.getText().isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
+                    "Please Enter Mail!");
+            return;
+        }
+        if(passwordGUI.getText().isEmpty()) {
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
+                    "Please Enter a Password!");
+            return;
+        }
+        
         int result = db.CreateUser(Name,Surname,Mail,passwordnumeric);
 
         if(result==1)
@@ -118,6 +140,7 @@ public class CreateAccount implements Initializable{
                 e.printStackTrace();
             }
     } 
+    
        private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));

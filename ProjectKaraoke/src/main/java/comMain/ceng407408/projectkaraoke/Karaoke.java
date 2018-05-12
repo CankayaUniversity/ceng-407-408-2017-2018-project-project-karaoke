@@ -439,44 +439,6 @@ public class Karaoke {
         }
     }
 
-   /* public static void main(String[] args) {
-        // TODO code application logic here
-
-        int op;
-        Karaoke db = new Karaoke();
-        System.out.println("1.Admin\n2.Teacher\n3.Family User\nEnter Your Type:");
-        int ch = sc.nextInt();
-        if (ch == 1) {
-            System.out.println("1.Login\n2.Create User\n3.Delete User\n4.Exit\nEnter Your Choice:");
-            op = sc.nextInt();
-            while (op != 4) {
-                if (op == 1) {
-                    //  db.ViewSinger();
-                    //db.DeleteSong();
-                    //db.Login();
-                    // db.ViewSongList();
-                    //db.AddSong();
-                    //String user;     
-                    //db.DeleteSinger();
-                    //db.AddSinger();
-                } else if (op == 2) {
-                    db.CreateUser();
-                } else if (op == 3) {
-                    db.DeleteUser();
-                }
-                System.out.println("1.Login\n2.Create User\n3.Delete User\n4.Exit\nEnter Your Choice:");
-                op = sc.nextInt();
-            }
-
-        } else if (ch == 2) {
-            System.out.println("1.Login\n2.Create User\n3.Delete User\nEnter Your Choice:");
-            op = sc.nextInt();
-            if (op == 1) {
-                db.Login();
-            }
-        }
-     
-    }*/
-
+ 
 }
 
