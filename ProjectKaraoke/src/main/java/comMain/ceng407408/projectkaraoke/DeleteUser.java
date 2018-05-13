@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.*;
 import comMain.ceng407408.projectkaraoke.*;
-//import static comMain.ceng407408.projectkaraoke.MainApp.stage;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +42,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -51,71 +52,42 @@ import sun.applet.Main;
  *
  * @author sevtap
  */
-public class CreateAccount implements Initializable{
-    @Override
+public class DeleteUser implements Initializable{
+ @Override
      public void initialize(URL location, ResourceBundle resources){
        
 }
-  
-    public static Stage stage = new Stage();
-    @FXML public TextField nameGUI =  new TextField();
-    @FXML public TextField surnameGUI= new TextField();
-    @FXML public TextField mailGUI = new TextField();
-    @FXML public  PasswordField passwordGUI = new PasswordField();
-    @FXML public  Button addGUI = new Button();
-    @FXML public  Button ppageGUI = new Button();
-    @FXML public  Button logout = new Button();
+
+ public static Stage stage = new Stage();
+    @FXML public ListView listUsersGUI =  new ListView();
+    @FXML public TextField deletedUserMailGUI= new TextField();
+    @FXML public  Button deleteBtnGUI = new Button();
     @FXML public  Label messageGUI = new Label();
     
     @FXML
-    public void AddUser()
+    public void DeleteBtn()
     {
         Karaoke db = new Karaoke();
         
-        String Name = "";
-        String Surname = "";
         String Mail = "";
-        String Password = "";
-        int passwordnumeric;
-
-        Name = nameGUI.getText();
-        Surname = surnameGUI.getText();
-        Mail = mailGUI.getText();
-        Password = passwordGUI.getText().trim();
-        passwordnumeric = Integer.parseInt(Password);
-        
-        Window owner = addGUI.getScene().getWindow();
-        if(nameGUI.getText().isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
-                    "Please Enter Name!");
-            return;
-        }
-        if(mailGUI.getText().isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
-                    "Please Enter Mail!");
-            return;
-        }
-        if(passwordGUI.getText().isEmpty()) {
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
-                    "Please Enter a Password!");
-            return;
-        }
-        
-        int result = db.CreateUser(Name,Surname,Mail,passwordnumeric);
+  
+        Mail = deletedUserMailGUI.getText();
+        System.out.println(Mail);
+        int result = db.DeleteUser(Mail);
 
         if(result==1)
         {            
-           messageGUI.setText("User Inserted Successfully!");
+           messageGUI.setText("User Deleted Successfully!");
            messageGUI.setVisible(true);
         }
-        else if(result==2)
+        else if(result==0)
         {
              messageGUI.setText("There Is User In Database With " + Mail + " Mail Address!");
              messageGUI.setVisible(true);
         }
-        else if(result==0)
+        else if(result==2)
         {
-            messageGUI.setText("User Cannot Inserted!");
+            messageGUI.setText("User Is Not Active!");
             messageGUI.setVisible(true);
         
         }
@@ -126,7 +98,7 @@ public class CreateAccount implements Initializable{
     public void ppageBtn(){
   
          try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
+                replaceSceneContent("/fxml/teacher.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -163,4 +135,5 @@ public class CreateAccount implements Initializable{
      public static void main(String[] args) {
         launch(args);
     }
+  
 }

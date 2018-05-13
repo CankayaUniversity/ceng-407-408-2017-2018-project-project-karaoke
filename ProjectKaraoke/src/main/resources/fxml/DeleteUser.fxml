@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.DeleteUser">
+  <children>
+    <Button layoutX="33.0" layoutY="332.0" mnemonicParsing="false" text="Back" />
+    <ListView id="listUsers" fx:id="listUsersGUI" layoutX="33.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+    <TextField id="deletedUserMail" fx:id="deletedUserMailGUI" layoutX="333.0" layoutY="92.0" prefWidth="200.0" />
+    <Button fx:id="deleteBtnGUI" layoutX="401.0" layoutY="148.0" mnemonicParsing="false" onAction="#DeleteBtn" text="delete" />
+    <Label fx:id="messageGUI" layoutX="375.0" layoutY="216.0" text="Label" />
+  </children>
+</AnchorPane>

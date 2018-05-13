@@ -92,7 +92,7 @@ public class MainApp extends Application {
         if(result==1)
         {            
             try {
-                replaceSceneContent("/fxml/teacher.fxml");
+                replaceSceneContent("/fxml/AdminCreateAccount.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }

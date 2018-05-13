@@ -36,7 +36,7 @@ public class Karaoke {
     static final String DB_URL = "jdbc:mysql://localhost:3306/karaoke?zeroDateTimeBehavior=convertToNull";
 
     static final String USER = "root";
-    static final String PASS = "28192819mali?";
+    static final String PASS = "";
 
     public Karaoke() {
 
@@ -63,12 +63,13 @@ public class Karaoke {
 
             if (!resultset.next()) {
 
-                psmt = con.prepareStatement("INSERT INTO user_types (Name, Surname, Mail, Password, IsActive, IsAdmin, IsTeacher, IsFamilyUser) VALUES (?,?,?,?,?,?,?,?)");
+                psmt = con.prepareStatement("INSERT INTO user_types (Name, Surname, Mail, Password, IsActive,IsAdmin) VALUES (?,?,?,?,?,?)");
                 psmt.setString(1, name);
                 psmt.setString(2, surname);
                 psmt.setString(3, mail);
                 psmt.setInt(4, password);
                 psmt.setInt(5, 1);
+                psmt.setInt(6,0);
                 psmt.executeUpdate();
                 result=1;
              
@@ -88,13 +89,12 @@ public class Karaoke {
         return result;
     }
 
-    public void DeleteUser() {
+    public int DeleteUser(String mail) {
 
         int flag = 1;
         PreparedStatement psmt = null;
+        int returnresult=100;
 
-        System.out.println("Enter The Mail Of User That You Want To Delete:");
-        String mail = sc.next();
 
         try {
             psmt = con.prepareStatement("SELECT IsActive FROM user_types WHERE Mail = ?");
@@ -104,6 +104,7 @@ public class Karaoke {
                 if (resultset.getBoolean("IsActive") == false) {
                     System.out.println("User Is Not Active!");
                     flag = 0;
+                    returnresult=2;
                 }
             }
 
@@ -114,18 +115,22 @@ public class Karaoke {
                 int result = psmt.executeUpdate();
                 if (result != 0) {
                     System.out.println("Delete User From Database Successfully! ");
+                    returnresult=1;
                 } else {
                     System.out.println("There Is No User With " + mail + " Mail Address!");
+                    returnresult=0;
                 }
             }
             psmt.close();
             resultset.close();
+            
 
         } catch (Exception ex) {
 
             ex.printStackTrace();
 
         }
+        return returnresult;
     }
 
     public void AddSong() {
