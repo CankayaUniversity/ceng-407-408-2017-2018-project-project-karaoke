@@ -58,6 +58,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Main.class.getClass().getResource("/fxml/Login.fxml"));
         
+        Karaoke db = new Karaoke();
         Scene scene = new Scene(root);
         //scene.getStylesheets().add("/styles/Styles.css");
         

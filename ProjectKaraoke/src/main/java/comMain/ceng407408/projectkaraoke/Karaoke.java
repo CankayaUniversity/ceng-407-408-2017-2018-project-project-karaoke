@@ -33,10 +33,10 @@ public class Karaoke {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DOMAIN_NAME = "localhost";
     static final String DB_NAME = "karaoke";
-    static final String DB_URL = "jdbc:mysql://" + DOMAIN_NAME + "/" + DB_NAME;
+    static final String DB_URL = "jdbc:mysql://localhost:3306/karaoke?zeroDateTimeBehavior=convertToNull";
 
     static final String USER = "root";
-    static final String PASS = "";
+    static final String PASS = "28192819mali?";
 
     public Karaoke() {
 
@@ -223,7 +223,6 @@ public class Karaoke {
                 if (!resultset.next()) {
                     System.out.println("Wrong Mail or Password!");
                 } else {
-
                     if (resultset.getInt("IsActive") == 0) {
                         System.out.println("User Is Not Active!");
                     }
