@@ -129,28 +129,22 @@ public class Karaoke {
         return returnresult;
     }
 
-    public void AddSong() {
+    public int AddSong(String songname, String lyric) {
 
         PreparedStatement psmt = null;
+        int returnresult=100;
 
         int ID = 0;
-        System.out.println("Enter Name Of Song:");
-        String buffer = sc.nextLine();
-        String songname = sc.nextLine();
-        System.out.println("ddddd" + songname);
-        System.out.println("Enter Lyric Of Song:");
-        String lyric = sc.nextLine();
-        System.out.println("egenaz" + lyric);
-        try {
+               try {
             psmt = con.prepareStatement("INSERT INTO song_main (SongName, Lyric, IsActive) VALUES (?,?,?)");
             psmt.setString(1, songname);
             psmt.setString(2, lyric);
             psmt.setInt(3, 1);
             int result = psmt.executeUpdate();
             if (result != 0) {
-                System.out.println("Song Inserted Successfully! ");
+                returnresult=1;
             } else {
-                System.out.println("Fail!");
+                returnresult=0;
             }
 
             psmt.close();
@@ -198,6 +192,7 @@ public class Karaoke {
 
             ex.printStackTrace();
         }
+        return returnresult;
 
     }
 

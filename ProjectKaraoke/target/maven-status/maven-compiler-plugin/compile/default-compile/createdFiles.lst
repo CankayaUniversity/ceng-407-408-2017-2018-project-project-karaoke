@@ -381,6 +381,7 @@ edu/cmu/sphinx/frontend/feature/BatchAGC.class
 edu/cmu/sphinx/linguist/language/ngram/large/LargeTrigramModel.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$5.class
 edu/cmu/sphinx/tools/gui/reader/XMLConfigReader$XMLReaderHolder.class
+comMain/ceng407408/projectkaraoke/AddSong.class
 edu/cmu/sphinx/util/CommandInterface.class
 edu/cmu/sphinx/tools/gui/util/SysCommandExecutor.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$2.class

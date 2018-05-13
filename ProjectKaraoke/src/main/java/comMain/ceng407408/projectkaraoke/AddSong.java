@@ -52,57 +52,59 @@ import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
-
-public class AdminMain implements Initializable{
+import javafx.scene.control.TextArea;
+public class AddSong implements Initializable{
     
-      @Override
+     @Override
      public void initialize(URL location, ResourceBundle resources){
-     }
-     
-    public static Stage stage = new Stage();
-  
-    @FXML public  Button addSongbtnGUI = new Button();
-    @FXML public  Button deleteSongBtnGUI = new Button();
-    @FXML public  Button createUserBtnGUI = new Button();
-    @FXML public  Button deleteUserBtnGUI = new Button();
-
+       
+}
+      public static Stage stage = new Stage();
+    @FXML public TextField songNameGUI =  new TextField();
+    @FXML public TextArea lyricsGUI = new TextArea();
+    @FXML public  Button addSongGUI = new Button();
+    @FXML public  Button ppageGUI = new Button();
+    @FXML public  Label messageGUI = new Label();
+    
+     @FXML
+    public void ppageBtn()
+    {
+         try {
+                replaceSceneContent("/fxml/AdminMainPage.fxml");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    } 
      @FXML
     public void addSongBtn()
     {
+        Karaoke db = new Karaoke();
         
-         try {
-                replaceSceneContent("/fxml/AddSong.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    }
-    @FXML
-    public void deleteSongBtn()
-    {
-          try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    }
-    @FXML
-     public void createUserBtn()
-    {
-          try {
-                replaceSceneContent("/fxml/AdminCreateAccount.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    }
-    @FXML
-     public void deleteUserBtn()
-    {
-          try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    }
+        String SongName = "";
+        String Lyric = "";
+      
+
+        SongName = songNameGUI.getText();
+        Lyric = lyricsGUI.getText();
+        
+        int result = db.AddSong(SongName,Lyric);
+
+        if(result==1)
+        {       
+           messageGUI.setText("Song Inserted Successfully!");
+           messageGUI.setVisible(true);
+        }
+       
+        else if(result==0)
+        {
+            messageGUI.setText("Song Cannot Inserted!");
+            messageGUI.setVisible(true);
+        
+        }
+            
+        
+        
+    } 
      private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));

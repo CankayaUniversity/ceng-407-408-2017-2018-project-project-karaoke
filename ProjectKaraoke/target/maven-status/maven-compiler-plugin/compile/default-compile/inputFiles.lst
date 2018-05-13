@@ -130,6 +130,7 @@
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/WordSequence.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/grammar/TextAlignerGrammar.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/ngram/InterpolatedLanguageModel.java
+/Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/AddSong.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/result/Sausage.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/util/StreamCepstrumSource.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/instrumentation/SpeedTracker.java
