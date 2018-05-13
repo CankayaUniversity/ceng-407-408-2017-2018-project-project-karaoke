@@ -353,6 +353,7 @@ edu/cmu/sphinx/tools/gui/PanelConfigurable$8.class
 edu/cmu/sphinx/tools/gui/PanelGlobal.class
 edu/cmu/sphinx/frontend/feature/ConcatFeatureExtractor.class
 edu/cmu/sphinx/decoder/search/WordActiveListFactory$WordActiveList.class
+comMain/ceng407408/projectkaraoke/AdminMain.class
 edu/cmu/sphinx/frontend/util/Microphone$RecordingThread.class
 edu/cmu/sphinx/linguist/acoustic/trivial/TrivialHMM.class
 edu/cmu/sphinx/tools/gui/PanelGlobal$1.class

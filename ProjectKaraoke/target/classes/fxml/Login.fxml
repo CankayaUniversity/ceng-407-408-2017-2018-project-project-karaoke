@@ -9,11 +9,12 @@
   <children>
     <ImageView fitHeight="349.9999694824219" fitWidth="511.79820633205753" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../../../../../../../../Desktop/karaoke.jpg" />
+        <Image url="@../images/karaoke.jpg" />
       </image>
     </ImageView>
     <TextField id="mailTxt" fx:id="mailGUI" layoutX="167.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="MAIL" />
     <Button fx:id="loginButton" layoutX="167.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
-    <TextField id="passwordTxt" fx:id="passwordGUI" layoutX="167.0" layoutY="137.0" prefHeight="28.1328125" prefWidth="166.99977792969003" promptText="PASSWORD" />
+    <Label id="message" fx:id="messageGUI" layoutX="167.0" layoutY="230.0" prefWidth="166.999755859375" text="" textFill="#7200cc" />
+    <PasswordField fx:id="passwordGUI" layoutX="167.0" layoutY="142.0" prefHeight="28.1328125" prefWidth="167.0" promptText="PASSWORD" />
   </children>
 </Pane>

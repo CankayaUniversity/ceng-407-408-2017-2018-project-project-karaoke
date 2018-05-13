@@ -95,14 +95,12 @@ public class Karaoke {
         PreparedStatement psmt = null;
         int returnresult=100;
 
-
         try {
             psmt = con.prepareStatement("SELECT IsActive FROM user_types WHERE Mail = ?");
             psmt.setString(1, mail);
             ResultSet resultset = psmt.executeQuery();
             while (resultset.next()) {
                 if (resultset.getBoolean("IsActive") == false) {
-                    System.out.println("User Is Not Active!");
                     flag = 0;
                     returnresult=2;
                 }
@@ -114,10 +112,8 @@ public class Karaoke {
                 psmt.setString(2, mail);
                 int result = psmt.executeUpdate();
                 if (result != 0) {
-                    System.out.println("Delete User From Database Successfully! ");
                     returnresult=1;
                 } else {
-                    System.out.println("There Is No User With " + mail + " Mail Address!");
                     returnresult=0;
                 }
             }
@@ -208,7 +204,7 @@ public class Karaoke {
     public int Login(String mail, int password) {
 
         PreparedStatement psmt = null;
-
+        int returnresult=100;
         try {
             psmt = con.prepareStatement("SELECT * FROM user_types WHERE ((Mail = ? && Password = ?) && IsActive = ?)");
             psmt.setString(1, mail);
@@ -218,7 +214,7 @@ public class Karaoke {
             if (resultset.next()) {
 
                 System.out.println(resultset.getString("Name"));
-                return 1;
+                returnresult = 1;
 
             } else {
                 psmt = con.prepareStatement("SELECT IsActive FROM user_types WHERE Mail = ? && Password = ?");
@@ -227,9 +223,11 @@ public class Karaoke {
                 resultset = psmt.executeQuery();
                 if (!resultset.next()) {
                     System.out.println("Wrong Mail or Password!");
+                    returnresult=0;
                 } else {
                     if (resultset.getInt("IsActive") == 0) {
                         System.out.println("User Is Not Active!");
+                        returnresult=2;
                     }
 
                 }
@@ -243,7 +241,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
-        return 0;
+        return returnresult;
     }
 
     private void ViewSongList() {

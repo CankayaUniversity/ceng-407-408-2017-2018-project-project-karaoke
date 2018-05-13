@@ -68,7 +68,7 @@ public class DeleteUser implements Initializable{
     public void DeleteBtn()
     {
         Karaoke db = new Karaoke();
-        
+        //listUsersGUI
         String Mail = "";
   
         Mail = deletedUserMailGUI.getText();

@@ -48,8 +48,9 @@ public class MainApp extends Application {
     
     public static Stage stage = new Stage();
     @FXML public TextField mailGUI =  new TextField();
-    @FXML public TextField passwordGUI= new TextField();
+    @FXML public PasswordField passwordGUI= new PasswordField();
     @FXML public Button loginButton = new Button();
+    @FXML public  Label messageGUI = new Label();
 
     /*@FXML
     public MediaView mediaT = new MediaView();*/
@@ -92,14 +93,21 @@ public class MainApp extends Application {
         if(result==1)
         {            
             try {
-                replaceSceneContent("/fxml/AdminCreateAccount.fxml");
+                replaceSceneContent("/fxml/AdminMainPage.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        else
+        else if(result==2)
+        { 
+             messageGUI.setText("User Is Not Active!");
+             messageGUI.setVisible(true);
+        }
+        else if(result==0)
         {
-            System.out.println("comMain.MainApp.loginBtn()");
+            messageGUI.setText("Wrong Mail or Password!");
+            messageGUI.setVisible(true);
+        
         }
         
 

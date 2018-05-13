@@ -292,6 +292,7 @@
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/search/TokenHeapSearchManager.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/search/stats/WordTracker.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/util/AudioFileProcessListener.java
+/Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/AdminMain.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/classes/ClassProbability.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/GapInsertionDetector.java
 /Users/sevtap/Documents/GitHub/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/tools/gui/util/ConfigurableUtilException.java
