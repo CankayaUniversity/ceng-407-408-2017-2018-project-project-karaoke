@@ -47,16 +47,7 @@ public class FXMLController implements Initializable {
     Media pick;
     
     
-    @FXML
-    public void RecognizeSpeech() throws IOException, UnsupportedAudioFileException, InterruptedException{
-        Transcriber speechRecognition =  new Transcriber();
-        //There should be original lyric entered somehow
-        //Original lyrics should get from the database as an string
-            //Ex. String StrOriginalLyrics
-        String strOriginalLyrics="";    
-        ScoreAbst scoreFinal = speechRecognition.funcRecognize(strOriginalLyrics);
-        //scoreFinal should send the score to database or display the score
-    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         

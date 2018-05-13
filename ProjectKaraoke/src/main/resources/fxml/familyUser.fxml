@@ -6,15 +6,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FamilyUser">
-   <children>
-      <Button layoutX="53.0" layoutY="141.0" mnemonicParsing="false" text="Add Child" />
-      <TextField layoutX="14.0" layoutY="40.0" promptText="Name" />
-      <TextField layoutX="14.0" layoutY="88.0" promptText="Surname" />
-      <Button layoutX="31.0" layoutY="345.0" mnemonicParsing="false" text="Logout" />
-      <Button layoutX="512.0" layoutY="345.0" mnemonicParsing="false" text="Point List" />
-      <Button layoutX="243.0" layoutY="345.0" mnemonicParsing="false" text="Start The Game" />
-      <ListView layoutX="388.0" layoutY="8.0" prefHeight="200.0" prefWidth="200.0" />
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.FamilyUser">
+  <children>
+    <Button fx:id="buttonLogout" layoutX="31.0" layoutY="345.0" mnemonicParsing="false" text="Logout" />
+    <Button fx:id="buttonScoreTable" layoutX="512.0" layoutY="345.0" mnemonicParsing="false" text="Point List" />
+    <Button fx:id="buttonStart" onAction="#funcKarokeStart" layoutX="243.0" layoutY="345.0" mnemonicParsing="false" text="Start The Game" />
+    <ListView fix:id="listViewSong" layoutX="31.0" layoutY="22.0" prefHeight="260.0" prefWidth="549.0" />
+  </children>
 </AnchorPane>

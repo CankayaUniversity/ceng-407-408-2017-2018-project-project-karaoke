@@ -19,6 +19,7 @@ import sun.security.util.PropertyExpander;
 import java.util.ArrayList;
 import javafx.scene.Scene;
 import comMain.ceng407408.projectkaraoke.UserInfo;
+import comMain.ceng407408.projectkaraoke.SongProperties;
 import java.util.List;
 
 public class Karaoke {
@@ -36,7 +37,7 @@ public class Karaoke {
     static final String DB_URL = "jdbc:mysql://localhost:3306/karaoke?zeroDateTimeBehavior=convertToNull";
 
     static final String USER = "root";
-    static final String PASS = "";
+    static final String PASS = "28192819mali?";
 
     public Karaoke() {
 
@@ -435,7 +436,37 @@ public class Karaoke {
 
         }
     }
-
- 
+    
+    public void funcAddScore(int numUserID, int numSingerID, double dobScore, int numSongID) throws SQLException{
+         PreparedStatement psmt = null;
+         Date test = null;
+         psmt = con.prepareStatement("INSERT INTO score_table(UserID, SingerID, SongID, Score, Date) VALUES (?,?,?,?,?)");
+         psmt.setInt(1, numUserID);
+         psmt.setInt(2, numSingerID);
+         psmt.setInt(3, numSongID);
+         psmt.setFloat(4, (float)dobScore);
+         psmt.setDate(5, Date.valueOf(String.valueOf(test.getDate())));
+         psmt.executeQuery();
+         psmt.close();
+    }
+    
+    public ArrayList<SongProperties> funcSongList() throws SQLException{
+        ArrayList<SongProperties> listOfSongs = new ArrayList<>();
+        PreparedStatement psmt = null;
+        try{
+            psmt = con.prepareStatement("SELECT * FROM song_main WHERE IsActive=?");
+            psmt.setInt(1, 1);
+            ResultSet resultset = psmt.executeQuery();
+            if (resultset.next()) {
+                listOfSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
+                while(resultset.next())
+                    listOfSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
+            }
+        }
+        catch(Exception exExc){
+            exExc.printStackTrace();
+        }
+        return listOfSongs;
+    } 
 }
 
