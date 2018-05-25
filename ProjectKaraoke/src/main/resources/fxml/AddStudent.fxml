@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="394.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddStudent">
+  <children>
+    <TextField fx:id="textfieldSurname" layoutX="157.0" layoutY="87.0" prefWidth="200.0" />
+    <TextField fx:id="textfieldName" layoutX="157.0" layoutY="56.0" prefWidth="200.0" />
+    <Label layoutX="27.0" layoutY="56.0" text="Name" />
+    <Label layoutX="27.0" layoutY="79.0" text="Surname" />
+    <Button fx:id="buttonAddStudent" layoutX="157.0" layoutY="135.0" mnemonicParsing="false" onAction="#funcAddStudent" prefWidth="128.0" text="Add Student" />
+    <Label fx:id="labelError" layoutX="157.0" layoutY="169.0" text="---" visible="false" />
+    <Button fx:id="buttonCancel" cancelButton="true" layoutX="291.0" layoutY="135.0" mnemonicParsing="false" onAction="#funcCancel" text="Cancel" textAlignment="LEFT" />
+  </children>
+</AnchorPane>

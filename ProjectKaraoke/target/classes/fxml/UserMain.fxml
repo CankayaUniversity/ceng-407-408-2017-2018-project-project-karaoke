@@ -8,13 +8,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.TeacherMain">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.UserMain">
   <children>
     <Label layoutX="26.0" layoutY="46.0" text="Class List" />
     <Button fx:id="buttonScoreTable" layoutX="26.0" layoutY="392.0" mnemonicParsing="false" onAction="#funcScoreTable" text="Score Table" />
     <Button fx:id="buttonAddStudent" layoutX="249.0" layoutY="393.0" mnemonicParsing="false" onAction="#funcAddStudent" text="Add Student" />
     <Button fx:id="buttonStartKaraoke" layoutX="469.0" layoutY="392.0" mnemonicParsing="false" onAction="#funcStartKaroke" text="Start Karaoke!" />
-    <TableView fx:id="tableviewListOfSingers" layoutX="26.0" layoutY="99.0" prefHeight="200.0" prefWidth="546.0">
-    </TableView>
+    <TableView fx:id="tableviewListOfSingers" cache="true" editable="true" layoutX="26.0" layoutY="99.0" prefHeight="200.0" prefWidth="546.0" tableMenuButtonVisible="true" />
   </children>
-</Pane>
+</AnchorPane>

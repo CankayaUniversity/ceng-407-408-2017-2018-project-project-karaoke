@@ -8,47 +8,25 @@ package comMain.ceng407408.projectkaraoke;
 import UserStatic.UserSession;
 import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.text.Text;
-import javafx.scene.control.TableView;
-import javafx.scene.control.ChoiceBox;
-import comMain.ceng407408.projectkaraoke.UserInfo;
 import java.util.ArrayList;
-import javafx.application.Application;
+import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javax.swing.event.ChangeListener;
-import static jdk.nashorn.internal.objects.NativeArray.forEach;
+import javafx.scene.control.ChoiceBox;
 
 /**
  *
  * @author mehmetali
  */
-public class ScoreTable implements Initializable {
-
+public class KaraokeSongSinger implements Initializable {
+    
     @FXML ChoiceBox choiceboxSingers = new ChoiceBox();
-    @FXML TableView tableviewScoreTable = new TableView();
-    @FXML Button buttonCancel = new Button();
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        Karaoke objMainFuncs = new Karaoke();
-        //if(user.type == type.family)
-        ArrayList<UserInfo> listSinger = objMainFuncs.ViewSinger(UserSession.numUserId);
-        //else
-        //coreF
-        choiceboxSingers.getItems().removeAll();
-        for(int i = 0; i < listSinger.size(); i++)
-            choiceboxSingers.getItems().add(FXCollections.observableArrayList(listSinger.get(i).funcGetUserName()));
-    }
+    @FXML ChoiceBox choiceboxSongs = new ChoiceBox();
     
     private Parent replaceSceneContent(String fxml) throws Exception {
         
@@ -71,11 +49,27 @@ public class ScoreTable implements Initializable {
     }
     
     @FXML
-    private void funcCancel() throws Exception{
+    public void funcStart() throws Exception{
+        replaceSceneContent("/fxml/Karaoke.fxml");
+    }
+    
+    @FXML
+    public void funcCancel() throws Exception{
         replaceSceneContent("/fxml/UserMain.fxml");
     }
     
-    public static void main(String[] args){
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Karaoke objMainFunc = new Karaoke();
+        ArrayList<UserInfo> arrListSinger = objMainFunc.ViewSinger(UserSession.numUserId);
+        ArrayList<String> arrListSongs = objMainFunc.ViewSongList();
+        for(int i = 0; i < arrListSinger.size(); i++)
+            choiceboxSingers.getItems().add(FXCollections.observableArrayList(arrListSinger.get(i).funcGetUserName()));
+        for(int i = 0; i < arrListSongs.size(); i++)
+            choiceboxSongs.getItems().add(FXCollections.observableArrayList(arrListSongs.get(i)));
+    }
+    
+    private static void main(String[] args){
         launch(args);
     }
 }

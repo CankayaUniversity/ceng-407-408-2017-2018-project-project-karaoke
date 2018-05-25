@@ -16,6 +16,7 @@ edu/cmu/sphinx/linguist/language/ngram/SimpleNGramModel.class
 edu/cmu/sphinx/linguist/language/grammar/Grammar.class
 edu/cmu/sphinx/tools/audio/RawReader.class
 edu/cmu/sphinx/tools/gui/util/ConfigurableUtilException.class
+comMain/ceng407408/projectkaraoke/UserMain.class
 edu/cmu/sphinx/linguist/language/ngram/KeywordOptimizerModel.class
 edu/cmu/sphinx/jsgf/JSGFGrammarParseException.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/Senone.class
@@ -154,6 +155,7 @@ edu/cmu/sphinx/linguist/language/ngram/large/NGramProbability.class
 edu/cmu/sphinx/frontend/util/VUMeterPanel.class
 edu/cmu/sphinx/tools/audio/AudioTool$7.class
 edu/cmu/sphinx/tools/audio/AudioTool$3.class
+comMain/ceng407408/projectkaraoke/KaraokeSongSinger.class
 edu/cmu/sphinx/decoder/scorer/Scoreable.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/HTK/HMMSet.class
 edu/cmu/sphinx/util/TimerPool.class
@@ -381,7 +383,6 @@ edu/cmu/sphinx/tools/gui/writer/ConfigConverter.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleTag.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleName.class
 edu/cmu/sphinx/tools/gui/writer/XMLConfigWriter.class
-comMain/ceng407408/projectkaraoke/TeacherMain.class
 edu/cmu/sphinx/frontend/feature/BatchAGC.class
 edu/cmu/sphinx/linguist/language/ngram/large/LargeTrigramModel.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$5.class
@@ -440,6 +441,7 @@ edu/cmu/sphinx/frontend/util/ConcatFileDataSource.class
 edu/cmu/sphinx/decoder/scorer/BackgroundModelNormalizer.class
 edu/cmu/sphinx/instrumentation/MemoryTracker.class
 edu/cmu/sphinx/linguist/flat/SentenceHMMState$3.class
+comMain/ceng407408/projectkaraoke/AddStudent.class
 edu/cmu/sphinx/linguist/flat/FlatLinguist$GState.class
 edu/cmu/sphinx/linguist/dflat/OutOfGrammarGraph$FinalState.class
 edu/cmu/sphinx/decoder/search/TokenHeapSearchManager.class
@@ -526,6 +528,7 @@ edu/cmu/sphinx/tools/audio/FilenameDialog$2.class
 edu/cmu/sphinx/linguist/flat/NonEmittingHMMState.class
 edu/cmu/sphinx/tools/audio/Utils.class
 edu/cmu/sphinx/util/CommandInterpreter$10.class
+comMain/ceng407408/projectkaraoke/GameKaraoke.class
 edu/cmu/sphinx/jsgf/GrXMLGrammar.class
 edu/cmu/sphinx/decoder/search/SimpleActiveListManager$NonEmittingListIterator.class
 edu/cmu/sphinx/linguist/flat/WordState.class

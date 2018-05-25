@@ -54,12 +54,12 @@ public class MainApp extends Application {
     public Button loginButton = new Button();
     @FXML
     public Label messageGUI = new Label();
-
+Parent root;
     /*@FXML
     public MediaView mediaT = new MediaView();*/
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Main.class.getClass().getResource("/fxml/Login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
 
         Karaoke db = new Karaoke();
         Scene scene = new Scene(root);
@@ -107,6 +107,7 @@ public class MainApp extends Application {
             }
             try {
                 replaceSceneContent(strPathOfScene);
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
