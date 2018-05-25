@@ -450,7 +450,7 @@ public class Karaoke {
     public void funcAddSinger(String name, String surname, int user) {
 
         PreparedStatement psmt = null;
-
+//mali
         try {
 
             psmt = con.prepareStatement("INSERT INTO singer (SingerName, SingerSurname, IsActive, AverageScore,UserID) VALUES (?,?,?,?,?)");
