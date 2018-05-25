@@ -440,6 +440,7 @@ edu/cmu/sphinx/frontend/util/ConcatFileDataSource.class
 edu/cmu/sphinx/decoder/scorer/BackgroundModelNormalizer.class
 edu/cmu/sphinx/instrumentation/MemoryTracker.class
 edu/cmu/sphinx/linguist/flat/SentenceHMMState$3.class
+comMain/ceng407408/projectkaraoke/AddStudent.class
 edu/cmu/sphinx/linguist/flat/FlatLinguist$GState.class
 edu/cmu/sphinx/linguist/dflat/OutOfGrammarGraph$FinalState.class
 edu/cmu/sphinx/decoder/search/TokenHeapSearchManager.class

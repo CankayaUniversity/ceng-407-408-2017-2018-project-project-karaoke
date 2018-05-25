@@ -511,7 +511,7 @@ public class Karaoke {
             preStatement.setInt(1, UserSession.numUserId);
             ResultSet resultListOfSinger = preStatement.executeQuery();
             
-            ArrayList<UserAbst> arrUserAbst = new ArrayList<>();
+            List<UserAbst> arrUserAbst = new ArrayList<>();
             //if (resultListOfSinger.next()) {
                 //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
                 while (resultListOfSinger.next()) {
