@@ -53,7 +53,7 @@ public class UserMain implements Initializable {
     
     @FXML
     public void funcStartKaroke() throws Exception{
-        replaceSceneContent("d");
+        replaceSceneContent("/fxml/KaraokeSongSinger.fxml");
     }
 
     @Override

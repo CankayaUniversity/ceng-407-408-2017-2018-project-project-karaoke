@@ -38,8 +38,8 @@ class UserAbst {
     public final String strName;
     public final String strSurname;
     public final String strAverage;
-    
-    UserAbst(){
+
+    UserAbst() {
         strName = strSurname = strAverage = "";
     }
 
@@ -277,9 +277,10 @@ public class Karaoke {
         return returnresult;
     }
 
-    private void ViewSongList() {
+    public ArrayList<String> ViewSongList() {
 
         PreparedStatement psmt = null;
+        ArrayList<String> arrSongs = new ArrayList<String>();
 
         try {
 
@@ -288,10 +289,10 @@ public class Karaoke {
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
                 System.out.println(resultset.getString("SongName"));
-
+                arrSongs.add(resultset.getString("SongName"));
                 while (resultset.next()) {
                     System.out.println(resultset.getString("SongName"));
-
+                    arrSongs.add(resultset.getString("SongName"));
                 }
             } else {
                 System.out.println("There Is No Song In Database!");
@@ -304,6 +305,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
+        return arrSongs;
     }
 
     private void DeleteSong() {
@@ -510,32 +512,30 @@ public class Karaoke {
                     + " user_types.UserID = ?");
             preStatement.setInt(1, UserSession.numUserId);
             ResultSet resultListOfSinger = preStatement.executeQuery();
-            
+
             List<UserAbst> arrUserAbst = new ArrayList<>();
             //if (resultListOfSinger.next()) {
+            //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+            while (resultListOfSinger.next()) {
                 //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                while (resultListOfSinger.next()) {
-                    //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                    arrUserAbst.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                    System.out.println(resultListOfSinger.getString("SingerName")+ resultListOfSinger.getString("SingerSurname") + resultListOfSinger.getFloat("AverageScore"));
-                }
+                arrUserAbst.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                System.out.println(resultListOfSinger.getString("SingerName") + resultListOfSinger.getString("SingerSurname") + resultListOfSinger.getFloat("AverageScore"));
+            }
             //}
             ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList(arrUserAbst);
             //tableSingers.setEditable(true);
             for (int i = 0; i < obsListSingers.size(); i++) {
                 System.out.println(obsListSingers.get(i).strName);
             }
-            
-            
+
             TableColumn<UserAbst, String> columnName = new TableColumn<UserAbst, String>("Name");
             TableColumn<UserAbst, String> columnSurname = new TableColumn<UserAbst, String>("Surname");
             TableColumn<UserAbst, String> columnAverage = new TableColumn<UserAbst, String>("Average Score");
 
             columnName.setMinWidth(200);
             columnSurname.setMinWidth(200);
-            columnAverage.setMinWidth(150);      
-            
-            
+            columnAverage.setMinWidth(150);
+
             columnName.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strName"));
             columnSurname.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strSurname"));
             columnAverage.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strAverage"));
@@ -545,4 +545,5 @@ public class Karaoke {
             exExc.printStackTrace();
         }
     }
+
 }

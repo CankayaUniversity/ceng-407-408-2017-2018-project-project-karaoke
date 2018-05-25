@@ -82,10 +82,12 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/machlearn/OVector.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/props/RawPropertyData.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/acoustic/tiedstate/HTKLoader.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/KaraokeSongSinger.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/Decoder.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/grammar/ForcedAlignerGrammar.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/dictionary/Dictionary.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/CreateAccount.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/GameKaraoke.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/RecognizeSpeech/Transcriber.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/instrumentation/Resetable.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/dictionary/FastDictionary.java
