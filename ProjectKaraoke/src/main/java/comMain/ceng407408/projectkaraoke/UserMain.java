@@ -48,7 +48,7 @@ public class UserMain implements Initializable {
     
     @FXML
     public void funcAddStudent() throws Exception{
-        replaceSceneContent("d");
+        replaceSceneContent("/fxml/AddStudent.fxml");
     }
     
     @FXML
@@ -59,15 +59,15 @@ public class UserMain implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            tableviewListOfSingers = objMainFunc.funcListSinger(tableviewListOfSingers);
+            objMainFunc.funcListSinger(tableviewListOfSingers);
         } catch (SQLException ex) {
             Logger.getLogger(UserMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
     
     private Parent replaceSceneContent(String fxml) throws Exception {
-        Parent page;
-        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+        
+        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
