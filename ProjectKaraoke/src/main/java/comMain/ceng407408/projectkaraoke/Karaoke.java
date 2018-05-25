@@ -544,6 +544,43 @@ public class Karaoke {
         } catch (Exception exExc) {
             exExc.printStackTrace();
         }
+        
+    }
+
+    public UserPersonalInformation GetUserInformation(){
+
+        PreparedStatement psmt = null;
+        String name="";
+        String surname="";
+        String mail="";
+        int password = 0;
+        
+    
+        try {
+            psmt = con.prepareStatement("SELECT * FROM user_types WHERE UserID = ?");
+            psmt.setInt(1, );
+
+            ResultSet resultset = psmt.executeQuery();
+            if (resultset.next()) {
+
+                name = resultset.getString("Name");
+                surname = resultset.getString("Surname");
+                mail = resultset.getString("Mail");
+                password = resultset.getInt("Password");
+            }
+
+            psmt.close();
+            resultset.close();
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+
+        }
+      return new UserPersonalInformation(name,surname,mail,password);
+
+   
+
     }
 
 }

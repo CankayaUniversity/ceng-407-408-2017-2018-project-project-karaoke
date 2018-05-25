@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.UpdatePersonalInformation">
+  <children>
+    <ImageView fitHeight="300.0" fitWidth="600.0" layoutX="0.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
+      <image>
+        <Image url="@../images/background.jpg" />
+      </image>
+    </ImageView>
+    <Label layoutX="143.0" layoutY="87.0" prefHeight="17.0" prefWidth="60.0" text="Name:" />
+    <Label layoutX="143.0" layoutY="123.0" text="Surname:" />
+    <Label layoutX="143.0" layoutY="159.0" prefWidth="60.0" text="E-Mail:" />
+    <Label layoutX="143.0" layoutY="192.0" prefWidth="73.0" text="Password:" />
+    <Button fx:id="updatebtnGUI" layoutX="264.0" layoutY="226.0" mnemonicParsing="false" onAction="#updateBtn" text="UPDATE" />
+    <Button fx:id="backbtnGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppage" text="Back" />
+    <TextField fx:id="nameGUI" layoutX="225.0" layoutY="85.0" prefWidth="150.0" />
+    <TextField fx:id="surnameGUI" layoutX="225.0" layoutY="120.0" prefWidth="150.0" />
+    <TextField fx:id="mailGUI" layoutX="225.0" layoutY="156.0" prefWidth="150.0" />
+    <Label fx:id="messageLabel" layoutX="225.0" layoutY="258.0" prefWidth="150.0" text="" textFill="RED" visible="false" />
+    <PasswordField fx:id="passwordGUI" layoutX="225.0" layoutY="189.0" prefWidth="150.0" />
+  </children>
+</Pane>
