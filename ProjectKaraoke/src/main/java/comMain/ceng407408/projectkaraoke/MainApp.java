@@ -27,7 +27,6 @@ import comMain.ceng407408.projectkaraoke.*;
 import org.fredy.jsrt.api.SRTInfo;
 import org.fredy.jsrt.api.SRTReader;
 import org.fredy.jsrt.api.SRTTimeFormat;*/
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -40,98 +39,105 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
 
-
 public class MainApp extends Application {
-    
+
     public static void main(String[] args) {
         launch(args);
     }
-    
+
     public static Stage stage = new Stage();
-    @FXML public TextField mailGUI =  new TextField();
-    @FXML public PasswordField passwordGUI= new PasswordField();
-    @FXML public Button loginButton = new Button();
-    @FXML public  Label messageGUI = new Label();
+    @FXML
+    public TextField mailGUI = new TextField();
+    @FXML
+    public PasswordField passwordGUI = new PasswordField();
+    @FXML
+    public Button loginButton = new Button();
+    @FXML
+    public Label messageGUI = new Label();
 
     /*@FXML
     public MediaView mediaT = new MediaView();*/
-
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Main.class.getClass().getResource("/fxml/Login.fxml"));
-        
+
         Karaoke db = new Karaoke();
         Scene scene = new Scene(root);
         //scene.getStylesheets().add("/styles/Styles.css");
-        
+
         //Setting title of the login page 
         stage.setTitle("Login Page");
         loginButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-        
+
         //Setting the scene
         stage.setScene(scene);
-        
+
         //In order to block resizing the page(scene) 
         stage.setResizable(false);
         stage.show();
     }
+
     @FXML
     public void loginBtn() {
 
         Karaoke db = new Karaoke();
-        
+
         String checkMail = "";
         String checkPassword = "";
+        String strPathOfScene = "";
         int passwordnumeric;
 
         checkMail = mailGUI.getText();
         checkPassword = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(checkPassword);
-        int result = db.Login(checkMail,passwordnumeric);
+        int result = db.Login(checkMail, passwordnumeric);
         System.out.println(passwordnumeric);
         System.out.println(checkMail);
-        if(result==1)
-        {            
+        if (result == 1) {
+            switch (UserSession.numUserType) {
+                case 1:
+                    strPathOfScene = "/fxml/AdminMainPage.fxml";
+                    break;
+                case 2:
+                    strPathOfScene = "";
+                    break;
+                case 3:
+                    strPathOfScene = "/fxml/UserMain.fxml";
+                    break;
+            }
             try {
-                replaceSceneContent("/fxml/AdminMainPage.fxml");
-                //stage.close();
+                replaceSceneContent(strPathOfScene);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        else if(result==2)
-        { 
-             messageGUI.setText("User Is Not Active!");
-             messageGUI.setVisible(true);
-        }
-        else if(result==0)
-        {
+        } else if (result == 2) {
+            messageGUI.setText("User Is Not Active!");
+            messageGUI.setVisible(true);
+        } else if (result == 0) {
             messageGUI.setText("Wrong Mail or Password!");
             messageGUI.setVisible(true);
-        
+
         }
-        
 
     }
-    
-    
+
     private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
-        
+
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 300);
+            scene = new Scene(page);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        
+
         //stage.getScene().setRoot(page);
         stage.setScene(page.getScene());
         stage.setResizable(false);
         stage.setTitle("Welcome " + UserSession.strName);
         stage.show();
-        return page;                
-    }    
+        return page;
+    }
 }

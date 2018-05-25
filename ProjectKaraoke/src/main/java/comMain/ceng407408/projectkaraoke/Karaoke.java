@@ -9,7 +9,6 @@ package comMain.ceng407408.projectkaraoke;
  *
  * @author sevtap
  */
-
 import UserStatic.UserSession;
 import java.sql.*;
 import java.util.Scanner;
@@ -23,13 +22,31 @@ import comMain.ceng407408.projectkaraoke.UserInfo;
 import comMain.ceng407408.projectkaraoke.SongProperties;
 import java.util.Calendar;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+class UserAbst{
+    public final SimpleStringProperty strName;
+    public final SimpleStringProperty strSurname;
+    public final SimpleStringProperty strAverage;
+    UserAbst(final String strName_, final String strSurname_, final float floatAverage_){
+        this.strName = new SimpleStringProperty(strName_);
+        this.strSurname = new SimpleStringProperty(strSurname_);
+        this.strAverage = new SimpleStringProperty(Float.toString(floatAverage_));
+    }
+}
 
 public class Karaoke {
 
     /**
      * @param args the command line arguments
      */
-    private Connection con;
+    Connection con;
 
     static Scanner sc = new Scanner(System.in);
 
@@ -72,13 +89,13 @@ public class Karaoke {
                 psmt.setString(3, mail);
                 psmt.setInt(4, password);
                 psmt.setInt(5, 1);
-                psmt.setInt(6,0);
+                psmt.setInt(6, 0);
                 psmt.executeUpdate();
-                result=1;
-             
+                result = 1;
+
             } else {
-                result=2;
-             
+                result = 2;
+
             }
             psmt.close();
             resultset.close();
@@ -86,7 +103,7 @@ public class Karaoke {
         } catch (Exception ex) {
 
             ex.printStackTrace();
-            result=0;
+            result = 0;
 
         }
         return result;
@@ -96,7 +113,7 @@ public class Karaoke {
 
         int flag = 1;
         PreparedStatement psmt = null;
-        int returnresult=100;
+        int returnresult = 100;
 
         try {
             psmt = con.prepareStatement("SELECT IsActive FROM user_types WHERE Mail = ?");
@@ -105,7 +122,7 @@ public class Karaoke {
             while (resultset.next()) {
                 if (resultset.getBoolean("IsActive") == false) {
                     flag = 0;
-                    returnresult=2;
+                    returnresult = 2;
                 }
             }
 
@@ -115,14 +132,13 @@ public class Karaoke {
                 psmt.setString(2, mail);
                 int result = psmt.executeUpdate();
                 if (result != 0) {
-                    returnresult=1;
+                    returnresult = 1;
                 } else {
-                    returnresult=0;
+                    returnresult = 0;
                 }
             }
             psmt.close();
             resultset.close();
-            
 
         } catch (Exception ex) {
 
@@ -135,19 +151,19 @@ public class Karaoke {
     public int AddSong(String songname, String lyric) {
 
         PreparedStatement psmt = null;
-        int returnresult=100;
+        int returnresult = 100;
 
         int ID = 0;
-               try {
+        try {
             psmt = con.prepareStatement("INSERT INTO song_main (SongName, Lyric, IsActive) VALUES (?,?,?)");
             psmt.setString(1, songname);
             psmt.setString(2, lyric);
             psmt.setInt(3, 1);
             int result = psmt.executeUpdate();
             if (result != 0) {
-                returnresult=1;
+                returnresult = 1;
             } else {
-                returnresult=0;
+                returnresult = 0;
             }
 
             psmt.close();
@@ -202,7 +218,7 @@ public class Karaoke {
     public int Login(String mail, int password) {
 
         PreparedStatement psmt = null;
-        int returnresult=100;
+        int returnresult = 100;
         try {
             psmt = con.prepareStatement("SELECT * FROM user_types WHERE ((Mail = ? && Password = ?) && IsActive = ?)");
             psmt.setString(1, mail);
@@ -214,11 +230,13 @@ public class Karaoke {
                 System.out.println(resultset.getString("Name"));
                 UserSession.strName = resultset.getString("Name");
                 UserSession.numUserId = resultset.getInt("UserID");
-                if(resultset.getBoolean("IsAdmin") == true)
+                if (resultset.getBoolean("IsAdmin") == true) {
                     UserSession.numUserType = 1;
-                else if(resultset.getBoolean("IsFamilyUser") == true)
+                } else if (resultset.getBoolean("IsFamilyUser") == true) {
                     UserSession.numUserType = 2;
-                else UserSession.numUserType = 3;
+                } else {
+                    UserSession.numUserType = 3;
+                }
                 UserSession.enterDate = Calendar.getInstance().getTime();
                 returnresult = 1;
 
@@ -229,11 +247,11 @@ public class Karaoke {
                 resultset = psmt.executeQuery();
                 if (!resultset.next()) {
                     System.out.println("Wrong Mail or Password!");
-                    returnresult=0;
+                    returnresult = 0;
                 } else {
                     if (resultset.getInt("IsActive") == 0) {
                         System.out.println("User Is Not Active!");
-                        returnresult=2;
+                        returnresult = 2;
                     }
 
                 }
@@ -330,9 +348,11 @@ public class Karaoke {
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
                 listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
-                while (resultset.next())
+                while (resultset.next()) {
                     listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
-            } /*else {
+                }
+            }
+            /*else {
                 psmt = con.prepareStatement("SELECT IsActive FROM singer WHERE UserID = ?");
                 psmt.setInt(1, user);
                 resultset = psmt.executeQuery();
@@ -433,7 +453,7 @@ public class Karaoke {
             psmt.setString(1, name);
             psmt.setString(2, surname);
             psmt.setInt(3, 1);
-            psmt.setFloat(4,0);
+            psmt.setFloat(4, 0);
             psmt.setInt(5, user);
             psmt.executeUpdate();
             System.out.println("Singer Inserted Successfully! ");
@@ -446,37 +466,78 @@ public class Karaoke {
 
         }
     }
-    
-    public void funcAddScore(int numUserID, int numSingerID, double dobScore, int numSongID) throws SQLException{
-         PreparedStatement psmt = null;
-         Date test = null;
-         psmt = con.prepareStatement("INSERT INTO score_table(UserID, SingerID, SongID, Score, Date) VALUES (?,?,?,?,?)");
-         psmt.setInt(1, numUserID);
-         psmt.setInt(2, numSingerID);
-         psmt.setInt(3, numSongID);
-         psmt.setFloat(4, (float)dobScore);
-         psmt.setDate(5, Date.valueOf(String.valueOf(test.getDate())));
-         psmt.executeQuery();
-         psmt.close();
+
+    public void funcAddScore(int numUserID, int numSingerID, double dobScore, int numSongID) throws SQLException {
+        PreparedStatement psmt = null;
+        Date test = null;
+        psmt = con.prepareStatement("INSERT INTO score_table(UserID, SingerID, SongID, Score, Date) VALUES (?,?,?,?,?)");
+        psmt.setInt(1, numUserID);
+        psmt.setInt(2, numSingerID);
+        psmt.setInt(3, numSongID);
+        psmt.setFloat(4, (float) dobScore);
+        psmt.setDate(5, Date.valueOf(String.valueOf(test.getDate())));
+        psmt.executeQuery();
+        psmt.close();
     }
-    
-    public ArrayList<SongProperties> funcSongList() throws SQLException{
+
+    public ArrayList<SongProperties> funcSongList() throws SQLException {
         ArrayList<SongProperties> listOfSongs = new ArrayList<>();
         PreparedStatement psmt = null;
-        try{
+        try {
             psmt = con.prepareStatement("SELECT * FROM song_main WHERE IsActive=?");
             psmt.setInt(1, 1);
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
                 listOfSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
-                while(resultset.next())
+                while (resultset.next()) {
                     listOfSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
+                }
             }
-        }
-        catch(Exception exExc){
+        } catch (Exception exExc) {
             exExc.printStackTrace();
         }
         return listOfSongs;
-    } 
-}
+    }
+    
 
+    public TableView<UserAbst> funcListSinger(TableView<UserAbst> tableSingers) throws SQLException {
+        try {
+            PreparedStatement preStatement = con.prepareStatement("SELECT singer.SingerName, singer.SingerSurname, singer.AverageScore FROM singer "
+                    + " JOIN user_types ON user_types.UserID = singer.UserID "
+                    + " WHERE singer.IsActive = TRUE && "
+                    + " user_types.IsActive = TRUE && "
+                    + " user_types.UserID = ?");
+            preStatement.setInt(1, UserSession.numUserId);
+            ResultSet resultListOfSinger = preStatement.executeQuery();
+            ArrayList<UserAbst> arrListSinger = new ArrayList<>();
+            if(resultListOfSinger.next()){
+                //FXCollections.observableArrayList().add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                arrListSinger.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                while(resultListOfSinger.next())
+                    //FXCollections.observableArrayList().add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                    arrListSinger.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+            }
+            tableSingers.setEditable(true);
+            ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList(new UserAbst("test","test",12),new UserAbst("1","2",2));
+            
+            TableColumn columnName = new TableColumn("Name");
+            TableColumn columnSurname = new TableColumn("Surname");
+            TableColumn columnAverage = new TableColumn("Average Score");
+            
+            columnName.setMinWidth(200);
+            columnSurname.setMinWidth(200);
+            columnAverage.setMinWidth(150);
+            
+            columnName.setCellValueFactory(new PropertyValueFactory<>("strName"));
+            columnSurname.setCellValueFactory(new PropertyValueFactory<>("strSurname"));
+            columnAverage.setCellValueFactory(new PropertyValueFactory<>("strAverage"));
+            
+            tableSingers.getColumns().addAll(columnName, columnSurname, columnAverage);
+            tableSingers.setItems(obsListSingers);
+            
+        } catch (Exception exExc) {
+            exExc.printStackTrace();
+        }
+        return tableSingers;
+    }
+}

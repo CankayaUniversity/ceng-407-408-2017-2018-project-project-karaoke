@@ -46,8 +46,6 @@ public class FXMLController implements Initializable {
     MediaPlayer player;
     Media pick;
     
-    
-    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
@@ -56,7 +54,6 @@ public class FXMLController implements Initializable {
     private  void print() {
         
     }
-
     public void AnimateText(final Label lbl, String descImp) {
         final String content = descImp;
         final Animation animation = new Transition() {

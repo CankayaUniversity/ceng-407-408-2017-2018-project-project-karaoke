@@ -196,6 +196,7 @@ edu/cmu/sphinx/result/SausageMaker.class
 edu/cmu/sphinx/tools/gui/reader/GUIReader.class
 edu/cmu/sphinx/tools/gui/ConfigProperties.class
 edu/cmu/sphinx/util/CommandInterpreter$2.class
+comMain/ceng407408/projectkaraoke/UserAbst.class
 edu/cmu/sphinx/tools/gui/GUIMainDriver$1.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/HTKLoader$HTKStruct.class
 edu/cmu/sphinx/tools/audio/AudioTool$11.class
@@ -380,6 +381,7 @@ edu/cmu/sphinx/tools/gui/writer/ConfigConverter.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleTag.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleName.class
 edu/cmu/sphinx/tools/gui/writer/XMLConfigWriter.class
+comMain/ceng407408/projectkaraoke/TeacherMain.class
 edu/cmu/sphinx/frontend/feature/BatchAGC.class
 edu/cmu/sphinx/linguist/language/ngram/large/LargeTrigramModel.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$5.class
