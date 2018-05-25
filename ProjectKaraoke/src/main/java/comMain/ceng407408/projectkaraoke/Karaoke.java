@@ -10,6 +10,7 @@ package comMain.ceng407408.projectkaraoke;
  * @author sevtap
  */
 
+import UserStatic.UserSession;
 import java.sql.*;
 import java.util.Scanner;
 import java.lang.String;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import javafx.scene.Scene;
 import comMain.ceng407408.projectkaraoke.UserInfo;
 import comMain.ceng407408.projectkaraoke.SongProperties;
+import java.util.Calendar;
 import java.util.List;
 
 public class Karaoke {
@@ -210,6 +212,14 @@ public class Karaoke {
             if (resultset.next()) {
 
                 System.out.println(resultset.getString("Name"));
+                UserSession.strName = resultset.getString("Name");
+                UserSession.numUserId = resultset.getInt("UserID");
+                if(resultset.getBoolean("IsAdmin") == true)
+                    UserSession.numUserType = 1;
+                else if(resultset.getBoolean("IsFamilyUser") == true)
+                    UserSession.numUserType = 2;
+                else UserSession.numUserType = 3;
+                UserSession.enterDate = Calendar.getInstance().getTime();
                 returnresult = 1;
 
             } else {

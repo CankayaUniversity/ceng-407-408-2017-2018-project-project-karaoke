@@ -70,6 +70,7 @@ edu/cmu/sphinx/jsgf/rule/JSGFRuleToken.class
 edu/cmu/sphinx/linguist/language/ngram/BackoffLanguageModel.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$1.class
 edu/cmu/sphinx/decoder/search/PartitionActiveListFactory.class
+comMain/ceng407408/projectkaraoke/SongProperties.class
 edu/cmu/sphinx/tools/gui/util/SysCommandExecutor$1.class
 edu/cmu/sphinx/linguist/flat/BranchState.class
 edu/cmu/sphinx/util/SocketCommandClient$1.class
@@ -146,6 +147,7 @@ edu/cmu/sphinx/linguist/dictionary/Pronunciation.class
 RecognizeSpeech/Transcriber.class
 edu/cmu/sphinx/linguist/dflat/DynamicFlatLinguist$FullHMMSearchState.class
 edu/cmu/sphinx/linguist/acoustic/HMMState.class
+UserStatic/UserSession.class
 edu/cmu/sphinx/util/props/ConfigurationManager.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$4.class
 edu/cmu/sphinx/linguist/language/ngram/large/NGramProbability.class
@@ -365,6 +367,7 @@ edu/cmu/sphinx/linguist/lextree/LexTreeLinguist$LexTreeState.class
 edu/cmu/sphinx/tools/gui/util/ModelBuilder$CreatePropertyHelper.class
 edu/cmu/sphinx/decoder/search/SimpleActiveListFactory.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/ScoreCachingSenone$ScoreCache.class
+comMain/ceng407408/projectkaraoke/FamilyUser.class
 edu/cmu/sphinx/linguist/util/LinguistDumper.class
 edu/cmu/sphinx/util/Complex.class
 edu/cmu/sphinx/jsgf/JSGFRuleGrammarManager.class

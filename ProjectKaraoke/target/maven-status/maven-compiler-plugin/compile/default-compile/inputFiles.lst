@@ -35,6 +35,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/grammar/FSTGrammar.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/SocketCommandClient.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/tools/audio/AudioTool.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/SongProperties.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/search/stats/StateHistoryTracker.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/result/WordResultPath.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/instrumentation/BestPathAccuracyTracker.java
@@ -50,6 +51,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/util/LinguistStats.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/acoustic/tiedstate/HTK/HMMSet.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/tools/gui/GUIOperationException.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/UserStatic/UserSession.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/ngram/large/NGramBuffer.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/frequencywarp/PLPCepstrumProducer.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/HMMSearchState.java
@@ -344,6 +346,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/dictionary/MappingDictionary.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/jsgf/parser/JSGFParserConstants.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/result/Edge.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/FamilyUser.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/instrumentation/RecognizerMonitor.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/DataEndSignal.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/frequencywarp/FrequencyWarper.java

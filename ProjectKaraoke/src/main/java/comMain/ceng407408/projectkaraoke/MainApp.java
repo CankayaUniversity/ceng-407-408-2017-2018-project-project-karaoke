@@ -1,5 +1,6 @@
 package comMain.ceng407408.projectkaraoke;
 
+import UserStatic.UserSession;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -87,13 +88,13 @@ public class MainApp extends Application {
         checkPassword = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(checkPassword);
         int result = db.Login(checkMail,passwordnumeric);
-
         System.out.println(passwordnumeric);
         System.out.println(checkMail);
         if(result==1)
         {            
             try {
                 replaceSceneContent("/fxml/AdminMainPage.fxml");
+                //stage.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -117,19 +118,20 @@ public class MainApp extends Application {
     private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
-
+        
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 600);
-
+            scene = new Scene(page, 600, 300);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
+        
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("Welcome " + UserSession.strName);
         stage.show();
-        return page;
- 
-                
+        return page;                
     }    
 }
