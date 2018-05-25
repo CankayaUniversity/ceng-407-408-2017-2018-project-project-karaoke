@@ -23,18 +23,29 @@ import comMain.ceng407408.projectkaraoke.SongProperties;
 import java.util.Calendar;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
-class UserAbst{
+class UserAbst {
+
     public final SimpleStringProperty strName;
     public final SimpleStringProperty strSurname;
     public final SimpleStringProperty strAverage;
-    UserAbst(final String strName_, final String strSurname_, final float floatAverage_){
+    
+    UserAbst(){
+        strName = new SimpleStringProperty();
+        strSurname = new SimpleStringProperty();
+        strAverage = new SimpleStringProperty();
+    }
+
+    UserAbst(final String strName_, final String strSurname_, final float floatAverage_) {
         this.strName = new SimpleStringProperty(strName_);
         this.strSurname = new SimpleStringProperty(strSurname_);
         this.strAverage = new SimpleStringProperty(Float.toString(floatAverage_));
@@ -498,7 +509,6 @@ public class Karaoke {
         }
         return listOfSongs;
     }
-    
 
     public TableView<UserAbst> funcListSinger(TableView<UserAbst> tableSingers) throws SQLException {
         try {
@@ -509,32 +519,34 @@ public class Karaoke {
                     + " user_types.UserID = ?");
             preStatement.setInt(1, UserSession.numUserId);
             ResultSet resultListOfSinger = preStatement.executeQuery();
-            ArrayList<UserAbst> arrListSinger = new ArrayList<>();
-            if(resultListOfSinger.next()){
-                //FXCollections.observableArrayList().add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                arrListSinger.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                while(resultListOfSinger.next())
-                    //FXCollections.observableArrayList().add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                    arrListSinger.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+            ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList();
+            
+            //if (resultListOfSinger.next()) {
+                //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                while (resultListOfSinger.next()) {
+                    obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+                }
+            //}
+            //tableSingers.setEditable(true);
+            for (int i = 0; i < obsListSingers.size(); i++) {
+                System.out.println(obsListSingers.get(i));
             }
-            tableSingers.setEditable(true);
-            ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList(new UserAbst("test","test",12),new UserAbst("1","2",2));
             
-            TableColumn columnName = new TableColumn("Name");
-            TableColumn columnSurname = new TableColumn("Surname");
-            TableColumn columnAverage = new TableColumn("Average Score");
             
+            TableColumn<UserAbst, String> columnName = new TableColumn<UserAbst, String>("Name");
+            TableColumn<UserAbst, String> columnSurname = new TableColumn<UserAbst, String>("Surname");
+            TableColumn<UserAbst, String> columnAverage = new TableColumn<UserAbst, String>("Average Score");
+
             columnName.setMinWidth(200);
             columnSurname.setMinWidth(200);
             columnAverage.setMinWidth(150);
-            
-            columnName.setCellValueFactory(new PropertyValueFactory<>("strName"));
-            columnSurname.setCellValueFactory(new PropertyValueFactory<>("strSurname"));
-            columnAverage.setCellValueFactory(new PropertyValueFactory<>("strAverage"));
-            
-            tableSingers.getColumns().addAll(columnName, columnSurname, columnAverage);
             tableSingers.setItems(obsListSingers);
             
+            columnName.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strName"));
+            columnSurname.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strSurname"));
+            columnAverage.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strAverage"));
+            
+            tableSingers.getColumns().setAll(columnName, columnSurname, columnAverage);
         } catch (Exception exExc) {
             exExc.printStackTrace();
         }

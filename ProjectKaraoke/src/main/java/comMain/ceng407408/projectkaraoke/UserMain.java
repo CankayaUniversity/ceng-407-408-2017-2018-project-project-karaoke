@@ -6,6 +6,7 @@
 package comMain.ceng407408.projectkaraoke;
 
 import UserStatic.UserSession;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -32,34 +34,56 @@ import javafx.stage.Stage;
  *
  * @author mehmetali
  */
-public class TeacherMain implements Initializable {
-    
+public class UserMain implements Initializable {
+    private final Karaoke objMainFunc = new Karaoke();
     @FXML TableView<UserAbst> tableviewListOfSingers = new TableView<UserAbst>();
     @FXML Button buttonScoreTable = new Button();
     @FXML Button buttonAddStudent = new Button();
-    @FXML Button buttonStartKaraoke = new Button();    
-    private final Karaoke objMainFunc = new Karaoke();
+    @FXML Button buttonStartKaraoke = new Button();   
     
-    public void funcScoreTable() throws SQLException{
-        
+    @FXML
+    public void funcScoreTable() throws SQLException, Exception{
+        replaceSceneContent("/fxml/ScoreTable.fxml");
     }
     
-    public void funcAddStudent(){
-        
+    @FXML
+    public void funcAddStudent() throws Exception{
+        replaceSceneContent("d");
     }
-    public void funcStartKaroke(){
-        
+    
+    @FXML
+    public void funcStartKaroke() throws Exception{
+        replaceSceneContent("d");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            objMainFunc.funcListSinger(tableviewListOfSingers);
+            tableviewListOfSingers = objMainFunc.funcListSinger(tableviewListOfSingers);
         } catch (SQLException ex) {
-            Logger.getLogger(TeacherMain.class.getName()).log(Level.SEVERE, null, ex);
-        }        
+            Logger.getLogger(UserMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
+    private Parent replaceSceneContent(String fxml) throws Exception {
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+
+        Scene scene = stage.getScene();
+        if (scene == null) {
+            scene = new Scene(page);
+            stage.setScene(scene);
+        } else {
+            stage.getScene().setRoot(page);
+        }
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
+        stage.show();
+        return page;
+    }
 
     public static void main(String[] args) {
         launch(args);

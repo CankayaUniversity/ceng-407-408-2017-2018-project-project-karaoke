@@ -16,6 +16,7 @@ edu/cmu/sphinx/linguist/language/ngram/SimpleNGramModel.class
 edu/cmu/sphinx/linguist/language/grammar/Grammar.class
 edu/cmu/sphinx/tools/audio/RawReader.class
 edu/cmu/sphinx/tools/gui/util/ConfigurableUtilException.class
+comMain/ceng407408/projectkaraoke/UserMain.class
 edu/cmu/sphinx/linguist/language/ngram/KeywordOptimizerModel.class
 edu/cmu/sphinx/jsgf/JSGFGrammarParseException.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/Senone.class
@@ -381,7 +382,6 @@ edu/cmu/sphinx/tools/gui/writer/ConfigConverter.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleTag.class
 edu/cmu/sphinx/jsgf/rule/JSGFRuleName.class
 edu/cmu/sphinx/tools/gui/writer/XMLConfigWriter.class
-comMain/ceng407408/projectkaraoke/TeacherMain.class
 edu/cmu/sphinx/frontend/feature/BatchAGC.class
 edu/cmu/sphinx/linguist/language/ngram/large/LargeTrigramModel.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$5.class
