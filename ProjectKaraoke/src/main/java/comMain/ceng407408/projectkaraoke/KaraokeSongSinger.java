@@ -55,6 +55,7 @@ public class KaraokeSongSinger implements Initializable {
 
     @FXML
     public void funcStart() throws Exception {
+        try{
         if (KaraokeCache.numSingerID != 0 && KaraokeCache.numSongID != 0) {
             replaceSceneContent("/fxml/Karaoke.fxml");
         } else {
@@ -62,6 +63,9 @@ public class KaraokeSongSinger implements Initializable {
             alert.setTitle("Warning!");
             alert.setContentText("You have to choose a song and a user!");
             alert.showAndWait();
+        }
+        }catch(Exception exExc){
+            
         }
     }
 

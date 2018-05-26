@@ -372,7 +372,6 @@ edu/cmu/sphinx/linguist/lextree/LexTreeLinguist$LexTreeState.class
 edu/cmu/sphinx/tools/gui/util/ModelBuilder$CreatePropertyHelper.class
 edu/cmu/sphinx/decoder/search/SimpleActiveListFactory.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/ScoreCachingSenone$ScoreCache.class
-comMain/ceng407408/projectkaraoke/FamilyUser.class
 edu/cmu/sphinx/linguist/util/LinguistDumper.class
 edu/cmu/sphinx/util/Complex.class
 edu/cmu/sphinx/jsgf/JSGFRuleGrammarManager.class

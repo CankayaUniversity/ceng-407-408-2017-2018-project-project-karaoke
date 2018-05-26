@@ -251,9 +251,8 @@ public class Karaoke {
                 UserSession.numUserId = resultset.getInt("UserID");
                 if (resultset.getBoolean("IsAdmin") == true) {
                     UserSession.numUserType = 1;
-                } else if (resultset.getBoolean("IsFamilyUser") == true) {
-                    UserSession.numUserType = 2;
-                } else {
+                }
+                    else {
                     UserSession.numUserType = 3;
                 }
                 UserSession.enterDate = Calendar.getInstance().getTime();
@@ -624,7 +623,9 @@ public class Karaoke {
         preStatement.setInt(1, UserSession.numUserId);
         preStatement.setInt(2, numSingerID);
         ResultSet resultSingerName = preStatement.executeQuery();
-        return resultSingerName.getString("SingerName") + " " + resultSingerName.getString("SingerSurname");
+        if(resultSingerName.next())
+            return resultSingerName.getString("SingerName") + " " + resultSingerName.getString("SingerSurname");
+        return "";
     }
 
     public String funcGetSongName(final int numSongID) throws SQLException {
@@ -632,7 +633,9 @@ public class Karaoke {
                 + " WHERE karaoke.song_main.SongID = ?;");
         preStatement.setInt(1, numSongID);
         ResultSet resultSongName = preStatement.executeQuery();
-        return resultSongName.getString("SongName");
+        if(resultSongName.next())
+            return resultSongName.getString("SongName");
+        return "";
     }
     
     public String funcGetLyric(final int numSongID) throws SQLException{
@@ -640,14 +643,18 @@ public class Karaoke {
                 + " WHERE karaoke.song_main.SongID = ?;");
         preStatement.setInt(1, numSongID);
         ResultSet resultLyric = preStatement.executeQuery();
-        return resultLyric.getString("Lyric");
+        if(resultLyric.next())
+            return resultLyric.getString("Lyric");
+        return "";
     }
     
     public long funcGetTime(final int numSongID) throws SQLException{
         PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.song_main.SongTime FROM karaoke.song_main "
                 + " WHERE karaoke.song_main.SongID = ?;");
         preStatement.setInt(1, numSongID);
-        ResultSet resultLyric = preStatement.executeQuery();
-        return resultLyric.getLong("SongTime");
+        ResultSet resultTime = preStatement.executeQuery();
+        if(resultTime.next())
+            return resultTime.getLong("SongTime");
+        return 0;
     } 
 }
