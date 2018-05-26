@@ -136,6 +136,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/ResultProducer.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/feature/BatchAGC.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/acoustic/HMMPosition.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/DeleteUserAbst.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/IDGenerator.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/SimpleBatchManager.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/props/ConfCategory.java
@@ -306,6 +307,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/flat/SentenceHMMState.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/acoustic/LeftRightContext.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/util/GDLDumper.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/UserStatic/KaraokeCache.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/transform/DiscreteCosineTransform2.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/jsgf/parser/JavaCharStream.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/search/WordPruningBreadthFirstSearchManager.java

@@ -23,6 +23,8 @@ import javafx.scene.control.ChoiceBox;
  *
  * @author mehmetali
  */
+
+
 public class KaraokeSongSinger implements Initializable {
     
     @FXML ChoiceBox choiceboxSingers = new ChoiceBox();
@@ -67,6 +69,7 @@ public class KaraokeSongSinger implements Initializable {
             choiceboxSingers.getItems().add(FXCollections.observableArrayList(arrListSinger.get(i).getStrUserName()));
         for(int i = 0; i < arrListSongs.size(); i++)
             choiceboxSongs.getItems().add(FXCollections.observableArrayList(arrListSongs.get(i)));
+        //choiceboxSingers.getSelectionModel().selectedIndexProperty().addListener
     }
     
     private static void main(String[] args){

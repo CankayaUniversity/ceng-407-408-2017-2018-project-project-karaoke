@@ -57,6 +57,7 @@ edu/cmu/sphinx/frontend/GainControlProcessor.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/Pool$Feature.class
 edu/cmu/sphinx/linguist/dflat/OutOfGrammarGraph$OogSearchState.class
 edu/cmu/sphinx/linguist/acoustic/HMMPool.class
+UserStatic/KaraokeCache.class
 EvaluationScore/ScoreAbst.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/HTK/SingleHMM.class
 edu/cmu/sphinx/linguist/language/grammar/TextAlignerGrammar.class

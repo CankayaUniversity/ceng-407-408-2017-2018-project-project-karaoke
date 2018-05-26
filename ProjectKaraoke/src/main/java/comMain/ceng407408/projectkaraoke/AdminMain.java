@@ -9,6 +9,7 @@ package comMain.ceng407408.projectkaraoke;
  *
  * @author sevtap
  */
+import UserStatic.UserSession;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,6 +32,7 @@ import javafx.util.Duration;
 import java.io.*;
 import comMain.ceng407408.projectkaraoke.*;
 import static comMain.ceng407408.projectkaraoke.CreateAccount.stage;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 //import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
@@ -95,7 +97,7 @@ public class AdminMain implements Initializable{
             }
     }
     @FXML
-     public void deleteUserBtn()
+    public void deleteUserBtn()
     {
           try {
                 replaceSceneContent("/fxml/DeleteUser.fxml");
@@ -109,18 +111,19 @@ public class AdminMain implements Initializable{
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 600);
-
+            scene = new Scene(page);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
         stage.show();
         return page;
- 
-                
-    }   
+    }
        
      public static void main(String[] args) {
         launch(args);

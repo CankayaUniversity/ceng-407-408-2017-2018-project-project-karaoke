@@ -52,35 +52,7 @@ import sun.applet.Main;
  *
  * @author sevtap
  */
-class DeleteUserAbst {
 
-    private String numID;
-    private String strMail;
-    private String strName;
-
-    DeleteUserAbst() {
-        numID = "";
-        strMail = strName = "";
-    }
-
-    DeleteUserAbst(final int numID_, final String strMail_, final String strName_) {
-        numID = String.valueOf(numID_);
-        strMail = strMail_;
-        strName = strName_;
-    }
-
-    public String getNumID() {
-        return numID;
-    }
-
-    public String getStrMail() {
-        return strMail;
-    }
-
-    public String getStrName() {
-        return strName;
-    }
-}
 
 public class DeleteUser implements Initializable {
 
@@ -152,22 +124,24 @@ public class DeleteUser implements Initializable {
         }
     }
 
-    private Parent replaceSceneContent(String fxml) throws Exception {
+   private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 600);
-
+            scene = new Scene(page);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
         stage.show();
         return page;
-
     }
 
     public static void main(String[] args) {
