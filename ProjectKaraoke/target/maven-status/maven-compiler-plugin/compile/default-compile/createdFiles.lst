@@ -487,6 +487,7 @@ edu/cmu/sphinx/decoder/search/SearchManager.class
 edu/cmu/sphinx/tools/audio/Downsampler.class
 edu/cmu/sphinx/util/props/PropertyType$4.class
 edu/cmu/sphinx/tools/gui/PanelConfigurable.class
+comMain/ceng407408/projectkaraoke/DeleteUser$1.class
 edu/cmu/sphinx/recognizer/StateListener.class
 edu/cmu/sphinx/frontend/util/ConcatAudioFileDataSource.class
 edu/cmu/sphinx/decoder/Decoder.class
@@ -495,6 +496,7 @@ edu/cmu/sphinx/linguist/acoustic/tiedstate/SenoneHMM.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/SenoneSequence.class
 edu/cmu/sphinx/tools/gui/PanelConfigurable$9.class
 edu/cmu/sphinx/decoder/search/stats/TokenTypeTracker.class
+comMain/ceng407408/projectkaraoke/DeleteUserAbst.class
 edu/cmu/sphinx/decoder/search/AlternateHypothesisManager.class
 edu/cmu/sphinx/frontend/databranch/DataListener.class
 edu/cmu/sphinx/util/Timer.class

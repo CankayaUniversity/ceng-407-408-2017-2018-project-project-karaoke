@@ -10,6 +10,7 @@ package comMain.ceng407408.projectkaraoke;
  * @author sevtap
  */
 import UserStatic.UserSession;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.sql.*;
 import java.util.Scanner;
 import java.lang.String;
@@ -102,7 +103,30 @@ public class Karaoke {
         }
         return result;
     }
-
+    
+    private ObservableList<DeleteUserAbst> funcGetAllUsers() throws SQLException{
+        ObservableList<DeleteUserAbst> listOfUsers = FXCollections.observableArrayList();
+        PreparedStatement psmt = con.prepareStatement("SELECT UserID, Name, Mail FROM user_types WHERE IsActive = true");
+        ResultSet resultset = psmt.executeQuery(); 
+        while(resultset.next())
+            listOfUsers.add(new DeleteUserAbst(resultset.getInt("UserID"), resultset.getString("Mail"), resultset.getString("Name")));
+        return listOfUsers;
+    }
+    
+    public void funcListAllUsers(TableView<DeleteUserAbst> tableUsers) throws SQLException{
+        TableColumn<DeleteUserAbst, String> columnUserID = new TableColumn<>("ID");
+            TableColumn<DeleteUserAbst, String> columnName = new TableColumn<>("Name");
+            TableColumn<DeleteUserAbst, String> columnMail = new TableColumn<>("Mail");
+            columnUserID.setMinWidth(200);
+            columnName.setMinWidth(200);
+            columnMail.setMinWidth(200);
+            tableUsers.setItems(funcGetAllUsers());
+            columnUserID.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("numID"));
+            columnName.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strName"));
+            columnMail.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strMail"));
+            tableUsers.getColumns().addAll(columnUserID, columnName, columnMail);
+    }
+    
     public int DeleteUser(String mail) {
 
         int flag = 1;

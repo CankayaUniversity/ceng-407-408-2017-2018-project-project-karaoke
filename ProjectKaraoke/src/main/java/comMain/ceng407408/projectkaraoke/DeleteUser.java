@@ -32,88 +32,127 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static javafx.application.Application.launch;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableView;
 import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
+
 /**
  *
  * @author sevtap
  */
-public class DeleteUser implements Initializable{
- @Override
-     public void initialize(URL location, ResourceBundle resources){
-       
+class DeleteUserAbst {
+
+    private String numID;
+    private String strMail;
+    private String strName;
+
+    DeleteUserAbst() {
+        numID = "";
+        strMail = strName = "";
+    }
+
+    DeleteUserAbst(final int numID_, final String strMail_, final String strName_) {
+        numID = String.valueOf(numID_);
+        strMail = strMail_;
+        strName = strName_;
+    }
+
+    public String getNumID() {
+        return numID;
+    }
+
+    public String getStrMail() {
+        return strMail;
+    }
+
+    public String getStrName() {
+        return strName;
+    }
 }
 
- public static Stage stage = new Stage();
-    @FXML public ListView listUsersGUI =  new ListView();
-    @FXML public TextField deletedUserMailGUI= new TextField();
-    @FXML public  Button deleteBtnGUI = new Button();
-    @FXML public  Label messageGUI = new Label();
-    
-    @FXML
-    public void DeleteBtn()
-    {
-        Karaoke db = new Karaoke();
-        //listUsersGUI
-        String Mail = "";
-  
-        Mail = deletedUserMailGUI.getText();
-        System.out.println(Mail);
-        int result = db.DeleteUser(Mail);
+public class DeleteUser implements Initializable {
 
-        if(result==1)
-        {            
-           messageGUI.setText("User Deleted Successfully!");
-           messageGUI.setVisible(true);
+    private Karaoke objMainFunc = new Karaoke();
+    private String strSelectedMail = "EMPTY";
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            objMainFunc.funcListAllUsers(tableviewSongList);
+            tableviewSongList.getSelectionModel().selectedItemProperty().addListener(new javafx.beans.value.ChangeListener<DeleteUserAbst>() {
+                @Override
+                public void changed(ObservableValue<? extends DeleteUserAbst> obs, DeleteUserAbst oldV, DeleteUserAbst newV) {
+                    strSelectedMail = newV.getStrMail();
+                }
+            });
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DeleteUser.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else if(result==0)
-        {
-             messageGUI.setText("There Is User In Database With " + Mail + " Mail Address!");
-             messageGUI.setVisible(true);
-        }
-        else if(result==2)
-        {
-            messageGUI.setText("User Is Not Active!");
-            messageGUI.setVisible(true);
-        
-        }
-            
-        
-    } 
-     @FXML
-    public void ppageBtn(){
-  
-         try {
-                replaceSceneContent("/fxml/teacher.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
     }
-     @FXML
-    public void logoutBtn()
-    {
-         try {
-                replaceSceneContent("/fxml/Login.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
+
+    public static Stage stage = new Stage();
+    @FXML
+    public Button deleteBtnGUI = new Button();
+    @FXML
+    public Label messageGUI = new Label();
+    @FXML
+    TableView<DeleteUserAbst> tableviewSongList = new TableView<>();
+
+    @FXML
+    public void DeleteBtn() {
+        Karaoke db = new Karaoke();
+        int result = 0;
+        if (strSelectedMail != "EMPTY") {
+            result = db.DeleteUser(strSelectedMail);
+
+            if (result == 1) {
+                messageGUI.setText("User Deleted Successfully!");
+                messageGUI.setVisible(true);
+            } else if (result == 0) {
+                messageGUI.setText("There Is User In Database With " + strSelectedMail + " Mail Address!");
+                messageGUI.setVisible(true);
+            } else if (result == 2) {
+                messageGUI.setText("User Is Not Active!");
+                messageGUI.setVisible(true);
+
             }
-    } 
-    
-       private Parent replaceSceneContent(String fxml) throws Exception {
+        }
+
+    }
+
+    @FXML
+    public void ppageBtn() {
+
+        try {
+            replaceSceneContent("/fxml/teacher.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void logoutBtn() {
+        try {
+            replaceSceneContent("/fxml/Login.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Parent replaceSceneContent(String fxml) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
@@ -128,12 +167,11 @@ public class DeleteUser implements Initializable{
         stage.sizeToScene();
         stage.show();
         return page;
- 
-                
-    }   
-       
-     public static void main(String[] args) {
+
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
-  
+
 }
