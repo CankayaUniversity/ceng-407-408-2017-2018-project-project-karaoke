@@ -17,9 +17,10 @@
         <Image url="@../images/background.jpg" />
       </image>
     </ImageView>
-    <Button fx:id="addSongBtnGUI" layoutX="144.0" layoutY="81.0" mnemonicParsing="false" onAction="#addSongBtn" text="ADD SONG" />
-    <Button fx:id="deleteSongBtnGUI" layoutX="144.0" layoutY="118.0" mnemonicParsing="false" onAction="#deleteSongBtn" text="DELETE SONG" />
-    <Button fx:id="createUserBtnGUI" layoutX="144.0" layoutY="154.0" mnemonicParsing="false" onAction="#createUserBtn" text="CREATE USER" />
-    <Button fx:id="deleteUserBtnGUI" layoutX="144.0" layoutY="190.0" mnemonicParsing="false" onAction="#deleteUserBtn" text="DELETE USER" />
+    <Button fx:id="addSongBtnGUI" layoutX="144.0" layoutY="81.0" mnemonicParsing="false" onAction="#addSongBtn" text="Add Song" />
+    <Button fx:id="deleteSongBtnGUI" layoutX="144.0" layoutY="118.0" mnemonicParsing="false" onAction="#deleteSongBtn" text="Delete Song" />
+    <Button fx:id="createUserBtnGUI" layoutX="144.0" layoutY="154.0" mnemonicParsing="false" onAction="#createUserBtn" text="Create User Account" />
+    <Button fx:id="deleteUserBtnGUI" layoutX="144.0" layoutY="190.0" mnemonicParsing="false" onAction="#deleteUserBtn" text="Delete User Account" />
+    <Button fx:id="logout" layoutX="552.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutBtn" text="Logout" />
   </children>
 </AnchorPane>

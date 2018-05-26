@@ -3,17 +3,25 @@
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="394.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddStudent">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddStudent">
   <children>
-    <TextField fx:id="textfieldSurname" layoutX="157.0" layoutY="87.0" prefWidth="200.0" />
-    <TextField fx:id="textfieldName" layoutX="157.0" layoutY="56.0" prefWidth="200.0" />
-    <Label layoutX="27.0" layoutY="56.0" text="Name" />
-    <Label layoutX="27.0" layoutY="79.0" text="Surname" />
-    <Button fx:id="buttonAddStudent" layoutX="157.0" layoutY="135.0" mnemonicParsing="false" onAction="#funcAddStudent" prefWidth="128.0" text="Add Student" />
-    <Label fx:id="labelError" layoutX="157.0" layoutY="169.0" text="---" visible="false" />
-    <Button fx:id="buttonCancel" cancelButton="true" layoutX="291.0" layoutY="135.0" mnemonicParsing="false" onAction="#funcCancel" text="Cancel" textAlignment="LEFT" />
+    <ImageView fitHeight="306.5" fitWidth="613.0" layoutX="-6.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
+      <image>
+        <Image url="@../images/background.jpg" />
+      </image>
+    </ImageView>
+    <TextField fx:id="textfieldSurname" layoutX="200.0" layoutY="189.0" prefWidth="200.0" />
+    <TextField fx:id="textfieldName" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
+    <Label layoutX="133.0" layoutY="153.0" text="Name:" />
+    <Label layoutX="133.0" layoutY="192.0" text="Surname:" />
+    <Button fx:id="buttonAddStudent" layoutX="236.0" layoutY="237.0" mnemonicParsing="false" onAction="#funcAddStudent" prefWidth="128.0" text="Add Student" />
+    <Label fx:id="nameMessage" layoutX="425.0" layoutY="150.0" prefWidth="128.0" text="" textFill="RED" visible="false" />
+    <Label fx:id="surnameMessage" layoutX="425.0" layoutY="192.0" prefWidth="114.0" text="" textFill="#ff3333" />
+    <Label fx:id="messageGUI" layoutX="200.0" layoutY="273.0" prefWidth="199.9998779296875" text="" textFill="RED" visible="false" />
+    <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtn" text="Back" />
   </children>
 </AnchorPane>

@@ -67,8 +67,8 @@ public class AdminMain implements Initializable{
     @FXML public  Button deleteSongBtnGUI = new Button();
     @FXML public  Button createUserBtnGUI = new Button();
     @FXML public  Button deleteUserBtnGUI = new Button();
-
-     @FXML
+    @FXML public  Button logout = new Button();
+    @FXML
     public void addSongBtn()
     {
         
@@ -78,6 +78,18 @@ public class AdminMain implements Initializable{
                 e.printStackTrace();
             }
     }
+      @FXML
+    public void logoutBtn()
+    {
+        
+         try {
+                UserSession.numUserId=-1;
+                replaceSceneContent("/fxml/Login.fxml");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+    
     @FXML
     public void deleteSongBtn()
     {

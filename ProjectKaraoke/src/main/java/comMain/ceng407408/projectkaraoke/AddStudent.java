@@ -25,21 +25,21 @@ public class AddStudent implements Initializable {
     
     @FXML TextField textfieldSurname = new TextField();
     @FXML TextField textfieldName = new TextField();
-    @FXML Label labelError = new Label();
+    @FXML Label messageGUI = new Label();
     private Karaoke objMainFunc = new Karaoke();
     
     @FXML
     private void funcAddStudent(){
-        labelError.setVisible(true);
+        messageGUI.setVisible(true);
         if(!textfieldName.getText().isEmpty() && !textfieldSurname.getText().isEmpty()){
             objMainFunc.funcAddSinger(textfieldName.getText(), textfieldSurname.getText(), UserSession.numUserId);
-            labelError.setText("Successfully added!");
+            messageGUI.setText("Successfully added!");
         }
-        else labelError.setText("Could not added to the database!");
+        else messageGUI.setText("Could not added to the database!");
     }
     
     @FXML
-    private void funcCancel() throws Exception{
+    private void backBtn() throws Exception{
         replaceSceneContent("/fxml/UserMain.fxml");
     }
     

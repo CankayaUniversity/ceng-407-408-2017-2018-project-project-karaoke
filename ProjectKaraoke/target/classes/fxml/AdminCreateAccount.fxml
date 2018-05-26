@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
 
-<Pane disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.CreateAccount">
+<Pane disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.CreateAccount">
   <children>
-    <ImageView fitHeight="300.0" fitWidth="600.0" layoutX="0.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" scaleX="1.0" scaleY="2.1" scaleZ="0.0">
+    <ImageView fitHeight="308.3106384277344" fitWidth="616.6212768554688" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5" y="50.0">
       <image>
         <Image url="@../images/background.jpg" />
       </image>
@@ -18,7 +18,7 @@
     <TextField fx:id="nameGUI" layoutX="217.0" layoutY="153.0" promptText="Name" />
     <TextField fx:id="surnameGUI" layoutX="217.0" layoutY="184.0" promptText="Surname" />
     <TextField fx:id="mailGUI" layoutX="217.0" layoutY="217.0" promptText="E-Mail" />
-    <Button fx:id="addGUI" layoutX="217.0" layoutY="287.0" mnemonicParsing="false" onAction="#AddUser" prefHeight="21.310646874997474" prefWidth="143.453125" text="ADD USER" />
+    <Button fx:id="addGUI" layoutX="217.0" layoutY="287.0" mnemonicParsing="false" onAction="#AddUser" prefHeight="21.310646874997474" prefWidth="143.453125" text="Add User" />
     <Button fx:id="ppageGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppageBtn" text="Back" />
     <PasswordField fx:id="passwordGUI" layoutX="217.0" layoutY="248.0" prefHeight="21.310546875" prefWidth="143.453125" promptText="Password" />
     <Label fx:id="messageGUI" disable="false" layoutX="202.0" layoutY="326.0" prefWidth="173.0" text="" textFill="RED" visible="false" />

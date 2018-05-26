@@ -316,7 +316,6 @@ public class Karaoke {
         return arrSongs;
     }
     
-    
     private ObservableList<SongProperties> funcGetSongs() {
         PreparedStatement psmt = null;
         ObservableList<SongProperties> arrSongs = FXCollections.observableArrayList();
@@ -511,7 +510,6 @@ public class Karaoke {
             psmt.setFloat(4, 0);
             psmt.setInt(5, user);
             psmt.executeUpdate();
-            System.out.println("Singer Inserted Successfully! ");
 
             psmt.close();
 
