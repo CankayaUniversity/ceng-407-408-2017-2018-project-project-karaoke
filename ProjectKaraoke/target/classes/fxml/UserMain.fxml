@@ -15,5 +15,7 @@
     <Button fx:id="buttonAddStudent" layoutX="249.0" layoutY="393.0" mnemonicParsing="false" onAction="#funcAddStudent" text="Add Student" />
     <Button fx:id="buttonStartKaraoke" layoutX="469.0" layoutY="392.0" mnemonicParsing="false" onAction="#funcStartKaroke" text="Start Karaoke!" />
     <TableView fx:id="tableviewListOfSingers" editable="true" layoutX="26.0" layoutY="99.0" prefHeight="200.0" prefWidth="546.0" tableMenuButtonVisible="true" />
+    <Button fx:id="update" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateBtn" text="Update Personal Information" />
+    <Button fx:id="logout" layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutBtn" text="Logout" />
   </children>
 </AnchorPane>

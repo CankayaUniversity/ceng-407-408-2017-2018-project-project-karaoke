@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="533.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.DeleteSong">
+  <children>
+    <TableView fx:id="tableviewSongs" layoutX="47.0" layoutY="40.0" prefHeight="227.0" prefWidth="457.0" />
+    <Label fx:id="labelMessage" layoutX="467.0" layoutY="299.0" text="" textAlignment="RIGHT" />
+    <Button fx:id="buttonBack" cancelButton="true" layoutX="47.0" layoutY="278.0" mnemonicParsing="false" onAction="#funcBack" text="Back" />
+    <Button fx:id="buttonDelete" defaultButton="true" layoutX="438.0" layoutY="272.0" mnemonicParsing="false" onAction="#funcDelete" text="Delete" />
+  </children>
+</AnchorPane>

@@ -58,15 +58,41 @@ public class UpdatePersonalInformation implements Initializable{
     @FXML public TextField surnameGUI= new TextField();
     @FXML public TextField mailGUI = new TextField();
     @FXML public  PasswordField passwordGUI = new PasswordField();
-    @FXML public  Label messageLabel = new Label();
+    @FXML public  Label messageGUI = new Label();
     @FXML public  Button updatebtnGUI = new Button();
     @FXML public  Button backbtnGUI = new Button();
+    @FXML public  Label nameMessage = new Label();
+    @FXML public  Label surnameMessage = new Label();
+    @FXML public  Label mailMessage = new Label();
+    @FXML public  Label passwordMessage = new Label();
     
     @Override
     
      public void initialize(URL location, ResourceBundle resources){
          
-          Karaoke db = new Karaoke();
+        Karaoke db = new Karaoke();
+        
+        UserPersonalInformation result;
+     
+        String Password = "";
+        int passwordnumeric = 0;
+
+        result=db.GetUserInformation();
+        nameGUI.setText(result.GetName());
+        surnameGUI.setText(result.GetSurname());
+        mailGUI.setText(result.GetMail());
+        passwordnumeric = result.GetPassword();
+        passwordGUI.setText(Password.valueOf(passwordnumeric));
+       
+}
+     
+  
+ 
+             
+    @FXML
+    public void updateBtn()
+    {
+        Karaoke db = new Karaoke();
         
         String Name = "";
         String Surname = "";
@@ -79,26 +105,72 @@ public class UpdatePersonalInformation implements Initializable{
         Mail = mailGUI.getText();
         Password = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(Password);
-        
-        int result = db.CreateUser(Name,Surname,Mail,passwordnumeric);
 
-       
-         
-       
-}
-     
+        if(nameGUI.getText().isEmpty()== true) {
+            nameMessage.setVisible(true);
+            nameMessage.setText("Please Enter Name!");
+        }
+        else
+        {
+            nameMessage.setVisible(false);
+
+        }
+        
+        if(surnameGUI.getText().isEmpty()==true) {
+            
+            surnameMessage.setVisible(true);
+            surnameMessage.setText("Please Enter Surname!");
+            
+        }
+        else
+        {
+            surnameMessage.setVisible(false);
+
+        }
+        if(mailGUI.getText().isEmpty() == true) {
+           
+           mailMessage.setVisible(true);
+           mailMessage.setText("Please Enter Mail!");
+
+        }
+        else {
+           mailMessage.setVisible(false);
+        }
+        if( passwordGUI.getText().trim().equals(" ") ){
+            
+            passwordMessage.setVisible(true);
+            passwordMessage.setText("Please Enter Password!");
+
+        }
+        else
+        {
+            passwordMessage.setVisible(false);
+
+        }
   
- 
-             
-    @FXML
-    public void updateBtn()
-    {
+         if(!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty() && !surnameGUI.getText().isEmpty() && !nameGUI.getText().isEmpty() )
+        {
+
+   int result = db.UpdatePersonalInformation(Name,Surname,Mail,passwordnumeric);
+
+        if(result==1)
+        {            
+           messageGUI.setText("User Updated Successfully!");
+           messageGUI.setVisible(true);
+        }
+        else if(result==0)
+        {
+            messageGUI.setText("User Cannot Updated!");
+            messageGUI.setVisible(true);
+        
+        }
+        }
     }
      @FXML
-     public void ppage(){
+     public void backBtn(){
   
          try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
+                replaceSceneContent("/fxml/UserMain.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }

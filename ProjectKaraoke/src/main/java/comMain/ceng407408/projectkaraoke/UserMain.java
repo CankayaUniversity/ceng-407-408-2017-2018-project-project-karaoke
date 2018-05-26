@@ -40,6 +40,8 @@ public class UserMain implements Initializable {
     @FXML Button buttonScoreTable = new Button();
     @FXML Button buttonAddStudent = new Button();
     @FXML Button buttonStartKaraoke = new Button();   
+    @FXML Button update = new Button();
+    @FXML Button logout = new Button();  
     
     @FXML
     public void funcScoreTable() throws SQLException, Exception{
@@ -54,6 +56,15 @@ public class UserMain implements Initializable {
     @FXML
     public void funcStartKaroke() throws Exception{
         replaceSceneContent("/fxml/KaraokeSongSinger.fxml");
+    }
+     @FXML
+    public void updateBtn() throws Exception{
+        replaceSceneContent("/fxml/UpdatePersonalInformation.fxml");
+    }
+     @FXML
+    public void logoutBtn() throws Exception{
+        UserSession.numUserId=-1;
+        replaceSceneContent("/fxml/Login.fxml");
     }
 
     @Override

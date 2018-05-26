@@ -51,7 +51,7 @@ public class Karaoke {
     static final String DB_URL = "jdbc:mysql://localhost:3306/karaoke?zeroDateTimeBehavior=convertToNull";
 
     static final String USER = "root";
-    static final String PASS = "28192819mali?";
+    static final String PASS = "";
 
     public Karaoke() {
 
@@ -501,7 +501,6 @@ public class Karaoke {
     public void funcAddSinger(String name, String surname, int user) {
 
         PreparedStatement psmt = null;
-//mali
         try {
 
             psmt = con.prepareStatement("INSERT INTO singer (SingerName, SingerSurname, IsActive, AverageScore,UserID) VALUES (?,?,?,?,?)");
@@ -702,4 +701,33 @@ public class Karaoke {
             return resultTime.getLong("SongTime");
         return 0;
     } 
+    public int UpdatePersonalInformation(String name, String surname, String mail, int password) {
+
+        PreparedStatement psmt = null;
+        int returnresult=-1;
+        try {
+            
+                psmt = con.prepareStatement("UPDATE user_types SET Name = ?, Surname = ?, Mail= ?, Password=? WHERE UserID = ?");
+                psmt.setString(1, name);
+                psmt.setString(2, surname);
+                psmt.setString(3, mail);
+                psmt.setInt(4, password);
+                psmt.setInt(5, UserSession.numUserId);
+                int result = psmt.executeUpdate();
+                if (result != 0) {
+                    returnresult=1;
+                } else {
+                    returnresult=0;
+                }
+                 psmt.close();
+            }
+           
+
+        catch (Exception ex) {
+
+            ex.printStackTrace();
+
+        }
+        return returnresult;
+    }
 }
