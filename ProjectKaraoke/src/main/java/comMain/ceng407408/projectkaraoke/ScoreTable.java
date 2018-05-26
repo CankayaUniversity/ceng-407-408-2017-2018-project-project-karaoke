@@ -14,8 +14,11 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ChoiceBox;
-import comMain.ceng407408.projectkaraoke.UserInfo;
+import comMain.ceng407408.projectkaraoke.SingerInfo;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.beans.value.ObservableValue;
@@ -35,19 +38,27 @@ import static jdk.nashorn.internal.objects.NativeArray.forEach;
 public class ScoreTable implements Initializable {
 
     @FXML ChoiceBox choiceboxSingers = new ChoiceBox();
-    @FXML TableView tableviewScoreTable = new TableView();
+    @FXML TableView<ScoreTableAbst> tableviewScoreTable = new TableView<>();
     @FXML Button buttonCancel = new Button();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Karaoke objMainFuncs = new Karaoke();
-        //if(user.type == type.family)
-        ArrayList<UserInfo> listSinger = objMainFuncs.ViewSinger(UserSession.numUserId);
-        //else
-        //coreF
+        ArrayList<SingerInfo> listSinger = objMainFuncs.ViewSinger(UserSession.numUserId);
+
         choiceboxSingers.getItems().removeAll();
         for(int i = 0; i < listSinger.size(); i++)
-            choiceboxSingers.getItems().add(FXCollections.observableArrayList(listSinger.get(i).funcGetUserName()));
+            choiceboxSingers.getItems().add(FXCollections.observableArrayList(listSinger.get(i).getStrUserName()));
+        
+        choiceboxSingers.getSelectionModel().selectedIndexProperty().addListener(
+                (obs, oldV, newV) -> {
+            try {
+                objMainFuncs.funcListScoreTable(tableviewScoreTable, listSinger.get((int) newV).getNumID());
+            } catch (SQLException ex) {
+                Logger.getLogger(ScoreTable.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        );
     }
     
     private Parent replaceSceneContent(String fxml) throws Exception {

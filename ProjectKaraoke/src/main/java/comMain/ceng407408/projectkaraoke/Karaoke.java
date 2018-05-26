@@ -18,8 +18,10 @@ import java.util.logging.Logger;
 import sun.security.util.PropertyExpander;
 import java.util.ArrayList;
 import javafx.scene.Scene;
-import comMain.ceng407408.projectkaraoke.UserInfo;
+import comMain.ceng407408.projectkaraoke.SingerInfo;
 import comMain.ceng407408.projectkaraoke.SongProperties;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
@@ -331,19 +333,19 @@ public class Karaoke {
         }
     }
 
-    public ArrayList<UserInfo> ViewSinger(int user) {
+    public ArrayList<SingerInfo> ViewSinger(int user) {
 
         PreparedStatement psmt = null;
-        ArrayList<UserInfo> listSinger = new ArrayList<UserInfo>();
+        ArrayList<SingerInfo> listSinger = new ArrayList<SingerInfo>();
         try {
             psmt = con.prepareStatement("SELECT * FROM singer WHERE UserID = ? && IsActive = ?");
             psmt.setInt(1, user);
             psmt.setInt(2, 1);
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
-                listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
+                listSinger.add(new SingerInfo(resultset.getInt("SingerID"), user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
                 while (resultset.next()) {
-                    listSinger.add(new UserInfo(user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
+                    listSinger.add(new SingerInfo(resultset.getInt("SingerID"), user, resultset.getString("SingerName"), resultset.getString("SingerSurname"), resultset.getFloat("AverageScore")));
                 }
             }
             /*else {
@@ -503,7 +505,7 @@ public class Karaoke {
     }
 
     public void funcListSinger(TableView<UserAbst> tableSingers) throws SQLException {
-        try { 
+        try {
             TableColumn<UserAbst, String> columnName = new TableColumn<>("Name");
             TableColumn<UserAbst, String> columnSurname = new TableColumn<>("Surname");
             TableColumn<UserAbst, Float> columnAverage = new TableColumn<>("Average Score");
@@ -515,12 +517,29 @@ public class Karaoke {
             columnName.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strName"));
             columnSurname.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strSurname"));
             columnAverage.setCellValueFactory(new PropertyValueFactory<UserAbst, Float>("floatAverage"));
-            
+
             tableSingers.getColumns().addAll(columnName, columnSurname, columnAverage);
         } catch (Exception exExc) {
             exExc.printStackTrace();
         }
+    }
 
+    public void funcListScoreTable(TableView<ScoreTableAbst> tableScore, final int numUserSingerID) throws SQLException {
+        try {
+            TableColumn<ScoreTableAbst, String> columnSongName = new TableColumn<>("SongName");
+            TableColumn<ScoreTableAbst, Float> columnScore = new TableColumn<>("Score");
+            TableColumn<ScoreTableAbst, String> columnDate = new TableColumn<>("Date");
+            columnSongName.setMinWidth(200);
+            columnScore.setMinWidth(200);
+            columnDate.setMinWidth(200);
+            tableScore.setItems(funcGetSingerScoreHistory(numUserSingerID));
+            columnSongName.setCellValueFactory(new PropertyValueFactory<ScoreTableAbst, String>("strSongName"));
+            columnScore.setCellValueFactory(new PropertyValueFactory<ScoreTableAbst, Float>("floatScore"));
+            columnDate.setCellValueFactory(new PropertyValueFactory<ScoreTableAbst, String>("dateScore"));
+            tableScore.getColumns().addAll(columnSongName, columnScore, columnDate);
+        } catch (Exception exExc) {
+            exExc.printStackTrace();
+        }
     }
 
     public UserPersonalInformation GetUserInformation() {
@@ -556,4 +575,21 @@ public class Karaoke {
 
     }
 
+    public ObservableList<ScoreTableAbst> funcGetSingerScoreHistory(final int numUserSingerID) throws SQLException {
+        ObservableList<ScoreTableAbst> obsListSingers = FXCollections.observableArrayList();
+        PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.song_main.SongName, karaoke.score_table.Score, karaoke.score_table.Date FROM karaoke.score_table "
+                + " JOIN karaoke.song_main ON karaoke.score_table.SongID = karaoke.song_main.SongID "
+                + " WHERE karaoke.song_main.IsActive=true && "
+                + " karaoke.score_table.UserID = ? && "
+                + " karaoke.score_table.SingerID = ?");
+        preStatement.setInt(1, UserSession.numUserId);
+        preStatement.setInt(2, numUserSingerID);
+        ResultSet resultListOfSinger = preStatement.executeQuery();
+        while (resultListOfSinger.next()) {
+            
+            //java.sql.Date test2 = new java.sql.Date(test.getTime());
+            obsListSingers.add(new ScoreTableAbst(resultListOfSinger.getString("SongName"), resultListOfSinger.getFloat("Score"), resultListOfSinger.getString("Date")));
+        }
+        return obsListSingers;
+    }
 }

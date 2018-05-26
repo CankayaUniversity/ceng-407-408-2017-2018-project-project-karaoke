@@ -47,7 +47,7 @@ public class FamilyUser implements Initializable {
         try {
             ArrayList<SongProperties> listSongs = objKaraokeFunc.funcSongList();
             for(SongProperties objSong: listSongs)
-                songNames.add(objSong.funcGetSongName());
+                songNames.add(objSong.getStrSongName());
             listViewSong.setEditable(true);
             listViewSong.setItems(songNames);
         } catch (SQLException ex) {

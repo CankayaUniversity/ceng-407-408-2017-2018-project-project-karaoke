@@ -52,6 +52,7 @@ edu/cmu/sphinx/decoder/search/WordPruningBreadthFirstSearchManager.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/HTK/GMMDiag.class
 edu/cmu/sphinx/frontend/util/StreamCepstrumSource.class
 edu/cmu/sphinx/frontend/endpoint/WienerFilter.class
+comMain/ceng407408/projectkaraoke/ScoreTableAbst.class
 edu/cmu/sphinx/frontend/GainControlProcessor.class
 edu/cmu/sphinx/linguist/acoustic/tiedstate/Pool$Feature.class
 edu/cmu/sphinx/linguist/dflat/OutOfGrammarGraph$OogSearchState.class
@@ -248,7 +249,6 @@ edu/cmu/sphinx/tools/batch/BatchModeRecognizer$12.class
 edu/cmu/sphinx/linguist/dictionary/WordClassification.class
 edu/cmu/sphinx/tools/audio/AudioTool$2.class
 edu/cmu/sphinx/frontend/feature/LiveCMN.class
-comMain/ceng407408/projectkaraoke/UserInfo.class
 edu/cmu/sphinx/tools/gui/writer/GUIWriter.class
 edu/cmu/sphinx/linguist/dictionary/FullDictionary.class
 edu/cmu/sphinx/decoder/search/stats/WordTracker.class
@@ -500,6 +500,7 @@ edu/cmu/sphinx/frontend/databranch/DataListener.class
 edu/cmu/sphinx/util/Timer.class
 edu/cmu/sphinx/util/props/PropertyType$3.class
 edu/cmu/sphinx/linguist/lextree/Node.class
+comMain/ceng407408/projectkaraoke/SingerInfo.class
 edu/cmu/sphinx/util/HypothesisFile.class
 edu/cmu/sphinx/result/LatticeOptimizer.class
 edu/cmu/sphinx/util/props/ConfigurationManagerUtils$1.class

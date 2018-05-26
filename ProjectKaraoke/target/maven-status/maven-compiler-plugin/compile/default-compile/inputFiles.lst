@@ -1,7 +1,6 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/ngram/NetworkLanguageModel.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/GapInsertionDetector.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/WordSequence.java
-/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/UserInfo.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/flat/FlatLinguist.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/tools/feature/FeatureFileDumper.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/TimerPool.java
@@ -10,6 +9,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/flat/SentenceHMMStateArc.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/decoder/search/SortingActiveListFactory.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/SocketCommandInterpreter.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/ScoreTableAbst.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/language/ngram/large/NMaxGramBuffer.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/flat/SentenceHMMStateVisitor.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/util/props/ConfigurationChangeListener.java
@@ -290,6 +290,7 @@
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/DataStartSignal.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/frontend/util/VUMeterMonitor.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/tools/gui/GUIMediator.java
+/home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/comMain/ceng407408/projectkaraoke/SingerInfo.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/flat/AlternativeState.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/jsgf/rule/JSGFRuleSequence.java
 /home/mehmetali/ceng-407-408-project-project-karaoke/ProjectKaraoke/src/main/java/sphinx4/edu/cmu/sphinx/linguist/util/LRUCache.java

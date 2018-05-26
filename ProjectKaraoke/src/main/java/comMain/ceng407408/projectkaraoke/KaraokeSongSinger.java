@@ -61,10 +61,10 @@ public class KaraokeSongSinger implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Karaoke objMainFunc = new Karaoke();
-        ArrayList<UserInfo> arrListSinger = objMainFunc.ViewSinger(UserSession.numUserId);
+        ArrayList<SingerInfo> arrListSinger = objMainFunc.ViewSinger(UserSession.numUserId);
         ArrayList<String> arrListSongs = objMainFunc.ViewSongList();
         for(int i = 0; i < arrListSinger.size(); i++)
-            choiceboxSingers.getItems().add(FXCollections.observableArrayList(arrListSinger.get(i).funcGetUserName()));
+            choiceboxSingers.getItems().add(FXCollections.observableArrayList(arrListSinger.get(i).getStrUserName()));
         for(int i = 0; i < arrListSongs.size(); i++)
             choiceboxSongs.getItems().add(FXCollections.observableArrayList(arrListSongs.get(i)));
     }

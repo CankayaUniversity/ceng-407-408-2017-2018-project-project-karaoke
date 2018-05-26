@@ -25,7 +25,7 @@ public class SongProperties {
         strLyric = strLyric_;
     }
     
-    public int funcGetSongID() { return numSongID; }
-    public String funcGetSongName() { return strSongName; }
-    public String funcGetLyric() { return strLyric; }
+    public int getNumSongID() { return numSongID; }
+    public String getStrSongName() { return strSongName; }
+    public String getStrLyric() { return strLyric; }
 }

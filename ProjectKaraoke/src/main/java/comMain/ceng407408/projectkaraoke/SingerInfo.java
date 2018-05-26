@@ -8,26 +8,29 @@ package comMain.ceng407408.projectkaraoke;
  *
  * @author mehmetali
  */
-public class UserInfo {
+public class SingerInfo {
     private int numUserType;
+    private int numID;
     private String strUserName;
     private String strUserPassword;
     private float floatAvrScore;
     
-    UserInfo(){
-        numUserType = 0;
+    SingerInfo(){
+        numUserType = numID = 0;
         floatAvrScore = 0;
         strUserName = strUserPassword = "";
     }
     
-    UserInfo(final int numUserType_, final String strUserName_, final String strUserPassword_, final float floatAvrScore_){
+    SingerInfo(final int numID_, final int numUserType_, final String strUserName_, final String strUserPassword_, final float floatAvrScore_){
+        numID = numID_;
         numUserType = numUserType_;
         strUserName = strUserName_;
         floatAvrScore = floatAvrScore_;
         strUserPassword = strUserPassword_;
     }
     
-    public int funcGetUserType(){ return numUserType; }
-    public String funcGetUserName() { return strUserName; }
-    public float funcGetAvrScore() { return floatAvrScore; }
+    public int getNumID(){ return numID; }
+    public int getNumUserType(){ return numUserType; }
+    public String getStrUserName() { return strUserName; }
+    public float getFloatAvrScore() { return floatAvrScore; }
 }
