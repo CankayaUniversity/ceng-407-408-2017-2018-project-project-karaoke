@@ -34,6 +34,8 @@ import static comMain.ceng407408.projectkaraoke.CreateAccount.stage;
 //import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -65,6 +67,9 @@ public class AddSong implements Initializable{
     @FXML public  Button addSongGUI = new Button();
     @FXML public  Button ppageGUI = new Button();
     @FXML public  Label messageGUI = new Label();
+    @FXML public  Button musicBtn = new Button();
+    @FXML public  Label pathmessageGUI = new Label();
+    String path="";
     
      @FXML
     public void ppageBtn()
@@ -74,6 +79,25 @@ public class AddSong implements Initializable{
             } catch (Exception e) {
                 e.printStackTrace();
             }
+    } 
+     @FXML
+     public void pathBtn()
+    {
+        
+         FileChooser fc = new FileChooser();
+        // fc.setInitialDirectory(); bu kodda path verirsek direk ordan açılıyor 
+         fc.getExtensionFilters().addAll(
+                 new ExtensionFilter("WAV files","*.wav"));
+        
+         File selectedfile=fc.showOpenDialog(null);
+         if(selectedfile!=null)
+         {
+             path=selectedfile.getAbsolutePath();
+         }
+         else {
+           pathmessageGUI.setText("File Cannot Selected!!");
+           pathmessageGUI.setVisible(true);
+         }
     } 
      @FXML
     public void addSongBtn()
@@ -87,7 +111,8 @@ public class AddSong implements Initializable{
         SongName = songNameGUI.getText();
         Lyric = lyricsGUI.getText();
         
-        int result = db.AddSong(SongName,Lyric);
+        
+        int result = db.AddSong(SongName,Lyric,path);
 
         if(result==1)
         {       

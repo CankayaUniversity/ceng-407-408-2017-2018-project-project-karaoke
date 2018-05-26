@@ -167,17 +167,18 @@ public class Karaoke {
         return returnresult;
     }
 
-    public int AddSong(String songname, String lyric) {
+    public int AddSong(String songname, String lyric, String path) {
 
         PreparedStatement psmt = null;
         int returnresult = 100;
 
         int ID = 0;
         try {
-            psmt = con.prepareStatement("INSERT INTO song_main (SongName, Lyric, IsActive) VALUES (?,?,?)");
+            psmt = con.prepareStatement("INSERT INTO song_main (SongName, Lyric, IsActive,SongPath) VALUES (?,?,?,?)");
             psmt.setString(1, songname);
             psmt.setString(2, lyric);
             psmt.setInt(3, 1);
+            psmt.setString(4, path);
             int result = psmt.executeUpdate();
             if (result != 0) {
                 returnresult = 1;

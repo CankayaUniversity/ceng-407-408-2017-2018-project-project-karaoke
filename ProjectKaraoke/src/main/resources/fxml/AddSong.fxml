@@ -8,12 +8,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddSong">
   <children>
-    <Label layoutX="52.0" layoutY="82.0" text="Song Name:" />
-    <Label layoutX="51.0" layoutY="124.0" text="Song Lyrics:" />
-    <TextField fx:id="songNameGUI" layoutX="141.0" layoutY="77.0" />
-    <Button fx:id="ppageGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppageBtn" text="Previous Page" />
-    <TextArea fx:id="lyricsGUI" layoutX="141.0" layoutY="124.0" prefWidth="200.0" wrapText="true" />
-    <Button fx:id="addSongGUI" layoutX="213.0" layoutY="300.0" mnemonicParsing="false" onAction="#addSongBtn" text="ADD SONG" />
-    <Label fx:id="messageGUI" layoutX="241.0" layoutY="339.0" text="" />
+    <Label layoutX="51.0" layoutY="54.0" text="Song Name:" />
+    <Label layoutX="51.0" layoutY="89.0" text="Song Lyrics:" />
+    <TextField fx:id="songNameGUI" layoutX="141.0" layoutY="51.0" />
+    <Button fx:id="ppageGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppageBtn" text="Back" />
+    <TextArea fx:id="lyricsGUI" layoutX="141.0" layoutY="89.0" prefWidth="200.0" wrapText="true" />
+    <Button fx:id="addSongGUI" layoutX="213.0" layoutY="300.0" mnemonicParsing="false" onAction="#addSongBtn" text="Add Song" />
+    <Label fx:id="messageGUI" layoutX="136.0" layoutY="339.0" prefWidth="210.0" text="" />
+    <Label layoutX="51.0" layoutY="267.0" text="Choose Music:" />
+    <Button fx:id="musicBtn" layoutX="149.0" layoutY="265.0" mnemonicParsing="false" onAction="#pathBtn" text="..." />
+    <Label fx:id="pathmessageGUI" layoutX="207.0" layoutY="267.0" prefWidth="134.0" text="" textFill="RED" visible="false" />
   </children>
 </Pane>
