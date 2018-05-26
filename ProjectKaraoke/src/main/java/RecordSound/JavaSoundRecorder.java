@@ -17,7 +17,7 @@ import java.io.*;
  */
 public class JavaSoundRecorder {
 	// record duration, in milliseconds
-	static final long RECORD_TIME = 10000;	// 10 seconds
+	static long RECORD_TIME = 10000;	// 10 seconds
 	// path of the wav file
 	File wavFile = new File("/Users/sevtap/Downloads/Project2/srcbeta/sphinx4-1.0beta6/src/edu/cmu/sphinx/demo/transcriber/RecordAudio.wav");
 
@@ -39,9 +39,11 @@ public class JavaSoundRecorder {
 		AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
 		return format;
 	}
-        public long GetrecordTime()
-        {
+        public long GetrecordTime(){
             return RECORD_TIME;
+        }
+        public void SetrecordTime(final long RCORD_TIME){
+            RECORD_TIME = RCORD_TIME;
         }
 	/**
 	 * Captures the sound and record into a WAV file

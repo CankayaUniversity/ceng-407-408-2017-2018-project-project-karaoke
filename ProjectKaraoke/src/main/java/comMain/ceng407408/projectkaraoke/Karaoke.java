@@ -634,4 +634,20 @@ public class Karaoke {
         ResultSet resultSongName = preStatement.executeQuery();
         return resultSongName.getString("SongName");
     }
+    
+    public String funcGetLyric(final int numSongID) throws SQLException{
+         PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.song_main.Lyric FROM karaoke.song_main "
+                + " WHERE karaoke.song_main.SongID = ?;");
+        preStatement.setInt(1, numSongID);
+        ResultSet resultLyric = preStatement.executeQuery();
+        return resultLyric.getString("Lyric");
+    }
+    
+    public long funcGetTime(final int numSongID) throws SQLException{
+        PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.song_main.SongTime FROM karaoke.song_main "
+                + " WHERE karaoke.song_main.SongID = ?;");
+        preStatement.setInt(1, numSongID);
+        ResultSet resultLyric = preStatement.executeQuery();
+        return resultLyric.getLong("SongTime");
+    } 
 }

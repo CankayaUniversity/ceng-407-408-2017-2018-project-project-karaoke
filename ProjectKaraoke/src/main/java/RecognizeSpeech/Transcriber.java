@@ -18,15 +18,15 @@ import java.text.DecimalFormat;
 public class Transcriber {
 
 
-    public ScoreAbst funcRecognize(String strOriginalLyric) throws IOException, UnsupportedAudioFileException, InterruptedException {
+    public ScoreAbst funcRecognize(final String strOriginalLyric, final long longRecordTime) throws IOException, UnsupportedAudioFileException, InterruptedException {
         URL audioURL;
         ScoreAbst finalScore = new ScoreAbst();
         JavaSoundRecorder soundRecord = new JavaSoundRecorder();
         TestEvaluation evaluationResult =  new TestEvaluation();
         
-        long RecordTime = soundRecord.GetrecordTime();
+        soundRecord.SetrecordTime(longRecordTime);
         soundRecord.startCapture();
-        Thread.sleep(RecordTime + 10);
+        Thread.sleep(soundRecord.GetrecordTime() + 10);
         
         //Way of getting resource may change
         audioURL = Transcriber.class.getResource("RecordAudio.wav");
