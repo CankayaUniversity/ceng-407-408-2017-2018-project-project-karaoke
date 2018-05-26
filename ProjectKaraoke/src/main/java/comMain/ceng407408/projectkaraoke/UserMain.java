@@ -57,12 +57,13 @@ public class UserMain implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
+    public void initialize(URL location, ResourceBundle resources) {           
+            
+            try {
             objMainFunc.funcListSinger(tableviewListOfSingers);
-        } catch (SQLException ex) {
+            } catch (SQLException ex) {
             Logger.getLogger(UserMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            }
     }    
     
     private Parent replaceSceneContent(String fxml) throws Exception {

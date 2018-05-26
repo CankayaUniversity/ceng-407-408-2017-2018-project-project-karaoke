@@ -176,6 +176,7 @@ edu/cmu/sphinx/decoder/search/SortingActiveListFactory.class
 edu/cmu/sphinx/linguist/lextree/HMMTree$EntryPoint.class
 edu/cmu/sphinx/frontend/FloatData.class
 edu/cmu/sphinx/tools/batch/BatchModeRecognizer$10.class
+comMain/ceng407408/projectkaraoke/UserPersonalInformation.class
 edu/cmu/sphinx/linguist/lextree/LexTreeLinguist$LexTreeEndWordState.class
 edu/cmu/sphinx/jsgf/JSGFRuleGrammarFactory.class
 edu/cmu/sphinx/tools/audio/AudioTool$10.class
@@ -481,6 +482,7 @@ edu/cmu/sphinx/jsgf/rule/JSGFRuleCount.class
 edu/cmu/sphinx/jsgf/parser/JSGFParserTokenManager.class
 edu/cmu/sphinx/util/SocketCommandClient$2.class
 edu/cmu/sphinx/frontend/frequencywarp/PLPFrequencyFilterBank.class
+comMain/ceng407408/projectkaraoke/UpdatePersonalInformation.class
 edu/cmu/sphinx/decoder/search/SearchManager.class
 edu/cmu/sphinx/tools/audio/Downsampler.class
 edu/cmu/sphinx/util/props/PropertyType$4.class

@@ -33,23 +33,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
-class UserAbst {
-
-    public final String strName;
-    public final String strSurname;
-    public final String strAverage;
-
-    UserAbst() {
-        strName = strSurname = strAverage = "";
-    }
-
-    UserAbst(final String strName_, final String strSurname_, final float floatAverage_) {
-        this.strName = strName_;
-        this.strSurname = strSurname_;
-        this.strAverage = Float.toString(floatAverage_);
-    }
-}
-
 public class Karaoke {
 
     /**
@@ -503,62 +486,54 @@ public class Karaoke {
         return listOfSongs;
     }
 
+    private ObservableList<UserAbst> funcGetList() throws SQLException {
+        ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList();
+        PreparedStatement preStatement = con.prepareStatement("SELECT singer.SingerName, singer.SingerSurname, singer.AverageScore FROM singer "
+                + " JOIN user_types ON user_types.UserID = singer.UserID "
+                + " WHERE singer.IsActive = TRUE && "
+                + " user_types.IsActive = TRUE && "
+                + " user_types.UserID = ?");
+        preStatement.setInt(1, UserSession.numUserId);
+        ResultSet resultListOfSinger = preStatement.executeQuery();
+        while (resultListOfSinger.next()) {
+            obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
+        }
+
+        return obsListSingers;
+    }
+
     public void funcListSinger(TableView<UserAbst> tableSingers) throws SQLException {
-        try {
-            PreparedStatement preStatement = con.prepareStatement("SELECT singer.SingerName, singer.SingerSurname, singer.AverageScore FROM singer "
-                    + " JOIN user_types ON user_types.UserID = singer.UserID "
-                    + " WHERE singer.IsActive = TRUE && "
-                    + " user_types.IsActive = TRUE && "
-                    + " user_types.UserID = ?");
-            preStatement.setInt(1, UserSession.numUserId);
-            ResultSet resultListOfSinger = preStatement.executeQuery();
-
-            List<UserAbst> arrUserAbst = new ArrayList<>();
-            //if (resultListOfSinger.next()) {
-            //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-            while (resultListOfSinger.next()) {
-                //obsListSingers.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                arrUserAbst.add(new UserAbst(resultListOfSinger.getString("SingerName"), resultListOfSinger.getString("SingerSurname"), resultListOfSinger.getFloat("AverageScore")));
-                System.out.println(resultListOfSinger.getString("SingerName") + resultListOfSinger.getString("SingerSurname") + resultListOfSinger.getFloat("AverageScore"));
-            }
-            //}
-            ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList(arrUserAbst);
-            //tableSingers.setEditable(true);
-            for (int i = 0; i < obsListSingers.size(); i++) {
-                System.out.println(obsListSingers.get(i).strName);
-            }
-
-            TableColumn<UserAbst, String> columnName = new TableColumn<UserAbst, String>("Name");
-            TableColumn<UserAbst, String> columnSurname = new TableColumn<UserAbst, String>("Surname");
-            TableColumn<UserAbst, String> columnAverage = new TableColumn<UserAbst, String>("Average Score");
+        try { 
+            TableColumn<UserAbst, String> columnName = new TableColumn<>("Name");
+            TableColumn<UserAbst, String> columnSurname = new TableColumn<>("Surname");
+            TableColumn<UserAbst, Float> columnAverage = new TableColumn<>("Average Score");
 
             columnName.setMinWidth(200);
             columnSurname.setMinWidth(200);
             columnAverage.setMinWidth(150);
-
+            tableSingers.setItems(funcGetList());
             columnName.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strName"));
             columnSurname.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strSurname"));
-            columnAverage.setCellValueFactory(new PropertyValueFactory<UserAbst, String>("strAverage"));
-            tableSingers.setItems(obsListSingers);
+            columnAverage.setCellValueFactory(new PropertyValueFactory<UserAbst, Float>("floatAverage"));
+            
             tableSingers.getColumns().addAll(columnName, columnSurname, columnAverage);
         } catch (Exception exExc) {
             exExc.printStackTrace();
         }
-        
+
     }
 
-    public UserPersonalInformation GetUserInformation(){
+    public UserPersonalInformation GetUserInformation() {
 
         PreparedStatement psmt = null;
-        String name="";
-        String surname="";
-        String mail="";
+        String name = "";
+        String surname = "";
+        String mail = "";
         int password = 0;
-        
-    
+
         try {
             psmt = con.prepareStatement("SELECT * FROM user_types WHERE UserID = ?");
-            psmt.setInt(1, );
+            psmt.setInt(1, UserSession.numUserId);
 
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
@@ -577,9 +552,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
-      return new UserPersonalInformation(name,surname,mail,password);
-
-   
+        return new UserPersonalInformation(name, surname, mail, password);
 
     }
 
