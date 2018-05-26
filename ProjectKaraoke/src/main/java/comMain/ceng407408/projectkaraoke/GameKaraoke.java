@@ -12,6 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import RecognizeSpeech.Transcriber;
+import UserStatic.KaraokeCache;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.Button;
 
 /**
  *
@@ -19,9 +24,25 @@ import RecognizeSpeech.Transcriber;
  */
 public class GameKaraoke implements Initializable {
     @FXML Label labelLyrics = new Label();
+    @FXML Label labelSingerName = new Label();
+    @FXML Label labelSongName = new Label();
+    @FXML Button buttonStart = new Button();
+    private final Karaoke objMainFunc = new Karaoke();
+    
+    @FXML
+    private void funcStartKaraoke(){
+        
+    }
     
     @Override
-    public void initialize(URL location, ResourceBundle resources) {}
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            labelSingerName.setText(objMainFunc.funcGetSingerName(KaraokeCache.numSingerID));
+            labelSongName.setText(objMainFunc.funcGetSongName(KaraokeCache.numSongID));
+        } catch (SQLException ex) {
+            Logger.getLogger(GameKaraoke.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     private static void main(String[] args){
         launch(args);

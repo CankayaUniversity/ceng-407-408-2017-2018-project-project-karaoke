@@ -8,7 +8,10 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.GameKaraoke">
   <children>
-    <Label fx:id="labelLyrics" layoutX="263.0" layoutY="263.0" text="---" />
-    <Pane fx:id="paneAnimation" layoutX="197.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" />
+    <Label fx:id="labelLyrics" layoutX="285.0" layoutY="284.0" text="---" textAlignment="CENTER" />
+    <Pane fx:id="paneAnimation" layoutX="61.0" layoutY="71.0" prefHeight="200.0" prefWidth="478.0" />
+    <Button fx:id="buttonStart" defaultButton="true" layoutX="185.0" layoutY="314.0" mnemonicParsing="false" onAction="#funcStartKaraoke" prefHeight="37.0" prefWidth="214.0" text="START!" />
+    <Label fx:id="labelSingerName" layoutX="61.0" layoutY="37.0" text="Label" />
+    <Label fx:id="labelSongName" layoutX="503.0" layoutY="37.0" text="Label" textAlignment="RIGHT" />
   </children>
 </AnchorPane>

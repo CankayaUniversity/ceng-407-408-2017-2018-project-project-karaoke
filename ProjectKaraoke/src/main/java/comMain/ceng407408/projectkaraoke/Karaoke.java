@@ -103,30 +103,31 @@ public class Karaoke {
         }
         return result;
     }
-    
-    private ObservableList<DeleteUserAbst> funcGetAllUsers() throws SQLException{
+
+    private ObservableList<DeleteUserAbst> funcGetAllUsers() throws SQLException {
         ObservableList<DeleteUserAbst> listOfUsers = FXCollections.observableArrayList();
         PreparedStatement psmt = con.prepareStatement("SELECT UserID, Name, Mail FROM user_types WHERE IsActive = true");
-        ResultSet resultset = psmt.executeQuery(); 
-        while(resultset.next())
+        ResultSet resultset = psmt.executeQuery();
+        while (resultset.next()) {
             listOfUsers.add(new DeleteUserAbst(resultset.getInt("UserID"), resultset.getString("Mail"), resultset.getString("Name")));
+        }
         return listOfUsers;
     }
-    
-    public void funcListAllUsers(TableView<DeleteUserAbst> tableUsers) throws SQLException{
+
+    public void funcListAllUsers(TableView<DeleteUserAbst> tableUsers) throws SQLException {
         TableColumn<DeleteUserAbst, String> columnUserID = new TableColumn<>("ID");
-            TableColumn<DeleteUserAbst, String> columnName = new TableColumn<>("Name");
-            TableColumn<DeleteUserAbst, String> columnMail = new TableColumn<>("Mail");
-            columnUserID.setMinWidth(200);
-            columnName.setMinWidth(200);
-            columnMail.setMinWidth(200);
-            tableUsers.setItems(funcGetAllUsers());
-            columnUserID.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("numID"));
-            columnName.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strName"));
-            columnMail.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strMail"));
-            tableUsers.getColumns().addAll(columnUserID, columnName, columnMail);
+        TableColumn<DeleteUserAbst, String> columnName = new TableColumn<>("Name");
+        TableColumn<DeleteUserAbst, String> columnMail = new TableColumn<>("Mail");
+        columnUserID.setMinWidth(200);
+        columnName.setMinWidth(200);
+        columnMail.setMinWidth(200);
+        tableUsers.setItems(funcGetAllUsers());
+        columnUserID.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("numID"));
+        columnName.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strName"));
+        columnMail.setCellValueFactory(new PropertyValueFactory<DeleteUserAbst, String>("strMail"));
+        tableUsers.getColumns().addAll(columnUserID, columnName, columnMail);
     }
-    
+
     public int DeleteUser(String mail) {
 
         int flag = 1;
@@ -286,10 +287,10 @@ public class Karaoke {
         return returnresult;
     }
 
-    public ArrayList<String> ViewSongList() {
+    public ArrayList<SongProperties> ViewSongList() {
 
         PreparedStatement psmt = null;
-        ArrayList<String> arrSongs = new ArrayList<String>();
+        ArrayList<SongProperties> arrSongs = new ArrayList<SongProperties>();
 
         try {
 
@@ -297,11 +298,10 @@ public class Karaoke {
             psmt.setInt(1, 1);
             ResultSet resultset = psmt.executeQuery();
             if (resultset.next()) {
-                System.out.println(resultset.getString("SongName"));
-                arrSongs.add(resultset.getString("SongName"));
+                arrSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
                 while (resultset.next()) {
                     System.out.println(resultset.getString("SongName"));
-                    arrSongs.add(resultset.getString("SongName"));
+                    arrSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
                 }
             } else {
                 System.out.println("There Is No Song In Database!");
@@ -610,10 +610,28 @@ public class Karaoke {
         preStatement.setInt(2, numUserSingerID);
         ResultSet resultListOfSinger = preStatement.executeQuery();
         while (resultListOfSinger.next()) {
-            
+
             //java.sql.Date test2 = new java.sql.Date(test.getTime());
             obsListSingers.add(new ScoreTableAbst(resultListOfSinger.getString("SongName"), resultListOfSinger.getFloat("Score"), resultListOfSinger.getString("Date")));
         }
         return obsListSingers;
+    }
+
+    public String funcGetSingerName(final int numSingerID) throws SQLException {
+        PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.singer.SingerName, karaoke.singer.SingerSurname FROM karaoke.singer "
+                + " WHERE karaoke.singer.UserID = ? && "
+                + " karaoke.singer.SingerID = ?;");
+        preStatement.setInt(1, UserSession.numUserId);
+        preStatement.setInt(2, numSingerID);
+        ResultSet resultSingerName = preStatement.executeQuery();
+        return resultSingerName.getString("SingerName") + " " + resultSingerName.getString("SingerSurname");
+    }
+
+    public String funcGetSongName(final int numSongID) throws SQLException {
+        PreparedStatement preStatement = con.prepareStatement("SELECT karaoke.song_main.SongName FROM karaoke.song_main "
+                + " WHERE karaoke.song_main.SongID = ?;");
+        preStatement.setInt(1, numSongID);
+        ResultSet resultSongName = preStatement.executeQuery();
+        return resultSongName.getString("SongName");
     }
 }
