@@ -82,7 +82,7 @@ public class AdminMain implements Initializable{
     public void deleteSongBtn()
     {
           try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
+                replaceSceneContent("/fxml/DeleteSong.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -287,7 +287,6 @@ public class Karaoke {
     }
 
     public ArrayList<SongProperties> ViewSongList() {
-
         PreparedStatement psmt = null;
         ArrayList<SongProperties> arrSongs = new ArrayList<SongProperties>();
 
@@ -315,18 +314,61 @@ public class Karaoke {
         }
         return arrSongs;
     }
+    
+    
+    private ObservableList<SongProperties> funcGetSongs() {
+        PreparedStatement psmt = null;
+        ObservableList<SongProperties> arrSongs = FXCollections.observableArrayList();
 
-    private void DeleteSong() {
+        try {
+
+            psmt = con.prepareStatement("SELECT * FROM song_main WHERE IsActive = ?");
+            psmt.setInt(1, 1);
+            ResultSet resultset = psmt.executeQuery();
+            if (resultset.next()) {
+                arrSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
+                while (resultset.next()) {
+                    System.out.println(resultset.getString("SongName"));
+                    arrSongs.add(new SongProperties(resultset.getInt("SongID"), resultset.getString("SongName"), resultset.getString("Lyric")));
+                }
+            } else {
+                System.out.println("There Is No Song In Database!");
+            }
+
+            psmt.close();
+            resultset.close();
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+
+        }
+        return arrSongs;
+    }
+    
+    public void funcListSong(TableView<SongProperties> tableSongs){
+        try{
+            TableColumn<SongProperties, Integer> columnID = new TableColumn<>("Name");
+            TableColumn<SongProperties, String> columnName = new TableColumn<>("Surname");
+
+            columnID.setMinWidth(200);
+            columnName.setMinWidth(200);
+            tableSongs.setItems(funcGetSongs());
+            columnID.setCellValueFactory(new PropertyValueFactory<SongProperties, Integer>("numSongID"));
+            columnName.setCellValueFactory(new PropertyValueFactory<SongProperties, String>("strSongName"));
+            
+
+            tableSongs.getColumns().addAll(columnID, columnName);
+        }catch(Exception exExc){
+        }
+    }
+
+    public int DeleteSong(int numSongID) {
 
         int flag = 1;
         PreparedStatement psmt = null;
-
-        System.out.println("Enter Name Of Song That You Want To Delete:");
-        String buffer = sc.nextLine();
-        String songname = sc.nextLine();
         try {
-            psmt = con.prepareStatement("SELECT IsActive FROM song_main WHERE SongName = ?");
-            psmt.setString(1, songname);
+            psmt = con.prepareStatement("SELECT IsActive FROM song_main WHERE SongID = ?");
+            psmt.setInt(1, numSongID);
             ResultSet resultset = psmt.executeQuery();
             while (resultset.next()) {
                 if (resultset.getBoolean("IsActive") == false) {
@@ -336,14 +378,14 @@ public class Karaoke {
             }
 
             if (flag != 0) {
-                psmt = con.prepareStatement("UPDATE song_main SET IsActive = ? WHERE SongName = ?");
+                psmt = con.prepareStatement("UPDATE song_main SET IsActive = ? WHERE SongID = ?");
                 psmt.setInt(1, 0);
-                psmt.setString(2, songname);
+                psmt.setInt(2, numSongID);
                 int result = psmt.executeUpdate();
                 if (result != 0) {
                     System.out.println("Delete Song From Database Successfully! ");
                 } else {
-                    System.out.println("There Is No Song With " + songname + " Name");
+                    System.out.println("There Is No Song");
                 }
             }
             psmt.close();
@@ -354,6 +396,7 @@ public class Karaoke {
             ex.printStackTrace();
 
         }
+        return flag;
     }
 
     public ArrayList<SingerInfo> ViewSinger(int user) {
@@ -492,7 +535,7 @@ public class Karaoke {
         psmt.close();
     }
 
-    public ArrayList<SongProperties> funcSongList() throws SQLException {
+    /*public ArrayList<SongProperties> funcSongList() throws SQLException {
         ArrayList<SongProperties> listOfSongs = new ArrayList<>();
         PreparedStatement psmt = null;
         try {
@@ -509,7 +552,7 @@ public class Karaoke {
             exExc.printStackTrace();
         }
         return listOfSongs;
-    }
+    }*/
 
     private ObservableList<UserAbst> funcGetList() throws SQLException {
         ObservableList<UserAbst> obsListSingers = FXCollections.observableArrayList();
@@ -526,6 +569,8 @@ public class Karaoke {
 
         return obsListSingers;
     }
+    
+    //public void funcLis
 
     public void funcListSinger(TableView<UserAbst> tableSingers) throws SQLException {
         try {
