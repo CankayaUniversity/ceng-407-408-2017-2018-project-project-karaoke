@@ -73,7 +73,7 @@ public class AdminMain implements Initializable{
     {
         
          try {
-                replaceSceneContent("/fxml/AddSong.fxml", 400, 600);
+                replaceSceneContent("/fxml/AddSong.fxml", 600, 400);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +84,7 @@ public class AdminMain implements Initializable{
         
          try {
                 UserSession.numUserId=-1;
-                replaceSceneContent("/fxml/Login.fxml", 350, 500);
+                replaceSceneContent("/fxml/Login.fxml", 500, 350);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -94,7 +94,7 @@ public class AdminMain implements Initializable{
     public void deleteSongBtn()
     {
           try {
-                replaceSceneContent("/fxml/DeleteSong.fxml", 365, 533);
+                replaceSceneContent("/fxml/DeleteSong.fxml", 533, 365);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -103,7 +103,7 @@ public class AdminMain implements Initializable{
      public void createUserBtn()
     {
           try {
-                replaceSceneContent("/fxml/AdminCreateAccount.fxml", 400, 600);
+                replaceSceneContent("/fxml/AdminCreateAccount.fxml", 600, 400);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -112,7 +112,7 @@ public class AdminMain implements Initializable{
     public void deleteUserBtn()
     {
           try {
-                replaceSceneContent("/fxml/DeleteUser.fxml", 339 ,463);
+                replaceSceneContent("/fxml/DeleteUser.fxml", 463, 339);
             } catch (Exception e) {
                 e.printStackTrace();
             }

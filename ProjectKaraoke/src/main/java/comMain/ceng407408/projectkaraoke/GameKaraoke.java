@@ -134,7 +134,7 @@ public class GameKaraoke implements Initializable {
             alert.setContentText("Something gone wrong!");
             alert.showAndWait();
         }
-        replaceSceneContent("/fxml/UserMain.fxml", 471, 600);
+        replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
     }
 
     @Override

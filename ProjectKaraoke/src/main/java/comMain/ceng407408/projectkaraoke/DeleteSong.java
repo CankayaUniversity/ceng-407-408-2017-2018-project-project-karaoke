@@ -75,7 +75,7 @@ public class DeleteSong implements Initializable {
 
     @FXML
     public void funcBack() throws Exception {
-        replaceSceneContent("/fxml/AdminMainPage.fxml", 316, 631);
+        replaceSceneContent("/fxml/AdminMainPage.fxml", 631, 316);
     }
 
     @Override

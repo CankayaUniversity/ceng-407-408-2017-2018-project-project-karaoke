@@ -171,7 +171,7 @@ public class UpdatePersonalInformation implements Initializable{
      public void backBtn(){
   
          try {
-                replaceSceneContent("/fxml/UserMain.fxml", 471, 600);
+                replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
             } catch (Exception e) {
                 e.printStackTrace();
             }

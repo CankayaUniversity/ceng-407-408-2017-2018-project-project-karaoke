@@ -40,7 +40,7 @@ public class AddStudent implements Initializable {
     
     @FXML
     private void backBtn() throws Exception{
-        replaceSceneContent("/fxml/UserMain.fxml", 471, 600);
+        replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
     }
     
     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {

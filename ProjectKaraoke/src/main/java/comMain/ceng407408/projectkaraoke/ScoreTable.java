@@ -83,7 +83,7 @@ public class ScoreTable implements Initializable {
     
     @FXML
     private void funcCancel() throws Exception{
-        replaceSceneContent("/fxml/UserMain.fxml", 471, 600);
+        replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
     }
     
     public static void main(String[] args){

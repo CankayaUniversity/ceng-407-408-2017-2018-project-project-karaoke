@@ -121,7 +121,7 @@ public class DeleteUser implements Initializable {
     @FXML
     public void logoutBtn() {
         try {
-            replaceSceneContent("/fxml/Login.fxml", 350, 500);
+            replaceSceneContent("/fxml/Login.fxml", 500, 350);
         } catch (Exception e) {
             e.printStackTrace();
         }

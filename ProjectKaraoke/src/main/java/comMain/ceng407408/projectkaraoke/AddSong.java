@@ -83,7 +83,7 @@ public class AddSong implements Initializable {
     @FXML
     public void ppageBtn() {
         try {
-            replaceSceneContent("/fxml/AdminMainPage.fxml", 316, 631);
+            replaceSceneContent("/fxml/AdminMainPage.fxml", 631, 316);
         } catch (Exception e) {
             e.printStackTrace();
         }

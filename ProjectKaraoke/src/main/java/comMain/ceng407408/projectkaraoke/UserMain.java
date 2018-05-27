@@ -52,28 +52,28 @@ public class UserMain implements Initializable {
 
     @FXML
     public void funcScoreTable() throws SQLException, Exception {
-        replaceSceneContent("/fxml/ScoreTable.fxml", 400, 600);
+        replaceSceneContent("/fxml/ScoreTable.fxml", 600, 400);
     }
 
     @FXML
     public void funcAddStudent() throws Exception {
-        replaceSceneContent("/fxml/AddStudent.fxml", 400, 600);
+        replaceSceneContent("/fxml/AddStudent.fxml", 600, 400);
     }
 
     @FXML
     public void funcStartKaroke() throws Exception {
-        replaceSceneContent("/fxml/KaraokeSongSinger.fxml", 226, 311);
+        replaceSceneContent("/fxml/KaraokeSongSinger.fxml", 311, 226);
     }
 
     @FXML
     public void updateBtn() throws Exception {
-        replaceSceneContent("/fxml/UpdatePersonalInformation.fxml", 400, 600);
+        replaceSceneContent("/fxml/UpdatePersonalInformation.fxml", 600, 400);
     }
 
     @FXML
     public void logoutBtn() throws Exception {
         UserSession.numUserId = -1;
-        replaceSceneContent("/fxml/Login.fxml", 350, 500);
+        replaceSceneContent("/fxml/Login.fxml", 500, 350);
     }
 
     @Override

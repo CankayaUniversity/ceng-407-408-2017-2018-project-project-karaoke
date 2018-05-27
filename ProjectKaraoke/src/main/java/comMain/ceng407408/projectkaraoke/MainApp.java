@@ -75,7 +75,7 @@ Parent root;
         //In order to block resizing the page(scene) 
         stage.setResizable(false);
         stage.show();*/
-        replaceSceneContent("/fxml/Login.fxml", 350, 500);
+        replaceSceneContent("/fxml/Login.fxml", 500, 350);
     }
 
     @FXML
@@ -98,14 +98,14 @@ Parent root;
             switch (UserSession.numUserType) {
                 case 1:
                     strPathOfScene = "/fxml/AdminMainPage.fxml";
-                    replaceSceneContent(strPathOfScene, 316, 631);
+                    replaceSceneContent(strPathOfScene, 631, 316);
                     break;
                 case 2:
                     strPathOfScene = "";
                     break;
                 case 3:
                     strPathOfScene = "/fxml/UserMain.fxml";
-                    replaceSceneContent(strPathOfScene, 471, 600);
+                    replaceSceneContent(strPathOfScene, 600, 471);
                     break;
             }
         } else if (result == 2) {
@@ -134,7 +134,7 @@ Parent root;
         //stage.getScene().setRoot(page);
         stage.setScene(page.getScene());
         stage.setResizable(false);
-        stage.setTitle("Welcome " + UserSession.strName);
+        stage.setTitle("");
         stage.show();
         return page;
     }

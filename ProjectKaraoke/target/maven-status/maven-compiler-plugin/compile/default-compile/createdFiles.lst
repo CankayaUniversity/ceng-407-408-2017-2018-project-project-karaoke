@@ -3,7 +3,6 @@ edu/cmu/sphinx/frontend/FrontEnd.class
 edu/cmu/sphinx/tools/gui/PanelConfigurable$7.class
 edu/cmu/sphinx/frontend/SignalListener.class
 comMain/ceng407408/projectkaraoke/DeleteUser.class
-comMain/ceng407408/projectkaraoke/FXMLController$1.class
 edu/cmu/sphinx/util/props/PropertyType$1.class
 edu/cmu/sphinx/instrumentation/AccuracyTracker.class
 edu/cmu/sphinx/tools/audio/FilenameDialog.class
@@ -326,7 +325,6 @@ edu/cmu/sphinx/linguist/language/grammar/ForcedAlignerGrammar.class
 edu/cmu/sphinx/linguist/language/ngram/ProbDepth.class
 edu/cmu/sphinx/linguist/flat/SentenceHMMStateArc.class
 edu/cmu/sphinx/frontend/DataProcessor.class
-comMain/ceng407408/projectkaraoke/FXMLController.class
 edu/cmu/sphinx/frontend/util/AudioFileDataSource.class
 edu/cmu/sphinx/tools/audio/SpectrogramPanel$1.class
 edu/cmu/sphinx/linguist/lextree/LexTreeLinguist$LexTreeNonEmittingHMMState.class
@@ -437,7 +435,6 @@ edu/cmu/sphinx/tools/batch/SphinxShell.class
 comMain/ceng407408/projectkaraoke/MainApp.class
 edu/cmu/sphinx/tools/batch/BatchDecoderRecognizer.class
 edu/cmu/sphinx/instrumentation/SpeedTracker.class
-comMain/ceng407408/projectkaraoke/FXMLController$2.class
 edu/cmu/sphinx/frontend/BaseDataProcessor.class
 edu/cmu/sphinx/frontend/util/ConcatFileDataSource.class
 edu/cmu/sphinx/decoder/scorer/BackgroundModelNormalizer.class
