@@ -127,7 +127,7 @@ public class DeleteUser implements Initializable {
         }
     }
 
-   private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+  private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
@@ -140,7 +140,11 @@ public class DeleteUser implements Initializable {
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();

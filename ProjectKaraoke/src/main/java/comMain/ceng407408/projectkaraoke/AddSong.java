@@ -129,9 +129,9 @@ public class AddSong implements Initializable {
 
     }
 
-    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
-
-        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+   private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
@@ -142,7 +142,11 @@ public class AddSong implements Initializable {
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();

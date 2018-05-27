@@ -27,6 +27,7 @@ import javafx.util.Duration;
 import java.io.*;
 import comMain.ceng407408.projectkaraoke.*;
 import static comMain.ceng407408.projectkaraoke.DeleteUser.stage;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 //import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
@@ -176,7 +177,7 @@ public class CreateAccount implements Initializable {
         }
     }
 
-    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+   private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
@@ -189,12 +190,15 @@ public class CreateAccount implements Initializable {
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();
         return page;
-
     }
 
     public static void main(String[] args) {

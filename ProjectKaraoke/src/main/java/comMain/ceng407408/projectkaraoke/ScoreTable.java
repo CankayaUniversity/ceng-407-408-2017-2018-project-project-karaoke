@@ -28,6 +28,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import javax.swing.event.ChangeListener;
 import static jdk.nashorn.internal.objects.NativeArray.forEach;
 
@@ -37,9 +38,12 @@ import static jdk.nashorn.internal.objects.NativeArray.forEach;
  */
 public class ScoreTable implements Initializable {
 
-    @FXML ChoiceBox choiceboxSingers = new ChoiceBox();
-    @FXML TableView<ScoreTableAbst> tableviewScoreTable = new TableView<>();
-    @FXML Button buttonCancel = new Button();
+    @FXML
+    ChoiceBox choiceboxSingers = new ChoiceBox();
+    @FXML
+    TableView<ScoreTableAbst> tableviewScoreTable = new TableView<>();
+    @FXML
+    Button buttonCancel = new Button();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,23 +51,24 @@ public class ScoreTable implements Initializable {
         ArrayList<SingerInfo> listSinger = objMainFuncs.ViewSinger(UserSession.numUserId);
 
         choiceboxSingers.getItems().removeAll();
-        for(int i = 0; i < listSinger.size(); i++)
+        for (int i = 0; i < listSinger.size(); i++) {
             choiceboxSingers.getItems().add(FXCollections.observableArrayList(listSinger.get(i).getStrUserName()));
-        
+        }
+
         choiceboxSingers.getSelectionModel().selectedIndexProperty().addListener(
                 (obs, oldV, newV) -> {
-            try {
-                objMainFuncs.funcListScoreTable(tableviewScoreTable, listSinger.get((int) newV).getNumID());
-            } catch (SQLException ex) {
-                Logger.getLogger(ScoreTable.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+                    try {
+                        objMainFuncs.funcListScoreTable(tableviewScoreTable, listSinger.get((int) newV).getNumID());
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ScoreTable.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
         );
     }
-    
+
     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
-        
-        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
@@ -74,19 +79,25 @@ public class ScoreTable implements Initializable {
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();
         return page;
     }
-    
+
     @FXML
-    private void funcCancel() throws Exception{
+    private void funcCancel() throws Exception {
         replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
+        //Stage stage = (Stage) buttonCancel.getScene().getWindow();
+        //stage.close();
     }
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         launch(args);
     }
 }

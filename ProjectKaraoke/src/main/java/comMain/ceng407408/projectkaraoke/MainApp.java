@@ -132,7 +132,11 @@ Parent root;
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();

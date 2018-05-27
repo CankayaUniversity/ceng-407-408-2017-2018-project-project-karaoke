@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
 
-<Pane disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.CreateAccount">
+<AnchorPane disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.CreateAccount">
   <children>
     <ImageView fitHeight="308.3106384277344" fitWidth="616.6212768554688" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5" y="50.0">
       <image>
@@ -27,4 +27,4 @@
     <Label fx:id="mailMessage" layoutX="373.0" layoutY="217.0" text="" textFill="RED" visible="false" />
     <Label fx:id="passwordMessage" layoutX="373.0" layoutY="248.0" text="" textFill="RED" visible="false" />
   </children>
-</Pane>
+</AnchorPane>

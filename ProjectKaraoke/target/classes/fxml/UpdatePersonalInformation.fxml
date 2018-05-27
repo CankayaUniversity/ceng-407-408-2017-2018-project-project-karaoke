@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.UpdatePersonalInformation">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.UpdatePersonalInformation">
   <children>
     <ImageView fitHeight="300.0" fitWidth="600.0" layoutX="0.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
       <image>
@@ -30,4 +30,4 @@
     <Label fx:id="passwordMessage" layoutX="387.0" layoutY="192.0" prefWidth="108.0" text="" textFill="RED" visible="false" />
     <Label fx:id="messageGUI" layoutX="199.0" layoutY="267.0" prefWidth="202.0" text="" textFill="RED" visible="false" />
   </children>
-</Pane>
+</AnchorPane>

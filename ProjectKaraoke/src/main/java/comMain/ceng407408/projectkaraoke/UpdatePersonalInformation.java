@@ -4,23 +4,12 @@
  * and open the template in the editor.
  */
 package comMain.ceng407408.projectkaraoke;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaMarkerEvent;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.*;
@@ -39,8 +28,6 @@ import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -48,53 +35,62 @@ import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
+
 /**
  *
  * @author sevtap
  */
 
-public class UpdatePersonalInformation implements Initializable{
-      public static Stage stage = new Stage();
-    @FXML public TextField nameGUI =  new TextField();
-    @FXML public TextField surnameGUI= new TextField();
-    @FXML public TextField mailGUI = new TextField();
-    @FXML public  PasswordField passwordGUI = new PasswordField();
-    @FXML public  Label messageGUI = new Label();
-    @FXML public  Button updatebtnGUI = new Button();
-    @FXML public  Button backbtnGUI = new Button();
-    @FXML public  Label nameMessage = new Label();
-    @FXML public  Label surnameMessage = new Label();
-    @FXML public  Label mailMessage = new Label();
-    @FXML public  Label passwordMessage = new Label();
-    
+public class UpdatePersonalInformation implements Initializable {
+
+    public static Stage stage = new Stage();
+    @FXML
+    public TextField nameGUI = new TextField();
+    @FXML
+    public TextField surnameGUI = new TextField();
+    @FXML
+    public TextField mailGUI = new TextField();
+    @FXML
+    public PasswordField passwordGUI = new PasswordField();
+    @FXML
+    public Label messageGUI = new Label();
+    @FXML
+    public Button updatebtnGUI = new Button();
+    @FXML
+    public Button backbtnGUI = new Button();
+    @FXML
+    public Label nameMessage = new Label();
+    @FXML
+    public Label surnameMessage = new Label();
+    @FXML
+    public Label mailMessage = new Label();
+    @FXML
+    public Label passwordMessage = new Label();
+
     @Override
-    
-     public void initialize(URL location, ResourceBundle resources){
-         
+
+    public void initialize(URL location, ResourceBundle resources) {
+
         Karaoke db = new Karaoke();
-        
+
         UserPersonalInformation result;
-     
+
         String Password = "";
         int passwordnumeric = 0;
 
-        result=db.GetUserInformation();
+        result = db.GetUserInformation();
         nameGUI.setText(result.GetName());
         surnameGUI.setText(result.GetSurname());
         mailGUI.setText(result.GetMail());
         passwordnumeric = result.GetPassword();
         passwordGUI.setText(Password.valueOf(passwordnumeric));
-       
-}
-     
-  
- 
-             
+
+    }
+
     @FXML
-    public void updateBtn()
-    {
+    public void updateBtn() {
         Karaoke db = new Karaoke();
-        
+
         String Name = "";
         String Surname = "";
         String Mail = "";
@@ -107,77 +103,64 @@ public class UpdatePersonalInformation implements Initializable{
         Password = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(Password);
 
-        if(nameGUI.getText().isEmpty()== true) {
+        if (nameGUI.getText().isEmpty() == true) {
             nameMessage.setVisible(true);
             nameMessage.setText("Please Enter Name!");
-        }
-        else
-        {
+        } else {
             nameMessage.setVisible(false);
 
         }
-        
-        if(surnameGUI.getText().isEmpty()==true) {
-            
+
+        if (surnameGUI.getText().isEmpty() == true) {
+
             surnameMessage.setVisible(true);
             surnameMessage.setText("Please Enter Surname!");
-            
-        }
-        else
-        {
+
+        } else {
             surnameMessage.setVisible(false);
 
         }
-        if(mailGUI.getText().isEmpty() == true) {
-           
-           mailMessage.setVisible(true);
-           mailMessage.setText("Please Enter Mail!");
+        if (mailGUI.getText().isEmpty() == true) {
 
+            mailMessage.setVisible(true);
+            mailMessage.setText("Please Enter Mail!");
+
+        } else {
+            mailMessage.setVisible(false);
         }
-        else {
-           mailMessage.setVisible(false);
-        }
-        if( passwordGUI.getText().trim().equals(" ") ){
-            
+        if (passwordGUI.getText().trim().equals(" ")) {
+
             passwordMessage.setVisible(true);
             passwordMessage.setText("Please Enter Password!");
 
-        }
-        else
-        {
+        } else {
             passwordMessage.setVisible(false);
 
         }
-  
-         if(!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty() && !surnameGUI.getText().isEmpty() && !nameGUI.getText().isEmpty() )
-        {
 
-   int result = db.UpdatePersonalInformation(Name,Surname,Mail,passwordnumeric);
+        if (!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty() && !surnameGUI.getText().isEmpty() && !nameGUI.getText().isEmpty()) {
 
-        if(result==1)
-        {            
-           messageGUI.setText("User Updated Successfully!");
-           messageGUI.setVisible(true);
-        }
-        else if(result==0)
-        {
-            messageGUI.setText("User Cannot Updated!");
-            messageGUI.setVisible(true);
-        
-        }
-        }
-    }
-     @FXML
-     public void backBtn(){
-  
-         try {
-                replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
-            } catch (Exception e) {
-                e.printStackTrace();
+            int result = db.UpdatePersonalInformation(Name, Surname, Mail, passwordnumeric);
+
+            if (result == 1) {
+                messageGUI.setText("User Updated Successfully!");
+                messageGUI.setVisible(true);
+            } else if (result == 0) {
+                messageGUI.setText("User Cannot Updated!");
+                messageGUI.setVisible(true);
+
             }
+        }
     }
-     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
-         Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+
+    @FXML
+    public void backBtn() throws Exception {
+        replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
+    }
+
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
@@ -188,14 +171,18 @@ public class UpdatePersonalInformation implements Initializable{
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();
-        return page; 
-    }   
-       
-     public static void main(String[] args) {
+        return page;
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
 }

@@ -38,8 +38,9 @@ public class DeleteSong implements Initializable {
     private int numDeleteID = -1;
 
     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+        Parent page;
+        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
-        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = stage.getScene();
         if (scene == null) {
             scene = new Scene(page, numX, numY);
@@ -49,7 +50,11 @@ public class DeleteSong implements Initializable {
         }
 
         //stage.getScene().setRoot(page);
-        stage.setScene(page.getScene());
+        //stage.setScene(page.getScene());
+        stage.setMinHeight(numY);
+        stage.setMinWidth(numX);
+        stage.setMaxHeight(numY);
+        stage.setMaxWidth(numX);
         stage.setResizable(false);
         stage.setTitle("");
         stage.show();
