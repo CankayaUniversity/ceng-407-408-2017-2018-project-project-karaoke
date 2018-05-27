@@ -6,6 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.GameKaraoke">
   <children>
@@ -14,10 +15,14 @@
         <Image url="@../images/background.jpg" />
       </image>
     </ImageView>
-    <Label fx:id="labelLyrics" layoutX="285.0" layoutY="284.0" text="---" textAlignment="CENTER" />
+    <Label fx:id="labelLyrics" layoutX="285.0" layoutY="284.0" text="---" textAlignment="CENTER" textFill="WHITE" />
     <Pane fx:id="paneAnimation" layoutX="61.0" layoutY="71.0" prefHeight="200.0" prefWidth="478.0" />
     <Button fx:id="buttonStart" defaultButton="true" layoutX="185.0" layoutY="314.0" mnemonicParsing="false" onAction="#funcStartKaraoke" prefHeight="37.0" prefWidth="214.0" text="START!" />
-    <Label fx:id="labelSingerName" layoutX="61.0" layoutY="37.0" text="Label" />
-    <Label fx:id="labelSongName" layoutX="503.0" layoutY="37.0" text="Label" textAlignment="RIGHT" />
+    <Label fx:id="labelSingerName" layoutX="61.0" layoutY="37.0" text="Label" textFill="WHITE">
+      <font>
+        <Font name="System Bold" size="15.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label fx:id="labelSongName" font="$x1" layoutX="503.0" layoutY="38.0" text="Label" textAlignment="RIGHT" textFill="WHITE" />
   </children>
 </AnchorPane>

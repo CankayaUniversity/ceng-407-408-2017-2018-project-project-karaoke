@@ -16,7 +16,6 @@
         <Image url="@../images/background.jpg" />
       </image>
     </ImageView>
-    <Label layoutX="26.0" layoutY="46.0" text="Class List" />
     <Button fx:id="buttonScoreTable" layoutX="26.0" layoutY="392.0" mnemonicParsing="false" onAction="#funcScoreTable" text="Score Table" />
     <Button fx:id="buttonAddStudent" layoutX="249.0" layoutY="393.0" mnemonicParsing="false" onAction="#funcAddStudent" text="Add Student" />
     <Button fx:id="buttonStartKaraoke" layoutX="469.0" layoutY="392.0" mnemonicParsing="false" onAction="#funcStartKaroke" text="Start Karaoke!" />

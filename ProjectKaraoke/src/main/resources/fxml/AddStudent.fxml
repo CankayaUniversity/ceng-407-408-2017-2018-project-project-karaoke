@@ -6,6 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddStudent">
   <children>
@@ -16,8 +17,12 @@
     </ImageView>
     <TextField fx:id="textfieldSurname" layoutX="200.0" layoutY="189.0" prefWidth="200.0" />
     <TextField fx:id="textfieldName" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
-    <Label layoutX="133.0" layoutY="153.0" text="Name:" />
-    <Label layoutX="133.0" layoutY="192.0" text="Surname:" />
+    <Label layoutX="133.0" layoutY="153.0" text="Name:" textFill="BLACK">
+      <font>
+        <Font size="15.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="133.0" layoutY="192.0" text="Surname:" textFill="BLACK" />
     <Button fx:id="buttonAddStudent" layoutX="236.0" layoutY="237.0" mnemonicParsing="false" onAction="#funcAddStudent" prefWidth="128.0" text="Add Student" />
     <Label fx:id="nameMessage" layoutX="425.0" layoutY="150.0" prefWidth="128.0" text="" textFill="RED" visible="false" />
     <Label fx:id="surnameMessage" layoutX="425.0" layoutY="192.0" prefWidth="114.0" text="" textFill="#ff3333" />
