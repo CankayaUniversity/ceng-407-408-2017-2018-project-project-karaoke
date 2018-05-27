@@ -40,16 +40,16 @@ public class AddStudent implements Initializable {
     
     @FXML
     private void backBtn() throws Exception{
-        replaceSceneContent("/fxml/UserMain.fxml");
+        replaceSceneContent("/fxml/UserMain.fxml", 471, 600);
     }
     
-    private Parent replaceSceneContent(String fxml) throws Exception {
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         
         Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

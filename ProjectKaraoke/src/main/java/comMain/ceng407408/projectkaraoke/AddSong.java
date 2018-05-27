@@ -31,6 +31,7 @@ import javafx.util.Duration;
 import java.io.*;
 import comMain.ceng407408.projectkaraoke.*;
 import static comMain.ceng407408.projectkaraoke.CreateAccount.stage;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 //import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
@@ -55,101 +56,100 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
 import javafx.scene.control.TextArea;
-public class AddSong implements Initializable{
-    
-     @Override
-     public void initialize(URL location, ResourceBundle resources){
-       
-}
-      public static Stage stage = new Stage();
-    @FXML public TextField songNameGUI =  new TextField();
-    @FXML public TextArea lyricsGUI = new TextArea();
-    @FXML public  Button addSongGUI = new Button();
-    @FXML public  Button ppageGUI = new Button();
-    @FXML public  Label messageGUI = new Label();
-    @FXML public  Button musicBtn = new Button();
-    @FXML public  Label pathmessageGUI = new Label();
-    String path="";
-    
-     @FXML
-    public void ppageBtn()
-    {
-         try {
-                replaceSceneContent("/fxml/AdminMainPage.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    } 
-     @FXML
-     public void pathBtn()
-    {
-        
-         FileChooser fc = new FileChooser();
+
+public class AddSong implements Initializable {
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+    public static Stage stage = new Stage();
+    @FXML
+    public TextField songNameGUI = new TextField();
+    @FXML
+    public TextArea lyricsGUI = new TextArea();
+    @FXML
+    public Button addSongGUI = new Button();
+    @FXML
+    public Button ppageGUI = new Button();
+    @FXML
+    public Label messageGUI = new Label();
+    @FXML
+    public Button musicBtn = new Button();
+    @FXML
+    public Label pathmessageGUI = new Label();
+    String path = "";
+
+    @FXML
+    public void ppageBtn() {
+        try {
+            replaceSceneContent("/fxml/AdminMainPage.fxml", 316, 631);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void pathBtn() {
+
+        FileChooser fc = new FileChooser();
         // fc.setInitialDirectory(); bu kodda path verirsek direk ordan açılıyor 
-         fc.getExtensionFilters().addAll(
-                 new ExtensionFilter("WAV files","*.wav"));
-        
-         File selectedfile=fc.showOpenDialog(null);
-         if(selectedfile!=null)
-         {
-             path=selectedfile.getAbsolutePath();
-         }
-         else {
-           pathmessageGUI.setText("File Cannot Selected!!");
-           pathmessageGUI.setVisible(true);
-         }
-    } 
-     @FXML
-    public void addSongBtn()
-    {
+        fc.getExtensionFilters().addAll(
+                new ExtensionFilter("WAV files", "*.wav"));
+
+        File selectedfile = fc.showOpenDialog(null);
+        if (selectedfile != null) {
+            path = selectedfile.getAbsolutePath();
+        } else {
+            pathmessageGUI.setText("File Cannot Selected!!");
+            pathmessageGUI.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void addSongBtn() {
         Karaoke db = new Karaoke();
-        
+
         String SongName = "";
         String Lyric = "";
-      
 
         SongName = songNameGUI.getText();
         Lyric = lyricsGUI.getText();
-        
-        
-        int result = db.AddSong(SongName,Lyric,path);
 
-        if(result==1)
-        {       
-           messageGUI.setText("Song Inserted Successfully!");
-           messageGUI.setVisible(true);
-        }
-       
-        else if(result==0)
-        {
+        int result = db.AddSong(SongName, Lyric, path);
+
+        if (result == 1) {
+            messageGUI.setText("Song Inserted Successfully!");
+            messageGUI.setVisible(true);
+        } else if (result == 0) {
             messageGUI.setText("Song Cannot Inserted!");
             messageGUI.setVisible(true);
-        
+
         }
-            
-        
-        
-    } 
-     private Parent replaceSceneContent(String fxml) throws Exception {
-        Parent page;
-        page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+
+    }
+
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+
+        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 600);
-
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
         stage.show();
         return page;
- 
-                
-    }   
-       
-     public static void main(String[] args) {
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
 }

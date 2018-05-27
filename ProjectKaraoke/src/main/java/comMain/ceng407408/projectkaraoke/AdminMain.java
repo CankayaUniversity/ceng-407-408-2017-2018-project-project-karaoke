@@ -73,7 +73,7 @@ public class AdminMain implements Initializable{
     {
         
          try {
-                replaceSceneContent("/fxml/AddSong.fxml");
+                replaceSceneContent("/fxml/AddSong.fxml", 400, 600);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +84,7 @@ public class AdminMain implements Initializable{
         
          try {
                 UserSession.numUserId=-1;
-                replaceSceneContent("/fxml/Login.fxml");
+                replaceSceneContent("/fxml/Login.fxml", 350, 500);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -94,7 +94,7 @@ public class AdminMain implements Initializable{
     public void deleteSongBtn()
     {
           try {
-                replaceSceneContent("/fxml/DeleteSong.fxml");
+                replaceSceneContent("/fxml/DeleteSong.fxml", 365, 533);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -103,7 +103,7 @@ public class AdminMain implements Initializable{
      public void createUserBtn()
     {
           try {
-                replaceSceneContent("/fxml/AdminCreateAccount.fxml");
+                replaceSceneContent("/fxml/AdminCreateAccount.fxml", 400, 600);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -112,18 +112,18 @@ public class AdminMain implements Initializable{
     public void deleteUserBtn()
     {
           try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
+                replaceSceneContent("/fxml/DeleteUser.fxml", 339 ,463);
             } catch (Exception e) {
                 e.printStackTrace();
             }
     }
-     private Parent replaceSceneContent(String fxml) throws Exception {
+     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

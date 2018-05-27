@@ -37,12 +37,12 @@ public class DeleteSong implements Initializable {
     private Karaoke objMainFunc = new Karaoke();
     private int numDeleteID = -1;
 
-    private Parent replaceSceneContent(String fxml) throws Exception {
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
 
         Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
@@ -75,7 +75,7 @@ public class DeleteSong implements Initializable {
 
     @FXML
     public void funcBack() throws Exception {
-        replaceSceneContent("/fxml/AdminMainPage.fxml");
+        replaceSceneContent("/fxml/AdminMainPage.fxml", 316, 631);
     }
 
     @Override

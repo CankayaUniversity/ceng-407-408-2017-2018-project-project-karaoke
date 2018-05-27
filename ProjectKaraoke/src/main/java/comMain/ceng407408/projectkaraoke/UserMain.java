@@ -35,55 +35,64 @@ import javafx.stage.Stage;
  * @author mehmetali
  */
 public class UserMain implements Initializable {
+
     private final Karaoke objMainFunc = new Karaoke();
-    @FXML TableView<UserAbst> tableviewListOfSingers = new TableView<UserAbst>();
-    @FXML Button buttonScoreTable = new Button();
-    @FXML Button buttonAddStudent = new Button();
-    @FXML Button buttonStartKaraoke = new Button();   
-    @FXML Button update = new Button();
-    @FXML Button logout = new Button();  
-    
     @FXML
-    public void funcScoreTable() throws SQLException, Exception{
-        replaceSceneContent("/fxml/ScoreTable.fxml");
-    }
-    
+    TableView<UserAbst> tableviewListOfSingers = new TableView<UserAbst>();
     @FXML
-    public void funcAddStudent() throws Exception{
-        replaceSceneContent("/fxml/AddStudent.fxml");
-    }
-    
+    Button buttonScoreTable = new Button();
     @FXML
-    public void funcStartKaroke() throws Exception{
-        replaceSceneContent("/fxml/KaraokeSongSinger.fxml");
+    Button buttonAddStudent = new Button();
+    @FXML
+    Button buttonStartKaraoke = new Button();
+    @FXML
+    Button update = new Button();
+    @FXML
+    Button logout = new Button();
+
+    @FXML
+    public void funcScoreTable() throws SQLException, Exception {
+        replaceSceneContent("/fxml/ScoreTable.fxml", 400, 600);
     }
-     @FXML
-    public void updateBtn() throws Exception{
-        replaceSceneContent("/fxml/UpdatePersonalInformation.fxml");
+
+    @FXML
+    public void funcAddStudent() throws Exception {
+        replaceSceneContent("/fxml/AddStudent.fxml", 400, 600);
     }
-     @FXML
-    public void logoutBtn() throws Exception{
-        UserSession.numUserId=-1;
-        replaceSceneContent("/fxml/Login.fxml");
+
+    @FXML
+    public void funcStartKaroke() throws Exception {
+        replaceSceneContent("/fxml/KaraokeSongSinger.fxml", 226, 311);
+    }
+
+    @FXML
+    public void updateBtn() throws Exception {
+        replaceSceneContent("/fxml/UpdatePersonalInformation.fxml", 400, 600);
+    }
+
+    @FXML
+    public void logoutBtn() throws Exception {
+        UserSession.numUserId = -1;
+        replaceSceneContent("/fxml/Login.fxml", 350, 500);
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {           
-            
-            try {
+    public void initialize(URL location, ResourceBundle resources) {
+
+        try {
             objMainFunc.funcListSinger(tableviewListOfSingers);
-            } catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(UserMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }    
-    
-    private Parent replaceSceneContent(String fxml) throws Exception {
-        
+        }
+    }
+
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
+
         Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

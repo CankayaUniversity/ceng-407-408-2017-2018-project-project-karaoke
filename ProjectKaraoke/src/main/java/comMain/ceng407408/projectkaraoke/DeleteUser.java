@@ -109,7 +109,10 @@ public class DeleteUser implements Initializable {
     public void ppageBtn() {
 
         try {
-            replaceSceneContent("/fxml/teacher.fxml");
+            /**
+             * Used resource is non exist!
+             */
+            //replaceSceneContent("/fxml/teacher.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -118,19 +121,19 @@ public class DeleteUser implements Initializable {
     @FXML
     public void logoutBtn() {
         try {
-            replaceSceneContent("/fxml/Login.fxml");
+            replaceSceneContent("/fxml/Login.fxml", 350, 500);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-   private Parent replaceSceneContent(String fxml) throws Exception {
+   private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

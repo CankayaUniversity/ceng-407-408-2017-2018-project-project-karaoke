@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.*;
 import comMain.ceng407408.projectkaraoke.*;
+import static comMain.ceng407408.projectkaraoke.DeleteUser.stage;
 //import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 
 import java.io.File;
@@ -47,35 +48,48 @@ import javafx.stage.Window;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.event.ChangeListener;
 import sun.applet.Main;
+
 /**
  *
  * @author sevtap
  */
-public class CreateAccount implements Initializable{
+public class CreateAccount implements Initializable {
+
     @Override
-     public void initialize(URL location, ResourceBundle resources){
-       
-}
-  
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
     public static Stage stage = new Stage();
-    @FXML public TextField nameGUI =  new TextField();
-    @FXML public TextField surnameGUI= new TextField();
-    @FXML public TextField mailGUI = new TextField();
-    @FXML public  PasswordField passwordGUI = new PasswordField();
-    @FXML public  Button addGUI = new Button();
-    @FXML public  Button ppageGUI = new Button();
-    @FXML public  Button logout = new Button();
-    @FXML public  Label messageGUI = new Label();
-    @FXML public  Label nameMessage = new Label();
-    @FXML public  Label surnameMessage = new Label();
-    @FXML public  Label mailMessage = new Label();
-    @FXML public  Label passwordMessage = new Label();
-             
     @FXML
-    public void AddUser()
-    {
+    public TextField nameGUI = new TextField();
+    @FXML
+    public TextField surnameGUI = new TextField();
+    @FXML
+    public TextField mailGUI = new TextField();
+    @FXML
+    public PasswordField passwordGUI = new PasswordField();
+    @FXML
+    public Button addGUI = new Button();
+    @FXML
+    public Button ppageGUI = new Button();
+    @FXML
+    public Button logout = new Button();
+    @FXML
+    public Label messageGUI = new Label();
+    @FXML
+    public Label nameMessage = new Label();
+    @FXML
+    public Label surnameMessage = new Label();
+    @FXML
+    public Label mailMessage = new Label();
+    @FXML
+    public Label passwordMessage = new Label();
+
+    @FXML
+    public void AddUser() {
         Karaoke db = new Karaoke();
-        
+
         String Name = "";
         String Surname = "";
         String Mail = "";
@@ -88,112 +102,102 @@ public class CreateAccount implements Initializable{
         Password = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(Password);
 
-        System.out.println("ejfle"+Password);
-        if(nameGUI.getText().isEmpty()== true) {
-                        nameMessage.setVisible(true);
+        System.out.println("ejfle" + Password);
+        if (nameGUI.getText().isEmpty() == true) {
+            nameMessage.setVisible(true);
             nameMessage.setText("Please Enter Name!");
-        }
-        else
-        {
+        } else {
             nameMessage.setVisible(false);
 
         }
-        
-        if(surnameGUI.getText().isEmpty()==true) {
-            
-                        surnameMessage.setVisible(true);
+
+        if (surnameGUI.getText().isEmpty() == true) {
+
+            surnameMessage.setVisible(true);
             surnameMessage.setText("Please Enter Surname!");
-            
-        }
-        else
-        {
+
+        } else {
             surnameMessage.setVisible(false);
 
         }
-        if(mailGUI.getText().isEmpty() == true) {
-           
-           mailMessage.setVisible(true);
-                      mailMessage.setText("Please Enter Mail!");
+        if (mailGUI.getText().isEmpty() == true) {
 
+            mailMessage.setVisible(true);
+            mailMessage.setText("Please Enter Mail!");
+
+        } else {
+            mailMessage.setVisible(false);
         }
-        else {
-           mailMessage.setVisible(false);
-        }
-        if( passwordGUI.getText().trim().equals(" ") ){
-            
+        if (passwordGUI.getText().trim().equals(" ")) {
+
             passwordMessage.setVisible(true);
-                        passwordMessage.setText("Please Enter Password!");
+            passwordMessage.setText("Please Enter Password!");
 
-        }
-        else
-        {
+        } else {
             passwordMessage.setVisible(false);
 
         }
-  
-         if(!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty() && !surnameGUI.getText().isEmpty() && !nameGUI.getText().isEmpty() )
-        {
 
-   int result = db.CreateUser(Name,Surname,Mail,passwordnumeric);
+        if (!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty() && !surnameGUI.getText().isEmpty() && !nameGUI.getText().isEmpty()) {
 
-        if(result==1)
-        {            
-           messageGUI.setText("User Inserted Successfully!");
-           messageGUI.setVisible(true);
-        }
-        else if(result==2)
-        {
-             messageGUI.setText("There Is User In Database With " + Mail + " Mail Address!");
-             messageGUI.setVisible(true);
-        }
-        else if(result==0)
-        {
-            messageGUI.setText("User Cannot Inserted!");
-            messageGUI.setVisible(true);
-        
-        }
-        }
-          
-    } 
-     @FXML
-    public void ppageBtn(){
-  
-         try {
-                replaceSceneContent("/fxml/DeleteUser.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
+            int result = db.CreateUser(Name, Surname, Mail, passwordnumeric);
+
+            if (result == 1) {
+                messageGUI.setText("User Inserted Successfully!");
+                messageGUI.setVisible(true);
+            } else if (result == 2) {
+                messageGUI.setText("There Is User In Database With " + Mail + " Mail Address!");
+                messageGUI.setVisible(true);
+            } else if (result == 0) {
+                messageGUI.setText("User Cannot Inserted!");
+                messageGUI.setVisible(true);
+
             }
+        }
+
     }
-     @FXML
-    public void logoutBtn()
-    {
-         try {
-                replaceSceneContent("/fxml/Login.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-    } 
-    
-       private Parent replaceSceneContent(String fxml) throws Exception {
+
+    @FXML
+    public void ppageBtn() {
+
+        try {
+            replaceSceneContent("/fxml/DeleteUser.fxml", 339, 463);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void logoutBtn() {
+        try {
+            replaceSceneContent("/fxml/Login.fxml", 350 ,500);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 600, 600);
-
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
         stage.show();
         return page;
- 
-                
-    }   
-       
-     public static void main(String[] args) {
+
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
 }

@@ -59,7 +59,7 @@ Parent root;
     public MediaView mediaT = new MediaView();*/
     @Override
     public void start(Stage stage) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
+        /*root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
 
         Karaoke db = new Karaoke();
         Scene scene = new Scene(root);
@@ -74,11 +74,12 @@ Parent root;
 
         //In order to block resizing the page(scene) 
         stage.setResizable(false);
-        stage.show();
+        stage.show();*/
+        replaceSceneContent("/fxml/Login.fxml", 350, 500);
     }
 
     @FXML
-    public void loginBtn() {
+    public void loginBtn() throws Exception {
 
         Karaoke db = new Karaoke();
 
@@ -97,19 +98,15 @@ Parent root;
             switch (UserSession.numUserType) {
                 case 1:
                     strPathOfScene = "/fxml/AdminMainPage.fxml";
+                    replaceSceneContent(strPathOfScene, 316, 631);
                     break;
                 case 2:
                     strPathOfScene = "";
                     break;
                 case 3:
                     strPathOfScene = "/fxml/UserMain.fxml";
+                    replaceSceneContent(strPathOfScene, 471, 600);
                     break;
-            }
-            try {
-                replaceSceneContent(strPathOfScene);
-                
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         } else if (result == 2) {
             messageGUI.setText("User Is Not Active!");
@@ -122,13 +119,13 @@ Parent root;
 
     }
 
-    private Parent replaceSceneContent(String fxml) throws Exception {
+    private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
         page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page, numX, numY);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
