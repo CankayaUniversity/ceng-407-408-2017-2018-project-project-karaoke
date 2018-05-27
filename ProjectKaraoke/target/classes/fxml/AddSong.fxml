@@ -7,9 +7,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddSong">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.AddSong">
   <children>
-    <ImageView fitHeight="300.0" fitWidth="600.0" layoutX="0.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
+    <ImageView fitHeight="300.0" fitWidth="600.0" layoutX="0.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" scaleY="2.0">
       <image>
         <Image url="@../images/background.jpg" />
       </image>
@@ -18,11 +18,16 @@
     <Label layoutX="129.0" layoutY="89.0" text="Song Lyrics:" />
     <TextField fx:id="songNameGUI" layoutX="228.0" layoutY="54.0" />
     <Button fx:id="ppageGUI" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ppageBtn" text="Back" />
-    <TextArea fx:id="lyricsGUI" layoutX="228.0" layoutY="89.0" prefWidth="200.0" wrapText="true" />
-    <Button fx:id="addSongGUI" layoutX="287.0" layoutY="319.0" mnemonicParsing="false" onAction="#addSongBtn" text="Add Song" />
-    <Label fx:id="messageGUI" layoutX="136.0" layoutY="339.0" prefWidth="210.0" text="" />
+    <TextArea fx:id="lyricsGUI" layoutX="228.0" layoutY="89.0" prefWidth="321.0" wrapText="true" />
+    <Button fx:id="addSongGUI" layoutX="289.0" layoutY="368.0" mnemonicParsing="false" onAction="#addSongBtn" text="Add Song" />
+    <Label fx:id="messageGUI" layoutX="198.0" layoutY="410.0" prefWidth="293.0" text="" />
     <Label layoutX="129.0" layoutY="276.0" text="Choose Music:" />
     <Button fx:id="musicBtn" layoutX="228.0" layoutY="273.0" mnemonicParsing="false" onAction="#pathBtn" text="..." />
-    <Label fx:id="pathmessageGUI" layoutX="207.0" layoutY="267.0" prefWidth="134.0" text="" textFill="RED" visible="false" />
+    <Label fx:id="pathmessageGUI" layoutX="281.0" layoutY="276.0" prefWidth="149.0" text="" textFill="RED" visible="true" />
+    <TextField fx:id="timeTxt" layoutX="245.0" layoutY="322.0" prefWidth="76.0" />
+    <Label fx:id="nameMessage" layoutX="414.0" layoutY="54.0" prefWidth="161.0" text="" textFill="RED" visible="false" />
+    <Label layoutX="129.0" layoutY="325.0" text="Song Time (sec):" />
+    <Label fx:id="lyricMessage" layoutX="552.0" layoutY="89.0" prefWidth="20.0" text="" textFill="RED" visible="false" />
+    <Label fx:id="timeMessage" layoutX="444.0" layoutY="325.0" prefWidth="142.0" text="" textFill="RED" visible="false" />
   </children>
 </AnchorPane>

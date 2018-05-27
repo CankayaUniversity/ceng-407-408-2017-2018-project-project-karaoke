@@ -109,8 +109,8 @@ public class GameKaraoke implements Initializable {
             long longRecordTime = objMainFunc.funcGetTime(KaraokeCache.numSongID);
             Transcriber speechFunc = new Transcriber();
             funcAnimateLyric(strLyric, longRecordTime);
-            ScoreAbst overallScore = speechFunc.funcRecognize(" ", longRecordTime);
-            Thread.sleep(longRecordTime);
+            ScoreAbst overallScore = speechFunc.funcRecognize(strLyric, longRecordTime);
+            //Thread.sleep(longRecordTime);
             switch (overallScore.getProcessCode()) {
                 case 0:
                     objMainFunc.funcAddScore(UserSession.numUserId, KaraokeCache.numSingerID, (float) overallScore.getScore(), KaraokeCache.numSongID);
@@ -132,10 +132,11 @@ public class GameKaraoke implements Initializable {
                     break;
             }
             alert.showAndWait();
-        } catch (SQLException exExc) {
+        } catch (Exception exExc) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error!");
-            alert.setContentText("Something gone wrong!");
+            alert.setContentText("Something gone wrong!\n");
+            exExc.printStackTrace();
             alert.showAndWait();
         }
         replaceSceneContent("/fxml/UserMain.fxml", 600, 471);
