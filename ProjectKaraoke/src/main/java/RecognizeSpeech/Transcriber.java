@@ -12,13 +12,14 @@ import java.net.URL;
 //import java.text.DecimalFormat;
 
 import java.text.DecimalFormat;
+import javax.sound.sampled.LineUnavailableException;
 
 
 /** A simple example that shows how to transcribe a continuous audio file that has multiple utterances in it. */
 public class Transcriber {
 
 
-    public ScoreAbst funcRecognize(final String strOriginalLyric, final long longRecordTime) throws IOException, UnsupportedAudioFileException, InterruptedException {
+    public ScoreAbst funcRecognize(final String strOriginalLyric, final long longRecordTime) throws IOException, UnsupportedAudioFileException, InterruptedException, LineUnavailableException {
         URL audioURL;
         ScoreAbst finalScore = new ScoreAbst();
         JavaSoundRecorder soundRecord = new JavaSoundRecorder();
@@ -34,7 +35,7 @@ public class Transcriber {
 
         URL configURL = Transcriber.class.getResource("config.xml");
 
-        ConfigurationManager cm = new ConfigurationManager(configURL);
+        ConfigurationManager cm = new ConfigurationManager("src/main/java/RecognizeSpeech/config.xml");
         Recognizer recognizer = (Recognizer) cm.lookup("recognizer");
 
         /* allocate the resource necessary for the recognizer */

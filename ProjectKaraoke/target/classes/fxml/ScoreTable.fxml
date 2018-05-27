@@ -4,15 +4,20 @@
 <?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.ScoreTable">
   <children>
-    <ChoiceBox fx:id="choiceboxSingers" layoutX="86.0" layoutY="53.0" prefWidth="136.0">
-    </ChoiceBox>
+    <ImageView fitHeight="318.5" fitWidth="637.0" layoutX="-21.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
+      <image>
+        <Image url="@../images/background.jpg" />
+      </image>
+    </ImageView>
+    <ChoiceBox fx:id="choiceboxSingers" layoutX="86.0" layoutY="53.0" prefWidth="136.0" />
     <Label layoutX="21.0" layoutY="53.0" text="Singers:" />
     <TableView fx:id="tableviewScoreTable" editable="true" layoutX="21.0" layoutY="100.0" prefHeight="259.0" prefWidth="554.0" />
-    <Button fx:id="buttonCancel" onAction="#funcCancel" cancelButton="true" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
+    <Button fx:id="buttonCancel" cancelButton="true" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#funcCancel" text="Back" />
   </children>
 </AnchorPane>

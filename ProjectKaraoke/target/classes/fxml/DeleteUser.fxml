@@ -4,13 +4,19 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="339.0" prefWidth="463.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.DeleteUser">
   <children>
-    <Button layoutX="33.0" layoutY="248.0" mnemonicParsing="false" text="Back" />
-    <Button fx:id="deleteBtnGUI" layoutX="341.0" layoutY="248.0" mnemonicParsing="false" onAction="#DeleteBtn" text="Delete" />
-    <Label fx:id="messageGUI" layoutX="211.0" layoutY="279.0" text="Label" />
-    <TableView fx:id="tableviewSongList" editable="true" layoutX="33.0" layoutY="32.0" prefHeight="200.0" prefWidth="371.0" />
+    <ImageView fitHeight="254.5" fitWidth="509.0" layoutX="-9.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" scaleY="1.5">
+      <image>
+        <Image url="@../images/background.jpg" />
+      </image>
+    </ImageView>
+    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
+    <Button fx:id="deleteBtnGUI" layoutX="212.0" layoutY="258.0" mnemonicParsing="false" onAction="#DeleteBtn" text="Delete" />
+    <Label fx:id="messageGUI" layoutX="147.0" layoutY="287.0" prefWidth="207.0" text="" textFill="RED" visible="false" />
+    <TableView fx:id="tableviewSongList" editable="true" layoutX="58.0" layoutY="48.0" prefHeight="200.0" prefWidth="371.0" />
   </children>
 </AnchorPane>
