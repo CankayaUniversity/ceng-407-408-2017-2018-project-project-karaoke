@@ -32,7 +32,6 @@ To install the program, you need to do the following steps in order by opening t
 Code:   mkdir / home / username / src /</b><br>
 So we have our source package in / home / username / src /.</b><br>
 </b><br>
-</b><br>
 Change to the directory / home / username / src / with the command "cd" (change directory) as follows:</b><br>
 Code:   CD / home / username / src /</b><br>
 </b><br>
@@ -59,10 +58,10 @@ Code:   cd <directory></b><br>
 Here things will be different. Some packages have an INSTALL or README file that contains installation instructions. Use "ls" to determine if the software contains an installation or readme file. If it has one, you can use the "more" command to read it:</b><br>
 Code:   more INSTALL</b><br>
 </b><br>
--In general, the last 3 levels are as follows:</b><br>
+</b>In general, the last 3 levels are as follows:<br></b><br>
 </b><br>
-I.    Configure the installation
-II.   Compile the software
+I.    Configure the installation</b><br>
+II.   Compile the software</b><br>
 III. Install the binaries</b><br>
 </b><br>
 Pre-installation configuration is done by running ./configure:</b><br>
