@@ -7,6 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="comMain.ceng407408.projectkaraoke.ScoreTable">
   <children>
@@ -15,8 +16,12 @@
         <Image url="@../images/background.jpg" />
       </image>
     </ImageView>
-    <ChoiceBox fx:id="choiceboxSingers" layoutX="86.0" layoutY="53.0" prefWidth="136.0" />
-    <Label layoutX="21.0" layoutY="53.0" text="Singers:" />
+    <ChoiceBox fx:id="choiceboxSingers" layoutX="126.0" layoutY="53.0" prefWidth="136.0" />
+    <Label layoutX="21.0" layoutY="53.0" text="Singers:" textFill="WHITE">
+      <font>
+        <Font name="System Bold" size="18.0" />
+      </font>
+    </Label>
     <TableView fx:id="tableviewScoreTable" editable="true" layoutX="21.0" layoutY="100.0" prefHeight="259.0" prefWidth="554.0" />
     <Button fx:id="buttonCancel" cancelButton="true" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#funcCancel" text="Back" />
   </children>

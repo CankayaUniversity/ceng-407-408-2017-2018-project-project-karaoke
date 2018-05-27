@@ -38,6 +38,7 @@ import javafx.scene.text.TextBuilder;
 import javafx.util.Duration;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -80,14 +81,14 @@ public class GameKaraoke implements Initializable {
     }
 
     private void funcAnimateLyric(final String strLyric, final long longDurationTime) {
-        labelLyrics.setText(TextBuilder.create()
+        Text set = TextBuilder.create()
                 .text(strLyric)
                 .layoutX(50)
                 .textOrigin(VPos.CENTER)
                 .textAlignment(TextAlignment.CENTER)
                 .fill(Color.RED)
                 .font(Font.font("SansSerif", FontPosture.ITALIC, 18))
-                .build().toString());
+                .build();
 
         TranslateTransition translateTransition = TranslateTransitionBuilder.create()
                 .node(labelLyrics)
@@ -97,7 +98,9 @@ public class GameKaraoke implements Initializable {
                 .interpolator(Interpolator.LINEAR)
                 .cycleCount(Timeline.INDEFINITE)
                 .build();
+        labelLyrics.setText(set.getText());
         translateTransition.play();
+        
     }
 
     @FXML
@@ -108,9 +111,10 @@ public class GameKaraoke implements Initializable {
             String strLyric = objMainFunc.funcGetLyric(KaraokeCache.numSongID);
             long longRecordTime = objMainFunc.funcGetTime(KaraokeCache.numSongID);
             Transcriber speechFunc = new Transcriber();
-            funcAnimateLyric(strLyric, longRecordTime);
+            
             ScoreAbst overallScore = speechFunc.funcRecognize(strLyric, longRecordTime);
             //Thread.sleep(longRecordTime);
+            funcAnimateLyric(strLyric, longRecordTime);
             switch (overallScore.getProcessCode()) {
                 case 0:
                     objMainFunc.funcAddScore(UserSession.numUserId, KaraokeCache.numSingerID, (float) overallScore.getScore(), KaraokeCache.numSongID);

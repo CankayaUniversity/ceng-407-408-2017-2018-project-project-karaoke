@@ -30,7 +30,7 @@ public class Transcriber {
         Thread.sleep(soundRecord.GetrecordTime() + 10);
         
         //Way of getting resource may change
-        audioURL = Transcriber.class.getResource("RecordAudio.wav");
+        audioURL = Transcriber.class.getResource("/RecordAudio.wav");
         
 
         URL configURL = Transcriber.class.getResource("config.xml");

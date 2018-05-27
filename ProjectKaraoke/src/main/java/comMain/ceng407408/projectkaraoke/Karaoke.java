@@ -529,8 +529,8 @@ public class Karaoke {
         psmt.setInt(2, numSingerID);
         psmt.setInt(3, numSongID);
         psmt.setFloat(4, (float) dobScore);
-        psmt.setDate(5, Date.valueOf(String.valueOf(test.getDate())));
-        psmt.executeQuery();
+        psmt.setString(5,String.valueOf(Calendar.getInstance().getTime()));
+        psmt.executeUpdate();
         psmt.close();
     }
 
