@@ -18,7 +18,7 @@
 <b align="center">{c1311009, c1311002, c1111029}@student.cankaya.edu.tr</b><br>
  
  
-<h2 align="center">Installation Guide for Karaoke Application</h2>
+<b align="center">Installation Guide for Karaoke Application</b><br>
 
 
 You should go to this site to see our website: http://developmentkaraoke.unaux.com/MainPage.html?i=1</b><br>
