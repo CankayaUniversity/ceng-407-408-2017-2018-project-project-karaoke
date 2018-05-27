@@ -16,7 +16,7 @@
 
 <p align="center">
 <b align="center">{c1311009, c1311002, c1111029}@student.cankaya.edu.tr</b><br>
- 
+ </b><br>
  
 <b align="center">Installation Guide for Karaoke Application</b><br>
 
