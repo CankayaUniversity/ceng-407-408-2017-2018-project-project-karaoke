@@ -51,7 +51,7 @@ public class Karaoke {
     static final String DB_URL = "jdbc:mysql://localhost:3306/karaoke?zeroDateTimeBehavior=convertToNull";
 
     static final String USER = "root";
-    static final String PASS = "";
+    static final String PASS = "28192819mali?";
 
     public Karaoke() {
 

@@ -39,7 +39,7 @@ public class KaraokeSongSinger implements Initializable {
 
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page);
+            scene = new Scene(page,900,900);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

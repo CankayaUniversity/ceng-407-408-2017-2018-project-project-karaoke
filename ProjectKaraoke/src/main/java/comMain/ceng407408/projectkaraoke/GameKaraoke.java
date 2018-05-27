@@ -15,14 +15,29 @@ import javafx.scene.control.Label;
 import RecognizeSpeech.Transcriber;
 import UserStatic.KaraokeCache;
 import UserStatic.UserSession;
+import static comMain.ceng407408.projectkaraoke.MainApp.stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Interpolator;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
+import javafx.animation.TranslateTransitionBuilder;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.VPos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextBuilder;
+import javafx.util.Duration;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -40,14 +55,56 @@ public class GameKaraoke implements Initializable {
     Button buttonStart = new Button();
     private final Karaoke objMainFunc = new Karaoke();
 
+    private Parent replaceSceneContent(String fxml) throws Exception {
+
+        Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml));
+
+        Scene scene = stage.getScene();
+        if (scene == null) {
+            scene = new Scene(page);
+            stage.setScene(scene);
+        } else {
+            stage.getScene().setRoot(page);
+        }
+
+        //stage.getScene().setRoot(page);
+        stage.setScene(page.getScene());
+        stage.setResizable(false);
+        stage.setTitle("");
+        stage.show();
+        return page;
+    }
+
+    private void funcAnimateLyric(final String strLyric, final long longDurationTime) {
+        labelLyrics.setText(TextBuilder.create()
+                .text(strLyric)
+                .layoutX(50)
+                .textOrigin(VPos.CENTER)
+                .textAlignment(TextAlignment.CENTER)
+                .fill(Color.RED)
+                .font(Font.font("SansSerif", FontPosture.ITALIC, 18))
+                .build().toString());
+
+        TranslateTransition translateTransition = TranslateTransitionBuilder.create()
+                .node(labelLyrics)
+                .fromY(500)
+                .toY(-500)
+                .duration(new Duration(longDurationTime))
+                .interpolator(Interpolator.LINEAR)
+                .cycleCount(Timeline.INDEFINITE)
+                .build();
+        translateTransition.play();
+    }
+
     @FXML
-    private void funcStartKaraoke() throws SQLException, IOException, UnsupportedAudioFileException, InterruptedException {
+    private void funcStartKaraoke() throws SQLException, IOException, UnsupportedAudioFileException, InterruptedException, Exception {
         try {
             Alert alert = null;
             DecimalFormat decformScoreFormat = new DecimalFormat("###.##");
             String strLyric = objMainFunc.funcGetLyric(KaraokeCache.numSongID);
             long longRecordTime = objMainFunc.funcGetTime(KaraokeCache.numSongID);
             Transcriber speechFunc = new Transcriber();
+            funcAnimateLyric(strLyric, longRecordTime);
             ScoreAbst overallScore = speechFunc.funcRecognize(" ", longRecordTime);
             Thread.sleep(longRecordTime);
             switch (overallScore.getProcessCode()) {
@@ -68,12 +125,16 @@ public class GameKaraoke implements Initializable {
                     alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Congratulations!");
                     alert.setContentText("Your score: " + decformScoreFormat.format(overallScore.getScore()) + "\n You missed some words!");
-                    break;                    
-            }                       
+                    break;
+            }
             alert.showAndWait();
         } catch (SQLException exExc) {
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setContentText("Something gone wrong!");
+            alert.showAndWait();
         }
+        replaceSceneContent("/fxml/UserMain.fxml");
     }
 
     @Override
