@@ -12,9 +12,11 @@
         <Image url="@../images/karaoke.jpg" />
       </image>
     </ImageView>
-    <TextField id="mailTxt" fx:id="mailGUI" layoutX="167.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="MAIL" />
-    <Button fx:id="loginButton" defaultButton="true" layoutX="167.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="LOGIN" />
-    <Label id="message" fx:id="messageGUI" layoutX="167.0" layoutY="230.0" prefWidth="166.999755859375" text="" textFill="#7200cc" />
-    <PasswordField fx:id="passwordGUI" layoutX="167.0" layoutY="142.0" prefHeight="28.1328125" prefWidth="167.0" promptText="PASSWORD" />
+    <TextField id="mailTxt" fx:id="mailGUI" layoutX="167.0" layoutY="98.0" prefHeight="28.1328125" prefWidth="167.0" promptText="Mail" />
+    <Button fx:id="loginButton" defaultButton="true" layoutX="167.0" layoutY="190.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="27.0" prefWidth="167.0" text="Login" />
+    <Label id="message" fx:id="messageGUI" layoutX="106.0" layoutY="230.0" prefWidth="289.0" text="" textFill="RED" />
+    <PasswordField fx:id="passwordGUI" layoutX="167.0" layoutY="142.0" prefHeight="28.1328125" prefWidth="167.0" promptText="Password" />
+    <Label fx:id="mailMessage" layoutX="361.0" layoutY="105.0" prefWidth="125.0" text="" textFill="RED" visible="false" />
+    <Label layoutX="361.0" layoutY="149.0" prefWidth="111.0" text="" textFill="#ff3333" visible="false" />
   </children>
 </AnchorPane>

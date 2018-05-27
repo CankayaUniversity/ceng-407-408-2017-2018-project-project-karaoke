@@ -54,6 +54,10 @@ public class MainApp extends Application {
     public Button loginButton = new Button();
     @FXML
     public Label messageGUI = new Label();
+    @FXML
+    public Label mailMessage = new Label();
+    @FXML
+    public Label passwordMessage = new Label();
 Parent root;
     /*@FXML
     public MediaView mediaT = new MediaView();*/
@@ -91,17 +95,30 @@ Parent root;
         checkMail = mailGUI.getText();
         checkPassword = passwordGUI.getText().trim();
         passwordnumeric = Integer.parseInt(checkPassword);
+         if (mailGUI.getText().isEmpty() == true) {
+
+            mailMessage.setVisible(true);
+            mailMessage.setText("Please Enter Mail!");
+
+        } else {
+            mailMessage.setVisible(false);
+        }
+        if (passwordGUI.getText().trim().equals(" ")) {
+
+            passwordMessage.setVisible(true);
+            passwordMessage.setText("Please Enter Password!");
+
+        } else {
+            passwordMessage.setVisible(false);
+
+        }
+         if (!passwordGUI.getText().trim().equals("") && !mailGUI.getText().isEmpty()) {
         int result = db.Login(checkMail, passwordnumeric);
-        System.out.println(passwordnumeric);
-        System.out.println(checkMail);
         if (result == 1) {
             switch (UserSession.numUserType) {
                 case 1:
                     strPathOfScene = "/fxml/AdminMainPage.fxml";
                     replaceSceneContent(strPathOfScene, 631, 316);
-                    break;
-                case 2:
-                    strPathOfScene = "";
                     break;
                 case 3:
                     strPathOfScene = "/fxml/UserMain.fxml";
@@ -116,7 +133,7 @@ Parent root;
             messageGUI.setVisible(true);
 
         }
-
+         }
     }
 
     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {

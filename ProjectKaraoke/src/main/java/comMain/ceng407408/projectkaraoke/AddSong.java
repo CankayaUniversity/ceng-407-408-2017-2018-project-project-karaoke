@@ -78,6 +78,15 @@ public class AddSong implements Initializable {
     public Button musicBtn = new Button();
     @FXML
     public Label pathmessageGUI = new Label();
+    @FXML
+    public TextField timeTxt = new TextField();
+     @FXML
+    public Label nameMessage = new Label();
+      @FXML
+    public Label lyricMessage = new Label();
+       @FXML
+    public Label timeMessage = new Label();
+    
     String path = "";
 
     @FXML
@@ -112,11 +121,42 @@ public class AddSong implements Initializable {
 
         String SongName = "";
         String Lyric = "";
+        String Time="";
+        int intTime = 0;
 
         SongName = songNameGUI.getText();
         Lyric = lyricsGUI.getText();
+        Time = timeTxt.getText();
+        intTime= Integer.parseInt(Time);
+        
+         if (songNameGUI.getText().isEmpty() == true) {
+            nameMessage.setVisible(true);
+            nameMessage.setText("Please Enter Song Name!");
+        } else {
+            nameMessage.setVisible(false);
 
-        int result = db.AddSong(SongName, Lyric, path);
+        }
+
+        if (lyricsGUI.getText().isEmpty() == true) {
+
+            lyricMessage.setVisible(true);
+            lyricMessage.setText("*");
+
+        } else {
+            lyricMessage.setVisible(false);
+
+        }
+        if (timeTxt.getText().isEmpty() == true) {
+
+            timeMessage.setVisible(true);
+            timeMessage.setText("Please Song Time!");
+
+        } else {
+            timeMessage.setVisible(false);
+        }
+      if (!songNameGUI.getText().isEmpty() && !lyricsGUI.getText().isEmpty() && !timeTxt.getText().isEmpty() && !path.isEmpty()) {
+
+        int result = db.AddSong(SongName, Lyric, path,intTime);
 
         if (result == 1) {
             messageGUI.setText("Song Inserted Successfully!");
@@ -126,6 +166,7 @@ public class AddSong implements Initializable {
             messageGUI.setVisible(true);
 
         }
+      }
 
     }
 
