@@ -58,7 +58,7 @@ Code:   cd <directory></b><br>
 Here things will be different. Some packages have an INSTALL or README file that contains installation instructions. Use "ls" to determine if the software contains an installation or readme file. If it has one, you can use the "more" command to read it:</b><br>
 Code:   more INSTALL</b><br>
 </b><br>
-</b>In general, the last 3 levels are as follows:<br></b><br>
+In general, the last 3 levels are as follows:
 </b><br>
 I.    Configure the installation</b><br>
 II.   Compile the software</b><br>
