@@ -66,8 +66,7 @@ III. Install the binaries</b><br>
 </b><br>
 Pre-installation configuration is done by running ./configure:</b><br>
 Code:   ./configure</b><br>
-</b><br>
-</b><br>
+
 2-) Downloading and applying source code from Intellij Idea</b><br>
 </b><br>
 First, you need to download and install the Intellij Idea tool from this link:</b><br>
@@ -75,7 +74,7 @@ https://www.jetbrains.com/idea/download/#section=windows</b><br>
 </b><br>
 After completing the installation of the Intellij Idea tool, you should download and unzip the latest version of your source code from the "Releases" tab in your Github depot.</b><br>
 </b><br>
-- Then you should open the Intellij Idea and follow these steps from the Intellij Idea window:</b><br>
+Then you should open the Intellij Idea and follow these steps from the Intellij Idea window:</b><br>
 </b><br>
 I. Choose File -> Open-> Source code -> Select the file with a near Intellij Idea image -> Click "Open".</b><br>
 II. After opening our source code, click the "Run" button at the top of the Intellij Idea user interface.</b><br>
