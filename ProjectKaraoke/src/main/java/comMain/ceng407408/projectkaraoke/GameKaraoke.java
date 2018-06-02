@@ -6,11 +6,8 @@
 package comMain.ceng407408.projectkaraoke;
 
 import EvaluationScore.ScoreAbst;
-import java.net.URL;
-import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import RecognizeSpeech.Transcriber;
 import UserStatic.KaraokeCache;
@@ -25,8 +22,11 @@ import javafx.animation.Interpolator;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.animation.TranslateTransitionBuilder;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.VPos;
+import javafx.scene.Group;
+import javafx.scene.GroupBuilder;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -39,12 +39,13 @@ import javafx.util.Duration;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  *
  * @author mehmetali
  */
-public class GameKaraoke implements Initializable {
+public class GameKaraoke extends Application {
 
     @FXML
     Label labelLyrics = new Label();
@@ -55,6 +56,8 @@ public class GameKaraoke implements Initializable {
     @FXML
     Button buttonStart = new Button();
     private final Karaoke objMainFunc = new Karaoke();
+    private TranslateTransition translateTransition = new TranslateTransition();
+    private Group root = new Group();
 
     private Parent replaceSceneContent(String fxml, int numX, int numY) throws Exception {
         Parent page;
@@ -80,17 +83,17 @@ public class GameKaraoke implements Initializable {
         return page;
     }
 
-    private void funcAnimateLyric(final String strLyric, final long longDurationTime) {
+    private Text funcAnimateLyric(final String strLyric, final long longDurationTime) {
         Text set = TextBuilder.create()
                 .text(strLyric)
                 .layoutX(50)
                 .textOrigin(VPos.CENTER)
                 .textAlignment(TextAlignment.CENTER)
                 .fill(Color.RED)
-                .font(Font.font("SansSerif", FontPosture.ITALIC, 18))
+                .font(Font.font("SansSerif", FontPosture.ITALIC, 20))
                 .build();
 
-        TranslateTransition translateTransition = TranslateTransitionBuilder.create()
+        translateTransition = TranslateTransitionBuilder.create()
                 .node(labelLyrics)
                 .fromY(500)
                 .toY(-500)
@@ -98,9 +101,8 @@ public class GameKaraoke implements Initializable {
                 .interpolator(Interpolator.LINEAR)
                 .cycleCount(Timeline.INDEFINITE)
                 .build();
-        labelLyrics.setText(set.getText());
-        translateTransition.play();
-        
+        //translateTransition.play();
+        return set;
     }
 
     @FXML
@@ -111,10 +113,25 @@ public class GameKaraoke implements Initializable {
             String strLyric = objMainFunc.funcGetLyric(KaraokeCache.numSongID);
             long longRecordTime = objMainFunc.funcGetTime(KaraokeCache.numSongID);
             Transcriber speechFunc = new Transcriber();
-            
+            buttonStart.setVisible(false);
+            labelSingerName.setVisible(false);
+            labelSongName.setVisible(false);
+             Thread animationDisplay = new Thread(new Runnable() {
+                public void run() {
+                    Group myGroup = GroupBuilder.create()
+                            .children(funcAnimateLyric(strLyric, longRecordTime))
+                            .build();
+
+                    root.getChildren().add(myGroup);
+                    translateTransition.play();
+                }
+            });
             ScoreAbst overallScore = speechFunc.funcRecognize(strLyric, longRecordTime);
             //Thread.sleep(longRecordTime);
-            funcAnimateLyric(strLyric, longRecordTime);
+            //funcAnimateLyric(strLyric, longRecordTime);
+            buttonStart.setVisible(true);
+            labelSingerName.setVisible(true);
+            labelSongName.setVisible(true);
             switch (overallScore.getProcessCode()) {
                 case 0:
                     objMainFunc.funcAddScore(UserSession.numUserId, KaraokeCache.numSingerID, (float) overallScore.getScore(), KaraokeCache.numSongID);
@@ -147,10 +164,15 @@ public class GameKaraoke implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void start(Stage primaryStage) {
         try {
             labelSingerName.setText(objMainFunc.funcGetSingerName(KaraokeCache.numSingerID));
             labelSongName.setText(objMainFunc.funcGetSongName(KaraokeCache.numSongID));
+            primaryStage.setTitle(labelSongName.getText() + " by " + labelSingerName.getText());
+
+            primaryStage.setScene(new Scene(root, 600, 400));
+            primaryStage.setResizable(false);
+            primaryStage.show();
         } catch (SQLException ex) {
             Logger.getLogger(GameKaraoke.class.getName()).log(Level.SEVERE, null, ex);
         }
